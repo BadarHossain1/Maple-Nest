@@ -7,8 +7,18 @@ import { ListingsGrid } from '@/components/ListingsGrid';
 import { FilterBar } from '@/components/FilterBar';
 import { ViewToggle } from '@/components/ViewToggle';
 import { SortOptions } from '@/components/SortOptions';
-import { MapView } from '@/components/MapView';
 import { useListings } from '@/hooks/useListings';
+
+// Dynamic import for MapView to prevent SSR issues
+const MapView = dynamic(
+  () => import('@/components/MapView').then(mod => mod.MapView),
+  { 
+    ssr: false,
+    loading: () => <div className="flex items-center justify-center h-96 bg-gray-100">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-500"></div>
+    </div>
+  }
+);
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
