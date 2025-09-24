@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import agentsData from '@/data/agents.json';
+import Image from 'next/image';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -29,16 +30,19 @@ export default function AgentsPage() {
 
   const filteredAgents = agentsData.filter(agent => {
     const matchesSearch = agent.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         agent.specialties.some(s => s.toLowerCase().includes(searchTerm.toLowerCase()));
+      agent.specialties.some(s => s.toLowerCase().includes(searchTerm.toLowerCase()));
     const matchesCity = !selectedCity || agent.serviceAreas.includes(selectedCity);
     return matchesSearch && matchesCity;
   });
 
-  const cities = [...new Set(agentsData.flatMap(agent => agent.serviceAreas))];
+  const cities = Array.from(agentsData.reduce((acc, agent) => {
+    agent.serviceAreas.forEach(area => acc.add(area));
+    return acc;
+  }, new Set<string>()));
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <motion.div 
+      <motion.div
         className="bg-white shadow-sm border-b"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -49,12 +53,12 @@ export default function AgentsPage() {
               Find Your Perfect Real Estate Agent
             </h1>
             <p className="text-lg text-gray-600">
-              Connect with experienced real estate professionals across Canada. 
+              Connect with experienced real estate professionals across Canada.
               Our agents are ready to help you buy, sell, or rent your perfect property.
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto"
             {...fadeInUp}
             transition={{ delay: 0.2 }}
@@ -83,7 +87,7 @@ export default function AgentsPage() {
         </div>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="container mx-auto px-4 py-12"
         variants={staggerContainer}
         initial="initial"
@@ -98,22 +102,27 @@ export default function AgentsPage() {
             >
               <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6">
                 <div className="text-center mb-6">
-                  <img 
-                    src={agent.headshot} 
-                    alt={agent.name}
-                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                  />
+                  <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                    <Image
+                      src={agent.headshot}
+                      alt={agent.name}
+                      width={96}
+                      height={96}
+                      unoptimized
+                      className="object-cover w-24 h-24"
+                    />
+                  </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-1">
                     {agent.name}
                   </h3>
                   <p className="text-gray-600 text-sm mb-2">{agent.brokerage}</p>
-                  
+
                   <div className="flex items-center justify-center gap-1 mb-3">
                     <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                     <span className="text-sm font-medium">{agent.reviews.average}</span>
                     <span className="text-sm text-gray-500">({agent.reviews.count} reviews)</span>
                   </div>
-                  
+
                   <div className="flex items-center justify-center gap-1 text-sm text-gray-600 mb-4">
                     <MapPin className="h-4 w-4" />
                     <span>{agent.serviceAreas.slice(0, 2).join(', ')}</span>
@@ -128,7 +137,7 @@ export default function AgentsPage() {
                     <p className="text-sm font-medium text-gray-900 mb-2">Specialties</p>
                     <div className="flex flex-wrap gap-2">
                       {agent.specialties.slice(0, 3).map((specialty, index) => (
-                        <span 
+                        <span
                           key={index}
                           className="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full"
                         >
@@ -159,7 +168,7 @@ export default function AgentsPage() {
                         Email
                       </Button>
                     </div>
-                    
+
                     <Link href={`/agents/${agent.slug}`}>
                       <Button className="w-full">View Profile</Button>
                     </Link>
@@ -171,12 +180,12 @@ export default function AgentsPage() {
         </div>
 
         {filteredAgents.length === 0 && (
-          <motion.div 
+          <motion.div
             className="text-center py-12"
             {...fadeInUp}
           >
             <p className="text-gray-600 text-lg mb-4">No agents found matching your criteria.</p>
-            <Button 
+            <Button
               onClick={() => {
                 setSearchTerm('');
                 setSelectedCity('');

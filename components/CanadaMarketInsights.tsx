@@ -127,8 +127,8 @@ const CanadaMarketInsights = () => {
                                 key={city.id}
                                 variant={activeCity === city.id ? "default" : "outline"}
                                 className={`px-6 py-2 rounded-full ${activeCity === city.id
-                                        ? 'bg-teal-500 text-white hover:bg-teal-600'
-                                        : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+                                    ? 'bg-teal-500 text-white hover:bg-teal-600'
+                                    : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
                                     }`}
                                 onClick={() => setActiveCity(city.id)}
                             >
