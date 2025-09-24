@@ -7,6 +7,7 @@ import { ListingsGrid } from '@/components/ListingsGrid';
 import { FilterBar } from '@/components/FilterBar';
 import { ViewToggle } from '@/components/ViewToggle';
 import { SortOptions } from '@/components/SortOptions';
+import { MapView } from '@/components/MapView';
 import { useListings } from '@/hooks/useListings';
 
 const fadeInUp = {

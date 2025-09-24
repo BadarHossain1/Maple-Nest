@@ -9,7 +9,7 @@ import { ViewToggle } from '@/components/ViewToggle';
 import { SortOptions } from '@/components/SortOptions';
 import { useListings } from '@/hooks/useListings';
 
-const MapView = dynamic(() => import('@/components/MapView').then(mod => ({ default: mod.MapView })), {
+const MapView = dynamic(() => import('@/components/MapView').then(mod => mod.MapView), {
   ssr: false,
   loading: () => <div className="h-[70vh] bg-gray-100 rounded-lg animate-pulse" />
 });
