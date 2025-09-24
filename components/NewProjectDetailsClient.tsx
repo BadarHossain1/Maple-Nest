@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Heart, Share2, MapPin, Calendar, Bed, Bath, Square, Home, Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -144,7 +145,7 @@ interface NewProjectDetailsClientProps {
 }
 
 export function NewProjectDetailsClient({ slug }: NewProjectDetailsClientProps) {
-    const [project, setProject] = useState(null);
+    const [project, setProject] = useState<any | null>(null);
     const [loading, setLoading] = useState(true);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [formData, setFormData] = useState({
@@ -183,7 +184,7 @@ export function NewProjectDetailsClient({ slug }: NewProjectDetailsClientProps) 
             <div className="min-h-screen bg-gray-50 flex items-center justify-center">
                 <div className="text-center">
                     <h1 className="text-2xl font-bold text-gray-900 mb-4">Project Not Found</h1>
-                    <p className="text-gray-600 mb-8">The project you're looking for doesn't exist or has been removed.</p>
+                    <p className="text-gray-600 mb-8">The project you&apos;re looking for doesn&apos;t exist or has been removed.</p>
                     <Link href="/new-projects">
                         <Button>Browse New Projects</Button>
                     </Link>
@@ -229,22 +230,27 @@ export function NewProjectDetailsClient({ slug }: NewProjectDetailsClientProps) 
                 <div className="container mx-auto px-4 py-6">
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 h-96">
                         <div className="lg:col-span-3">
-                            <img
-                                src={project.images[currentImageIndex]}
-                                alt={project.name}
-                                className="w-full h-full object-cover rounded-lg"
-                            />
+                            <div className="w-full h-full relative rounded-lg overflow-hidden">
+                                <Image
+                                    src={project.images[currentImageIndex]}
+                                    alt={project.name}
+                                    fill
+                                    unoptimized
+                                    className="object-cover"
+                                />
+                            </div>
                         </div>
                         <div className="flex flex-row lg:flex-col gap-4 overflow-x-auto lg:overflow-y-auto">
-                            {project.images.map((image, index) => (
-                                <img
-                                    key={index}
-                                    src={image}
-                                    alt={`${project.name} ${index + 1}`}
-                                    className={`w-24 h-24 lg:w-full lg:h-24 object-cover rounded-lg cursor-pointer transition-opacity ${index === currentImageIndex ? 'opacity-100 ring-2 ring-green-500' : 'opacity-70 hover:opacity-100'
-                                        }`}
-                                    onClick={() => setCurrentImageIndex(index)}
-                                />
+                            {project.images.map((image: string, index: number) => (
+                                <div key={index} className={`w-24 h-24 lg:w-full lg:h-24 rounded-lg cursor-pointer overflow-hidden ${index === currentImageIndex ? 'ring-2 ring-green-500' : 'opacity-70 hover:opacity-100'}`} onClick={() => setCurrentImageIndex(index)}>
+                                    <Image
+                                        src={image}
+                                        alt={`${project.name} ${index + 1}`}
+                                        fill
+                                        unoptimized
+                                        className="object-cover"
+                                    />
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -311,7 +317,7 @@ export function NewProjectDetailsClient({ slug }: NewProjectDetailsClientProps) 
                         <div className="bg-white rounded-lg shadow-sm p-6">
                             <h2 className="text-xl font-semibold text-gray-900 mb-4">Features & Amenities</h2>
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                                {project.features.map((feature, index) => (
+                                {project.features.map((feature: string, index: number) => (
                                     <div key={index} className="flex items-center gap-2">
                                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                                         <span className="text-gray-700">{feature}</span>

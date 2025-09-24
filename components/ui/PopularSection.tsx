@@ -5,7 +5,21 @@ import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 
-const popularSearchesData = {
+// Type definitions
+interface CityData {
+  apartments: string[];
+  villas: string[];
+  other: string[];
+}
+
+type CityName = 'Toronto' | 'Vancouver' | 'Montreal';
+
+interface PopularSearchesData {
+  sale: Record<CityName, CityData>;
+  offPlan: Record<CityName, CityData>;
+}
+
+const popularSearchesData: PopularSearchesData = {
   sale: {
     Toronto: {
       apartments: [
@@ -152,14 +166,14 @@ const popularSearchesData = {
 
 export function PopularSection() {
   const [activeTab, setActiveTab] = useState<'sale' | 'rent'>('sale');
-  const [activeCity, setActiveCity] = useState('Toronto');
+  const [activeCity, setActiveCity] = useState<CityName>('Toronto');
   const [showMoreSale, setShowMoreSale] = useState(false);
   const [showMoreOffPlan, setShowMoreOffPlan] = useState(false);
 
-  const cities = ['Toronto', 'Vancouver', 'Montreal'];
+  const cities: CityName[] = ['Toronto', 'Vancouver', 'Montreal'];
 
   // For rent, we'll use the same structure but change the wording
-  const getRentData = (cityData: any) => {
+  const getRentData = (cityData: CityData): CityData => {
     return {
       apartments: cityData.apartments.map((item: string) => item.replace('for sale', 'for rent')),
       villas: cityData.villas.map((item: string) => item.replace('for sale', 'for rent')),
@@ -247,7 +261,7 @@ export function PopularSection() {
                 <div className="space-y-2">
                   {(activeTab === 'sale' ? currentSaleData.apartments : currentRentData.apartments)
                     .slice(0, showMoreSale ? undefined : 5)
-                    .map((item, index) => (
+                    .map((item: string, index: number) => (
                     <Link
                       key={index}
                       href={`/${activeTab}`}
@@ -266,7 +280,7 @@ export function PopularSection() {
                 <div className="space-y-2">
                   {(activeTab === 'sale' ? currentSaleData.villas : currentRentData.villas)
                     .slice(0, showMoreSale ? undefined : 5)
-                    .map((item, index) => (
+                    .map((item: string, index: number) => (
                     <Link
                       key={index}
                       href={`/${activeTab}`}
@@ -285,7 +299,7 @@ export function PopularSection() {
                 <div className="space-y-2">
                   {(activeTab === 'sale' ? currentSaleData.other : currentRentData.other)
                     .slice(0, showMoreSale ? undefined : 5)
-                    .map((item, index) => (
+                    .map((item: string, index: number) => (
                     <Link
                       key={index}
                       href={`/${activeTab}`}
@@ -323,7 +337,7 @@ export function PopularSection() {
                   <div className="space-y-2">
                     {currentOffPlanData.apartments
                       .slice(0, showMoreOffPlan ? undefined : 5)
-                      .map((item, index) => (
+                      .map((item: string, index: number) => (
                       <Link
                         key={index}
                         href="/new-projects"
@@ -342,7 +356,7 @@ export function PopularSection() {
                   <div className="space-y-2">
                     {currentOffPlanData.villas
                       .slice(0, showMoreOffPlan ? undefined : 5)
-                      .map((item, index) => (
+                      .map((item: string, index: number) => (
                       <Link
                         key={index}
                         href="/new-projects"
@@ -361,7 +375,7 @@ export function PopularSection() {
                   <div className="space-y-2">
                     {currentOffPlanData.other
                       .slice(0, showMoreOffPlan ? undefined : 5)
-                      .map((item, index) => (
+                      .map((item: string, index: number) => (
                       <Link
                         key={index}
                         href="/new-projects"

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Heart, Share2, MapPin, Calendar, Bed, Bath, Square, Home } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { PhotoGallery } from '@/components/PhotoGallery';
 import { SaveButton } from '@/components/SaveButton';
@@ -13,7 +14,7 @@ import listingsData from '@/data/listings.json';
 import agentsData from '@/data/agents.json';
 import dynamic from 'next/dynamic';
 
-const MapView = dynamic(() => import('@/components/MapView').then(mod => ({ default: mod.MapView })), {
+const MapView = dynamic(() => import('@/components/MapView').then(mod => mod.MapView), {
   ssr: false,
   loading: () => <div className="h-80 bg-gray-100 rounded-lg animate-pulse flex items-center justify-center">
     <p className="text-gray-500">Loading map...</p>
@@ -31,8 +32,8 @@ interface ListingDetailsClientProps {
 }
 
 export default function ListingDetailsClient({ slug }: ListingDetailsClientProps) {
-  const [listing, setListing] = useState(null);
-  const [agent, setAgent] = useState(null);
+  const [listing, setListing] = useState<any>(null);
+  const [agent, setAgent] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -61,7 +62,7 @@ export default function ListingDetailsClient({ slug }: ListingDetailsClientProps
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Property Not Found</h1>
-          <p className="text-gray-600 mb-8">The property you're looking for doesn't exist or has been removed.</p>
+          <p className="text-gray-600 mb-8">The property you&apos;re looking for doesn&apos;t exist or has been removed.</p>
           <Link href="/buy">
             <Button>Browse Properties</Button>
           </Link>
@@ -72,21 +73,21 @@ export default function ListingDetailsClient({ slug }: ListingDetailsClientProps
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <motion.div 
+      <motion.div
         className="bg-white shadow-sm border-b sticky top-20 z-40"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link 
+            <Link
               href={listing.status === 'for-sale' ? '/buy' : '/rent'}
               className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
             >
               <ArrowLeft className="h-5 w-5" />
               <span>Back to listings</span>
             </Link>
-            
+
             <div className="flex items-center gap-2">
               <SaveButton listingId={listing.id} />
               <Button variant="outline" size="sm">
@@ -102,7 +103,7 @@ export default function ListingDetailsClient({ slug }: ListingDetailsClientProps
         <PhotoGallery images={listing.images} />
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="container mx-auto px-4 py-8"
         {...fadeInUp}
         transition={{ delay: 0.2 }}
@@ -122,7 +123,7 @@ export default function ListingDetailsClient({ slug }: ListingDetailsClientProps
                   </div>
                   <p className="text-gray-600">{listing.city}, {listing.province}</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4 text-center">
                   {listing.beds > 0 && (
                     <div className="flex items-center gap-1">
@@ -171,7 +172,7 @@ export default function ListingDetailsClient({ slug }: ListingDetailsClientProps
             <div className="bg-white rounded-lg shadow-sm p-6">
               <h2 className="text-xl font-semibold text-gray-900 mb-4">Features & Amenities</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {listing.features.map((feature, index) => (
+                {listing.features.map((feature: string, index: number) => (
                   <div key={index} className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
                     <span className="text-gray-700">{feature}</span>
@@ -198,11 +199,16 @@ export default function ListingDetailsClient({ slug }: ListingDetailsClientProps
                 </h3>
                 {agent && (
                   <div className="flex items-center gap-3 mb-4">
-                    <img 
-                      src={agent.headshot} 
-                      alt={agent.name}
-                      className="w-12 h-12 rounded-full object-cover"
-                    />
+                    <div className="w-12 h-12 rounded-full overflow-hidden">
+                      <Image
+                        src={agent.headshot}
+                        alt={agent.name}
+                        width={48}
+                        height={48}
+                        unoptimized
+                        className="object-cover w-12 h-12"
+                      />
+                    </div>
                     <div>
                       <p className="font-medium text-gray-900">{agent.name}</p>
                       <p className="text-sm text-gray-600">{agent.brokerage}</p>

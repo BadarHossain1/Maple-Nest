@@ -24,12 +24,12 @@ export default function RentPage() {
   const [view, setView] = useState<'grid' | 'map'>('grid');
   const [filters, setFilters] = useState({});
   const [sortBy, setSortBy] = useState('newest');
-  
+
   const { listings, loading } = useListings('for-rent', filters, sortBy);
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <motion.div 
+      <motion.div
         className="bg-white shadow-sm sticky top-20 z-40"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -45,7 +45,7 @@ export default function RentPage() {
                 {listings.length} properties
               </span>
             </div>
-            
+
             <div className="flex items-center gap-4 w-full lg:w-auto justify-between lg:justify-end">
               <SortOptions value={sortBy} onChange={setSortBy} />
               <ViewToggle view={view} onViewChange={setView} />
@@ -55,14 +55,14 @@ export default function RentPage() {
       </motion.div>
 
       <motion.div {...fadeInUp}>
-        <FilterBar 
-          filters={filters} 
+        <FilterBar
+          filters={filters}
           onFiltersChange={setFilters}
           showPropertyType
         />
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="container mx-auto px-4 py-8"
         {...fadeInUp}
         transition={{ duration: 0.6, delay: 0.2 }}

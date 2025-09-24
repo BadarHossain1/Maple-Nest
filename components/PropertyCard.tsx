@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Heart, MapPin, Bed, Bath, Square, Calendar, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SaveButton } from '@/components/SaveButton';
@@ -45,11 +46,13 @@ export function PropertyCard({ listing, className }: PropertyCardProps) {
             {!isImageLoaded && (
               <div className="absolute inset-0 bg-gray-200 animate-pulse" />
             )}
-            <img 
+            <Image
               src={listing.images[currentImageIndex]} 
               alt={listing.title}
+              fill
+              unoptimized
               className={cn(
-                'w-full h-full object-cover transition-all duration-300 group-hover:scale-105',
+                'object-cover transition-all duration-300 group-hover:scale-105',
                 isImageLoaded ? 'opacity-100' : 'opacity-0'
               )}
               onLoad={() => setIsImageLoaded(true)}
@@ -78,7 +81,7 @@ export function PropertyCard({ listing, className }: PropertyCardProps) {
         {/* Image Indicators */}
         {listing.images.length > 1 && (
           <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
-            {listing.images.map((_, index) => (
+            {listing.images.map((_: string, index: number) => (
               <div
                 key={index}
                 className={cn(

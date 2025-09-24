@@ -5,9 +5,24 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
+
+// Project interface
+interface Project {
+    id: string;
+    name: string;
+    type: string;
+    location: string;
+    launchPrice: string;
+    handover: string;
+    image: string;
+}
+
+// City type
+type CityName = 'Toronto' | 'Vancouver' | 'Montreal' | 'Calgary' | 'Ottawa' | 'Halifax';
 
 // Dummy Canadian new project data
-const newProjectsData = {
+const newProjectsData: Record<CityName, Project[]> = {
     Toronto: [
         {
             id: 'skyview-condos-toronto',
@@ -211,10 +226,10 @@ const newProjectsData = {
     ]
 };
 
-const cities = ['Toronto', 'Vancouver', 'Montreal', 'Calgary', 'Ottawa', 'Halifax'];
+const cities: CityName[] = ['Toronto', 'Vancouver', 'Montreal', 'Calgary', 'Ottawa', 'Halifax'];
 
 interface PropertySliderProps {
-    projects: any[];
+    projects: Project[];
     city: string;
 }
 
@@ -244,10 +259,12 @@ function PropertySlider({ projects, city }: PropertySliderProps) {
                         <div key={project.id} className="flex-shrink-0" style={{ width: `${100 / projects.length}%` }}>
                             <div className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
                                 <div className="relative h-48">
-                                    <img
+                                    <Image
                                         src={project.image}
                                         alt={project.name}
-                                        className="w-full h-full object-cover"
+                                        fill
+                                        unoptimized
+                                        className="object-cover"
                                     />
                                 </div>
                                 <div className="p-6">
@@ -309,7 +326,7 @@ function PropertySlider({ projects, city }: PropertySliderProps) {
 }
 
 export function NewProjectsSection() {
-    const [activeCity, setActiveCity] = useState('Toronto');
+    const [activeCity, setActiveCity] = useState<CityName>('Toronto');
 
     return (
         <section className="py-16 bg-white">

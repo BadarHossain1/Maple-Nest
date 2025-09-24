@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, MapPin, Filter, SortAsc } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -232,8 +233,8 @@ export default function AllNewProjectsPage() {
     const [selectedType, setSelectedType] = useState('');
     const [sortBy, setSortBy] = useState('name');
 
-    const cities = [...new Set(allNewProjects.map(p => p.city))];
-    const types = [...new Set(allNewProjects.map(p => p.type))];
+    const cities = Array.from(new Set(allNewProjects.map(p => p.city)));
+    const types = Array.from(new Set(allNewProjects.map(p => p.type)));
 
     useEffect(() => {
         let filtered = allNewProjects;
@@ -369,10 +370,12 @@ export default function AllNewProjectsPage() {
                             className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300"
                         >
                             <div className="relative h-48">
-                                <img
+                                <Image
                                     src={project.image}
                                     alt={project.name}
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    unoptimized
+                                    className="object-cover"
                                 />
                                 <div className="absolute top-4 left-4">
                                     <span className="bg-green-100 text-green-800 px-2 py-1 rounded-md text-xs font-medium">
