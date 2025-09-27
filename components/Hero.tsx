@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export function Hero() {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
   return (
     <section className="relative min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background Video */}
@@ -56,100 +59,133 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="w-full max-w-5xl mx-auto"
         >
-          {/* Property Type Tabs */}
-          <div className="bg-white rounded-t-lg p-1 mb-0 shadow-lg">
-            <div className="flex overflow-x-auto scrollbar-hide">
-              <div className="flex min-w-max gap-1 px-1">
-                <button className="px-4 sm:px-6 py-2.5 sm:py-3 text-green-600 font-medium bg-white rounded-md shadow-sm text-xs sm:text-sm lg:text-base whitespace-nowrap">
-                  Properties
-                </button>
-                <button className="px-4 sm:px-6 py-2.5 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-xs sm:text-sm lg:text-base whitespace-nowrap">
-                  New Projects
-                </button>
-                <button className="px-4 sm:px-6 py-2.5 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-xs sm:text-sm lg:text-base whitespace-nowrap">
-                  Transactions
-                </button>
-                <button className="px-3 sm:px-4 py-2.5 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-xs sm:text-sm lg:text-base whitespace-nowrap">
-                  Valuation™
-                </button>
-                <button className="px-4 sm:px-6 py-2.5 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-xs sm:text-sm lg:text-base whitespace-nowrap">
-                  Agents
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Search Form */}
-          <div className="bg-white rounded-lg rounded-tl-none shadow-lg p-3 sm:p-4 lg:p-6">
-            {/* Buy/Rent Toggle */}
-            <div className="flex mb-4 rounded-md overflow-hidden">
-              <button className="flex-1 px-4 py-2.5 sm:py-3 bg-green-50 text-green-600 font-medium border border-green-200 text-xs sm:text-sm lg:text-base">
-                Buy
-              </button>
-              <button className="flex-1 px-4 py-2.5 sm:py-3 bg-white text-gray-600 font-medium border border-gray-200 border-l-0 hover:bg-gray-50 text-xs sm:text-sm lg:text-base">
-                Rent
-              </button>
-            </div>
-
-            {/* Search Controls */}
-            <div className="space-y-3 sm:space-y-4 mb-4">
-              <div className="w-full">
-                <input
-                  type="text"
-                  placeholder="Enter location"
-                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-xs sm:text-sm lg:text-base"
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                <select className="px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-xs sm:text-sm lg:text-base">
-                  <option>All</option>
-                  <option>Ready</option>
-                  <option>Off-Plan</option>
-                </select>
-                <select className="px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-xs sm:text-sm lg:text-base">
-                  <option>Residential</option>
-                  <option>Commercial</option>
-                </select>
-              </div>
-            </div>
-
-            {/* Additional Filters */}
-            <div className="space-y-3 sm:space-y-0 sm:flex sm:gap-4 items-stretch">
-              <div className="grid grid-cols-2 sm:flex sm:flex-1 gap-2 sm:gap-3">
-                <select className="px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-xs sm:text-sm lg:text-base">
-                  <option>Beds & Baths</option>
-                  <option>1 Bed</option>
-                  <option>2 Beds</option>
-                  <option>3+ Beds</option>
-                </select>
-                <select className="px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-xs sm:text-sm lg:text-base">
-                  <option>Price (CAD)</option>
-                  <option>Under $500K</option>
-                  <option>$500K - $1M</option>
-                  <option>$1M+</option>
-                </select>
-              </div>
-              <button className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-medium transition-colors text-sm sm:text-base whitespace-nowrap">
-                Search
-              </button>
-            </div>
-
-            {/* AI Suggestion */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-4 sm:mt-6 pt-4 border-t border-gray-200 gap-3">
-              <div className="flex items-start sm:items-center gap-2 text-gray-600">
-                <div className="w-4 h-4 sm:w-5 sm:h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
-                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-600 rounded-full"></div>
-                </div>
-                <span className="text-xs sm:text-sm leading-tight">Get instant answers about Canadian real estate with PropertyGPT</span>
-              </div>
-              <Link href="/ai-assistant" className="text-green-600 font-medium hover:text-green-700 transition-colors flex items-center gap-1 text-xs sm:text-sm lg:text-base whitespace-nowrap self-start sm:self-center">
-                Try PropertyGPT
-                <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          {!isSearchOpen ? (
+            /* Search Toggle Button */
+            <div className="flex justify-center">
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white/20 transition-all duration-300 flex items-center gap-3 text-lg shadow-lg"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
-              </Link>
+                Find Your Perfect Home
+              </button>
             </div>
-          </div>
+          ) : (
+            /* Full Search Form */
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="relative"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setIsSearchOpen(false)}
+                className="absolute -top-2 -right-2 z-10 w-8 h-8 bg-gray-600 hover:bg-gray-700 text-white rounded-full flex items-center justify-center transition-colors shadow-lg"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              {/* Property Type Tabs */}
+              <div className="bg-white rounded-t-lg p-1 mb-0 shadow-lg">
+                <div className="flex overflow-x-auto scrollbar-hide">
+                  <div className="flex min-w-max gap-1 px-1">
+                    <button className="px-4 sm:px-6 py-2.5 sm:py-3 text-green-600 font-medium bg-white rounded-md shadow-sm text-xs sm:text-sm lg:text-base whitespace-nowrap">
+                      Properties
+                    </button>
+                    <button className="px-4 sm:px-6 py-2.5 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-xs sm:text-sm lg:text-base whitespace-nowrap">
+                      New Projects
+                    </button>
+                    <button className="px-4 sm:px-6 py-2.5 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-xs sm:text-sm lg:text-base whitespace-nowrap">
+                      Transactions
+                    </button>
+                    <button className="px-3 sm:px-4 py-2.5 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-xs sm:text-sm lg:text-base whitespace-nowrap">
+                      Valuation™
+                    </button>
+                    <button className="px-4 sm:px-6 py-2.5 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-xs sm:text-sm lg:text-base whitespace-nowrap">
+                      Agents
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Search Form */}
+              <div className="bg-white rounded-lg rounded-tl-none shadow-lg p-3 sm:p-4 lg:p-6">
+                {/* Buy/Rent Toggle */}
+                <div className="flex mb-4 rounded-md overflow-hidden">
+                  <button className="flex-1 px-4 py-2.5 sm:py-3 bg-green-50 text-green-600 font-medium border border-green-200 text-xs sm:text-sm lg:text-base">
+                    Buy
+                  </button>
+                  <button className="flex-1 px-4 py-2.5 sm:py-3 bg-white text-gray-600 font-medium border border-gray-200 border-l-0 hover:bg-gray-50 text-xs sm:text-sm lg:text-base">
+                    Rent
+                  </button>
+                </div>
+
+                {/* Search Controls */}
+                <div className="space-y-3 sm:space-y-4 mb-4">
+                  <div className="w-full">
+                    <input
+                      type="text"
+                      placeholder="Enter location"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-xs sm:text-sm lg:text-base"
+                    />
+                  </div>
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                    <select className="px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-xs sm:text-sm lg:text-base">
+                      <option>All</option>
+                      <option>Ready</option>
+                      <option>Off-Plan</option>
+                    </select>
+                    <select className="px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-xs sm:text-sm lg:text-base">
+                      <option>Residential</option>
+                      <option>Commercial</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Additional Filters */}
+                <div className="space-y-3 sm:space-y-0 sm:flex sm:gap-4 items-stretch">
+                  <div className="grid grid-cols-2 sm:flex sm:flex-1 gap-2 sm:gap-3">
+                    <select className="px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-xs sm:text-sm lg:text-base">
+                      <option>Beds & Baths</option>
+                      <option>1 Bed</option>
+                      <option>2 Beds</option>
+                      <option>3+ Beds</option>
+                    </select>
+                    <select className="px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-xs sm:text-sm lg:text-base">
+                      <option>Price (CAD)</option>
+                      <option>Under $500K</option>
+                      <option>$500K - $1M</option>
+                      <option>$1M+</option>
+                    </select>
+                  </div>
+                  <button className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-medium transition-colors text-sm sm:text-base whitespace-nowrap">
+                    Search
+                  </button>
+                </div>
+
+                {/* AI Suggestion */}
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-4 sm:mt-6 pt-4 border-t border-gray-200 gap-3">
+                  <div className="flex items-start sm:items-center gap-2 text-gray-600">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
+                      <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-600 rounded-full"></div>
+                    </div>
+                    <span className="text-xs sm:text-sm leading-tight">Get instant answers about Canadian real estate with PropertyGPT</span>
+                  </div>
+                  <Link href="/ai-assistant" className="text-green-600 font-medium hover:text-green-700 transition-colors flex items-center gap-1 text-xs sm:text-sm lg:text-base whitespace-nowrap self-start sm:self-center">
+                    Try PropertyGPT
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          )}
         </motion.div>
 
         {/* Experience the Journey Button */}
