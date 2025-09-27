@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ReactMarkdown from 'react-markdown';
 import { 
   Send, 
   Bot, 
@@ -48,36 +49,38 @@ const quickActions: QuickAction[] = [
   {
     icon: Home,
     label: "Find Properties",
-    prompt: "Help me find a 3-bedroom house in Toronto under $800K",
+    prompt: "I'm looking for a family home in Toronto with 3 bedrooms under $900K. Can you help me understand what's available and what neighborhoods to consider?",
     color: "bg-blue-500"
   },
   {
     icon: Calculator,
     label: "Mortgage Calculator",
-    prompt: "Calculate mortgage payments for a $600K home with 20% down",
+    prompt: "Can you calculate mortgage payments for a $650K home with 15% down payment? Include all the costs I should expect in Canada.",
     color: "bg-green-500"
   },
   {
     icon: MapPin,
-    label: "Neighborhood Info",
-    prompt: "Tell me about the best neighborhoods in Vancouver for families",
+    label: "Neighborhood Guide",
+    prompt: "What are the best family-friendly neighborhoods in Vancouver? I care about schools, safety, and commute to downtown.",
     color: "bg-purple-500"
   },
   {
     icon: TrendingUp,
-    label: "Market Trends",
-    prompt: "What are the current real estate market trends in Canada?",
+    label: "Market Analysis",
+    prompt: "What's happening in the Canadian real estate market right now? Should I buy now or wait for better prices?",
     color: "bg-orange-500"
   }
 ];
 
 const exampleQuestions = [
-  "What's the average home price in Montreal?",
-  "How do I get pre-approved for a mortgage?",
-  "What are the best investment properties in Calgary?",
-  "Compare rental yields in different Canadian cities",
-  "What documents do I need to buy a house?",
-  "How much should I budget for closing costs?"
+  "What's the average home price in Montreal for condos?",
+  "How do I get pre-approved for a mortgage in Canada?",
+  "What are the best investment opportunities in Calgary?",
+  "Compare rental yields between Toronto and Vancouver",
+  "What documents do I need as a first-time home buyer?",
+  "How much should I budget for closing costs in Ontario?",
+  "Is it better to rent or buy in the current market?",
+  "What areas in Canada have the most growth potential?"
 ];
 
 export default function AIAssistantPage() {
@@ -101,13 +104,13 @@ export default function AIAssistantPage() {
     const welcomeMessage: Message = {
       id: '1',
       type: 'assistant',
-      content: "👋 Hi! I'm **PropertyGPT**, your intelligent real estate assistant for Canada. I'm here to help you with property searches, market insights, mortgage calculations, and everything related to Canadian real estate. What would you like to know?",
+      content: "🏠 **Welcome to PropertyGPT!** \n\nI'm your AI-powered Canadian real estate assistant, backed by advanced AI technology. I can help you with:\n\n✨ **Real-time market analysis** across all Canadian cities\n💰 **Accurate mortgage calculations** and financing options\n🏘️ **Neighborhood insights** and comparisons\n📊 **Investment opportunities** and ROI analysis\n📋 **Step-by-step guidance** for buying/selling\n🔍 **Property search** based on your criteria\n\nWhat would you like to explore today? You can ask me anything about Canadian real estate!",
       timestamp: new Date(),
       suggestions: [
         "Find properties in my budget",
         "Calculate mortgage payments",
-        "Compare neighborhoods",
-        "Market analysis"
+        "Best neighborhoods for families",
+        "Current market trends"
       ]
     };
     setMessages([welcomeMessage]);
@@ -127,70 +130,58 @@ export default function AIAssistantPage() {
     setInputValue('');
     setIsLoading(true);
 
-    // Simulate AI response
-    setTimeout(() => {
+    try {
+      // Call the real Gemini AI API
+      const response = await fetch('/api/ai-assistant', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: content,
+          conversationHistory: messages.slice(-10) // Send last 10 messages for context
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (data.error) {
+        throw new Error(data.error);
+      }
+
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         type: 'assistant',
-        content: generateAIResponse(content),
+        content: data.response,
         timestamp: new Date(),
-        suggestions: generateSuggestions(content)
+        suggestions: data.suggestions || []
       };
       setMessages(prev => [...prev, assistantMessage]);
+
+    } catch (error) {
+      console.error('AI Assistant Error:', error);
+      
+      // Fallback message
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        type: 'assistant',
+        content: "🔧 I'm experiencing some technical difficulties right now, but I'm still here to help! \n\nIn the meantime, I can assist you with:\n\n• **Property Search** - Finding homes in your budget and preferred areas\n• **Mortgage Calculations** - Payment estimates and financing options\n• **Market Analysis** - Current trends across Canadian cities\n• **Neighborhood Insights** - Area comparisons and recommendations\n\nPlease try your question again, or feel free to ask about any Canadian real estate topic!",
+        timestamp: new Date(),
+        suggestions: [
+          "Find properties in my budget",
+          "Calculate mortgage payments",
+          "Best neighborhoods for families",
+          "Current market trends in Canada"
+        ]
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
       setIsLoading(false);
-    }, 1500);
-  };
-
-  const generateAIResponse = (prompt: string): string => {
-    const lowerPrompt = prompt.toLowerCase();
-    
-    if (lowerPrompt.includes('price') || lowerPrompt.includes('cost')) {
-      return `Based on current market data, here's what I found about pricing:\n\n**Average Home Prices in Major Canadian Cities:**\n• Toronto: $1.2M - $1.5M\n• Vancouver: $1.3M - $1.8M\n• Montreal: $450K - $650K\n• Calgary: $450K - $600K\n• Ottawa: $550K - $750K\n\nThese prices vary significantly by neighborhood and property type. Would you like me to provide more specific information for a particular area or property type?`;
     }
-    
-    if (lowerPrompt.includes('mortgage') || lowerPrompt.includes('calculate')) {
-      return `I can help you calculate mortgage payments! Here's a quick example:\n\n**For a $600K home with 20% down ($120K):**\n• Loan amount: $480K\n• Monthly payment (25yr, 5.5%): ~$2,900\n• Total interest: ~$390K\n\n**Additional costs to consider:**\n• Property taxes: $4K-$8K/year\n• Home insurance: $1K-$2K/year\n• Utilities: $150-$300/month\n\nWould you like me to calculate payments for a specific scenario?`;
-    }
-    
-    if (lowerPrompt.includes('neighborhood') || lowerPrompt.includes('area')) {
-      return `Here are some excellent neighborhoods to consider:\n\n**For Families:**\n• **North York (Toronto)** - Great schools, parks\n• **Burnaby (Vancouver)** - Family-friendly, transit access\n• **Nepean (Ottawa)** - Suburban feel, good amenities\n\n**For Young Professionals:**\n• **King West (Toronto)** - Vibrant nightlife, condos\n• **Yaletown (Vancouver)** - Urban living, waterfront\n• **Plateau (Montreal)** - Arts scene, cafes\n\n**Investment Opportunities:**\n• **Kitchener-Waterloo** - Tech growth\n• **Hamilton** - Emerging market\n• **Laval** - Affordable with growth potential\n\nWhat type of lifestyle are you looking for?`;
-    }
-    
-    if (lowerPrompt.includes('market') || lowerPrompt.includes('trend')) {
-      return `**Current Canadian Real Estate Market Trends (2025):**\n\n📈 **Key Insights:**\n• Interest rates stabilizing around 5-6%\n• Supply shortage continues in major cities\n• Strong immigration driving demand\n• Shift toward smaller, affordable markets\n\n🏙️ **Hot Markets:**\n• Atlantic Canada seeing growth\n• Kitchener-Waterloo tech expansion\n• Calgary recovering strongly\n\n💡 **Buyer Tips:**\n• Consider pre-construction for better pricing\n• Look at emerging neighborhoods\n• Factor in future transit developments\n\nWould you like detailed analysis for a specific city or region?`;
-    }
-    
-    // Default response
-    return `I'd be happy to help you with that! As your Canadian real estate assistant, I can provide information about:\n\n🏠 **Property Search** - Find homes matching your criteria\n💰 **Financial Planning** - Mortgage calculations and budgeting\n📊 **Market Analysis** - Current trends and pricing\n🗺️ **Location Insights** - Neighborhood comparisons\n📋 **Process Guidance** - Buying/selling procedures\n\nCould you provide more details about what you're looking for? For example:\n• Your budget range\n• Preferred cities or regions\n• Property type (house, condo, etc.)\n• Timeline for buying/selling`;
-  };
-
-  const generateSuggestions = (prompt: string): string[] => {
-    const lowerPrompt = prompt.toLowerCase();
-    
-    if (lowerPrompt.includes('price') || lowerPrompt.includes('cost')) {
-      return [
-        "Compare prices across cities",
-        "Show price trends over time",
-        "Calculate affordability",
-        "Find properties in my budget"
-      ];
-    }
-    
-    if (lowerPrompt.includes('mortgage')) {
-      return [
-        "Calculate different scenarios",
-        "Explain mortgage types",
-        "Find mortgage pre-approval",
-        "Compare lenders"
-      ];
-    }
-    
-    return [
-      "Show me similar properties",
-      "Calculate monthly costs",
-      "Compare neighborhoods",
-      "Schedule a viewing"
-    ];
   };
 
   const toggleListening = () => {
@@ -200,6 +191,32 @@ export default function AIAssistantPage() {
 
   const copyMessage = (content: string) => {
     navigator.clipboard.writeText(content);
+  };
+
+  const clearConversation = () => {
+    const welcomeMessage: Message = {
+      id: Date.now().toString(),
+      type: 'assistant',
+      content: "🏠 **Welcome to PropertyGPT!** \n\nI'm your AI-powered Canadian real estate assistant, backed by advanced AI technology. I can help you with:\n\n✨ **Real-time market analysis** across all Canadian cities\n💰 **Accurate mortgage calculations** and financing options\n🏘️ **Neighborhood insights** and comparisons\n📊 **Investment opportunities** and ROI analysis\n📋 **Step-by-step guidance** for buying/selling\n🔍 **Property search** based on your criteria\n\nWhat would you like to explore today? You can ask me anything about Canadian real estate!",
+      timestamp: new Date(),
+      suggestions: [
+        "Find properties in my budget",
+        "Calculate mortgage payments", 
+        "Best neighborhoods for families",
+        "Current market trends"
+      ]
+    };
+    setMessages([welcomeMessage]);
+  };
+
+  const regenerateLastResponse = async () => {
+    if (messages.length >= 2 && messages[messages.length - 2].type === 'user') {
+      const lastUserMessage = messages[messages.length - 2].content;
+      // Remove the last assistant response
+      setMessages(prev => prev.slice(0, -1));
+      // Resend the last user message
+      await handleSendMessage(lastUserMessage);
+    }
   };
 
   return (
@@ -229,9 +246,18 @@ export default function AIAssistantPage() {
               </div>
             </div>
             <div className="flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={clearConversation}
+                className="text-xs sm:text-sm hidden sm:flex"
+              >
+                <RefreshCw className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                New Chat
+              </Button>
               <Badge variant="secondary" className="bg-green-100 text-green-700 text-xs">
                 <Sparkles className="h-2.5 w-2.5 sm:h-3 sm:w-3 mr-1" />
-                <span className="hidden sm:inline">Online</span>
+                <span className="hidden sm:inline">AI Powered</span>
                 <span className="sm:hidden">●</span>
               </Badge>
             </div>
@@ -329,21 +355,30 @@ export default function AIAssistantPage() {
                             ? 'bg-blue-500 text-white rounded-br-md'
                             : 'bg-white border border-gray-200 text-gray-800 rounded-bl-md shadow-sm'
                         }`}>
-                          <div className="prose prose-sm max-w-none">
-                            {message.content.split('\n').map((line, index) => (
-                              <div key={index} className={`${message.type === 'user' ? 'text-white' : ''} text-xs sm:text-sm leading-relaxed`}>
-                                {line.startsWith('**') && line.endsWith('**') ? (
-                                  <strong>{line.replace(/\*\*/g, '')}</strong>
-                                ) : line.startsWith('•') ? (
-                                  <div className="ml-3 sm:ml-4">{line}</div>
-                                ) : line.startsWith('#') ? (
-                                  <h3 className="font-semibold mt-2 mb-1 text-sm sm:text-base">{line.replace(/^#+\s/, '')}</h3>
-                                ) : (
-                                  line
-                                )}
-                              </div>
-                            ))}
-                          </div>
+                          {message.type === 'assistant' ? (
+                            <div className="prose prose-sm max-w-none prose-emerald">
+                              <ReactMarkdown
+                                components={{
+                                  p: ({ children }) => <p className="text-xs sm:text-sm leading-relaxed mb-2 last:mb-0">{children}</p>,
+                                  strong: ({ children }) => <strong className="font-semibold text-emerald-700">{children}</strong>,
+                                  em: ({ children }) => <em className="text-emerald-600">{children}</em>,
+                                  ul: ({ children }) => <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm">{children}</ul>,
+                                  li: ({ children }) => <li className="text-xs sm:text-sm">{children}</li>,
+                                  h1: ({ children }) => <h1 className="text-base sm:text-lg font-bold mb-2 text-gray-900">{children}</h1>,
+                                  h2: ({ children }) => <h2 className="text-sm sm:text-base font-semibold mb-2 text-gray-800">{children}</h2>,
+                                  h3: ({ children }) => <h3 className="text-sm font-semibold mb-1 text-gray-800">{children}</h3>,
+                                  code: ({ children }) => <code className="bg-gray-100 px-1 py-0.5 rounded text-xs font-mono">{children}</code>,
+                                  blockquote: ({ children }) => <blockquote className="border-l-4 border-emerald-500 pl-3 py-1 bg-emerald-50 text-xs sm:text-sm italic">{children}</blockquote>
+                                }}
+                              >
+                                {message.content}
+                              </ReactMarkdown>
+                            </div>
+                          ) : (
+                            <div className="text-xs sm:text-sm text-white leading-relaxed">
+                              {message.content}
+                            </div>
+                          )}
                           
                           {message.type === 'assistant' && (
                             <div className="flex items-center gap-1 sm:gap-2 mt-2 sm:mt-3 pt-2 border-t border-gray-100">

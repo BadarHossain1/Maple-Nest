@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section className="relative h-[70vh] sm:h-[75vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 z-0"
@@ -16,18 +16,18 @@ export function Hero() {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       {/* Content */}
       <motion.div
-        className="relative z-10 text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
+        className="relative z-10 text-center max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 w-full py-8 sm:py-12"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight pt-6 sm:pt-8 lg:pt-12"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 leading-tight px-2"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -36,7 +36,7 @@ export function Hero() {
         </motion.h1>
 
         <motion.p
-          className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto"
+          className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto px-2"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -51,54 +51,56 @@ export function Hero() {
           className="w-full max-w-5xl mx-auto"
         >
           {/* Property Type Tabs */}
-          <div className="bg-white rounded-t-lg p-1 mb-0 shadow-lg overflow-x-auto">
-            <div className="flex min-w-max sm:min-w-0 sm:inline-flex">
-              <button className="px-3 sm:px-4 lg:px-6 py-2 sm:py-3 text-green-600 font-medium bg-white rounded-md shadow-sm text-sm sm:text-base whitespace-nowrap">
-                Properties
-              </button>
-              <button className="px-3 sm:px-4 lg:px-6 py-2 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-sm sm:text-base whitespace-nowrap">
-                New Projects
-              </button>
-              <button className="px-3 sm:px-4 lg:px-6 py-2 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-sm sm:text-base whitespace-nowrap">
-                Transactions
-              </button>
-              <button className="px-3 sm:px-4 lg:px-6 py-2 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-sm sm:text-base whitespace-nowrap">
-                Property-Valuation™
-              </button>
-              <button className="px-3 sm:px-4 lg:px-6 py-2 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-sm sm:text-base whitespace-nowrap">
-                Agents
-              </button>
+          <div className="bg-white rounded-t-lg p-1 mb-0 shadow-lg">
+            <div className="flex overflow-x-auto scrollbar-hide">
+              <div className="flex min-w-max gap-1 px-1">
+                <button className="px-4 sm:px-6 py-2.5 sm:py-3 text-green-600 font-medium bg-white rounded-md shadow-sm text-xs sm:text-sm lg:text-base whitespace-nowrap">
+                  Properties
+                </button>
+                <button className="px-4 sm:px-6 py-2.5 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-xs sm:text-sm lg:text-base whitespace-nowrap">
+                  New Projects
+                </button>
+                <button className="px-4 sm:px-6 py-2.5 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-xs sm:text-sm lg:text-base whitespace-nowrap">
+                  Transactions
+                </button>
+                <button className="px-3 sm:px-4 py-2.5 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-xs sm:text-sm lg:text-base whitespace-nowrap">
+                  Valuation™
+                </button>
+                <button className="px-4 sm:px-6 py-2.5 sm:py-3 text-gray-600 font-medium hover:text-green-600 transition-colors text-xs sm:text-sm lg:text-base whitespace-nowrap">
+                  Agents
+                </button>
+              </div>
             </div>
           </div>
 
           {/* Search Form */}
-          <div className="bg-white rounded-lg rounded-tl-none shadow-lg p-4 sm:p-6">
+          <div className="bg-white rounded-lg rounded-tl-none shadow-lg p-3 sm:p-4 lg:p-6">
             {/* Buy/Rent Toggle */}
-            <div className="flex mb-4">
-              <button className="flex-1 sm:flex-none px-4 sm:px-6 py-2 bg-green-50 text-green-600 font-medium rounded-l-md border border-green-200 text-sm sm:text-base">
+            <div className="flex mb-4 rounded-md overflow-hidden">
+              <button className="flex-1 px-4 py-2.5 sm:py-3 bg-green-50 text-green-600 font-medium border border-green-200 text-xs sm:text-sm lg:text-base">
                 Buy
               </button>
-              <button className="flex-1 sm:flex-none px-4 sm:px-6 py-2 bg-white text-gray-600 font-medium rounded-r-md border border-gray-200 border-l-0 hover:bg-gray-50 text-sm sm:text-base">
+              <button className="flex-1 px-4 py-2.5 sm:py-3 bg-white text-gray-600 font-medium border border-gray-200 border-l-0 hover:bg-gray-50 text-xs sm:text-sm lg:text-base">
                 Rent
               </button>
             </div>
 
             {/* Search Controls */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4">
-              <div className="flex-1">
+            <div className="space-y-3 sm:space-y-4 mb-4">
+              <div className="w-full">
                 <input
                   type="text"
                   placeholder="Enter location"
-                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-xs sm:text-sm lg:text-base"
                 />
               </div>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:flex-1">
-                <select className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-sm sm:text-base">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                <select className="px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-xs sm:text-sm lg:text-base">
                   <option>All</option>
                   <option>Ready</option>
                   <option>Off-Plan</option>
                 </select>
-                <select className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-sm sm:text-base">
+                <select className="px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-xs sm:text-sm lg:text-base">
                   <option>Residential</option>
                   <option>Commercial</option>
                 </select>
@@ -106,37 +108,37 @@ export function Hero() {
             </div>
 
             {/* Additional Filters */}
-            <div className="flex flex-col lg:flex-row gap-3 sm:gap-4 items-stretch lg:items-center">
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 flex-1">
-                <select className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-sm sm:text-base">
+            <div className="space-y-3 sm:space-y-0 sm:flex sm:gap-4 items-stretch">
+              <div className="grid grid-cols-2 sm:flex sm:flex-1 gap-2 sm:gap-3">
+                <select className="px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-xs sm:text-sm lg:text-base">
                   <option>Beds & Baths</option>
                   <option>1 Bed</option>
                   <option>2 Beds</option>
                   <option>3+ Beds</option>
                 </select>
-                <select className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-sm sm:text-base">
+                <select className="px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-xs sm:text-sm lg:text-base">
                   <option>Price (CAD)</option>
                   <option>Under $500K</option>
                   <option>$500K - $1M</option>
                   <option>$1M+</option>
                 </select>
               </div>
-              <button className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-medium transition-colors text-sm sm:text-base btn-mobile">
+              <button className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-medium transition-colors text-sm sm:text-base whitespace-nowrap">
                 Search
               </button>
             </div>
 
             {/* AI Suggestion */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-4 sm:mt-6 pt-4 border-t border-gray-200 gap-3">
-              <div className="flex items-center gap-2 text-gray-600">
-                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start sm:items-center gap-2 text-gray-600">
+                <div className="w-4 h-4 sm:w-5 sm:h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
                   <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-600 rounded-full"></div>
                 </div>
-                <span className="text-xs sm:text-sm">Get instant answers about Canadian real estate with PropertyGPT</span>
+                <span className="text-xs sm:text-sm leading-tight">Get instant answers about Canadian real estate with PropertyGPT</span>
               </div>
-              <Link href="/ai-assistant" className="text-green-600 font-medium hover:text-green-700 transition-colors flex items-center gap-1 text-sm sm:text-base whitespace-nowrap">
+              <Link href="/ai-assistant" className="text-green-600 font-medium hover:text-green-700 transition-colors flex items-center gap-1 text-xs sm:text-sm lg:text-base whitespace-nowrap self-start sm:self-center">
                 Try PropertyGPT
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>

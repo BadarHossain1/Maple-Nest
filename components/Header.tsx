@@ -53,14 +53,14 @@ export function Header() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-3 sm:px-4">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="flex items-center justify-center w-10 h-10 bg-emerald-500 rounded-lg group-hover:bg-emerald-600 transition-colors">
-              <Home className="h-6 w-6 text-white" />
+            <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-emerald-500 rounded-lg group-hover:bg-emerald-600 transition-colors">
+              <Home className="h-4 w-4 sm:h-6 sm:w-6 text-white" />
             </div>
-            <span className="text-2xl font-bold text-gray-900">MapleNest</span>
+            <span className="text-xl sm:text-2xl font-bold text-gray-900">MapleNest</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -148,14 +148,14 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 -mr-2 touch-manipulation"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6" />
+              <X className="h-5 w-5 sm:h-6 sm:w-6" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
             )}
           </button>
         </div>
@@ -164,23 +164,23 @@ export function Header() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <motion.div
-          className="lg:hidden bg-white border-t border-gray-100"
+          className="lg:hidden bg-white border-t border-gray-100 shadow-lg"
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="container mx-auto px-4 py-6">
-            <nav className="space-y-4">
+          <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-6">
+            <nav className="space-y-2 sm:space-y-4">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    'block py-2 text-base font-medium transition-colors',
+                    'block py-2.5 sm:py-2 text-base font-medium transition-colors rounded-lg px-2 sm:px-0',
                     pathname === item.href
-                      ? 'text-emerald-600'
-                      : 'text-gray-700 hover:text-emerald-600'
+                      ? 'text-emerald-600 bg-emerald-50 sm:bg-transparent'
+                      : 'text-gray-700 hover:text-emerald-600 hover:bg-gray-50 sm:hover:bg-transparent'
                   )}
                   onClick={() => setIsMenuOpen(false)}
                 >

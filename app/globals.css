@@ -166,4 +166,30 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+  
+  /* Mobile tab scrolling */
+  .tab-scroll {
+    @apply overflow-x-auto scrollbar-hide;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Mobile form improvements */
+  .form-input-mobile {
+    @apply w-full px-3 py-2.5 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent;
+    @apply sm:px-4 sm:py-3 sm:text-base;
+  }
+  
+  .form-select-mobile {
+    @apply w-full px-3 py-2.5 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600;
+    @apply sm:px-4 sm:py-3 sm:text-base;
+  }
+  
+  /* Mobile spacing utilities */
+  .mobile-padding {
+    @apply px-3 py-2 sm:px-4 sm:py-3;
+  }
+  
+  .mobile-margin {
+    @apply mb-3 sm:mb-4;
+  }
 }
