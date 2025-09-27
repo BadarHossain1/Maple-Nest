@@ -140,7 +140,7 @@ export default function BuildingGuidesPage() {
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}
             <section
-                className="relative h-96 bg-cover bg-center bg-no-repeat"
+                className="relative h-80 sm:h-96 md:h-[32rem] bg-cover bg-center bg-no-repeat"
                 style={{
                     backgroundImage: 'url(https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&h=800&fit=crop)'
                 }}
@@ -153,16 +153,16 @@ export default function BuildingGuidesPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h1 className="text-5xl font-bold mb-4">Explore These Skyscrapers!</h1>
-                        <p className="text-xl mb-8">Discover Canada&apos;s most impressive residential buildings</p>
-                        <div className="flex justify-center">
-                            <div className="flex items-center bg-white rounded-lg overflow-hidden shadow-lg max-w-md w-full">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">Explore These Skyscrapers!</h1>
+                        <p className="text-sm sm:text-lg md:text-xl mb-6 sm:mb-8 px-4">Discover Canada&apos;s most impressive residential buildings</p>
+                        <div className="flex justify-center px-4">
+                            <div className="flex flex-col sm:flex-row items-stretch sm:items-center bg-white rounded-lg overflow-hidden shadow-lg max-w-md w-full gap-0 sm:gap-0">
                                 <input
                                     type="text"
                                     placeholder="Search location"
-                                    className="flex-1 px-6 py-4 text-gray-900 focus:outline-none"
+                                    className="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-gray-900 focus:outline-none text-sm sm:text-base"
                                 />
-                                <Button className="rounded-none px-8 py-4 bg-emerald-500 hover:bg-emerald-600">
+                                <Button className="rounded-none sm:rounded-none px-6 sm:px-8 py-3 sm:py-4 bg-emerald-500 hover:bg-emerald-600 text-sm sm:text-base font-medium">
                                     SEARCH
                                 </Button>
                             </div>
@@ -172,16 +172,16 @@ export default function BuildingGuidesPage() {
             </section>
 
             {/* Luxury Buildings Section */}
-            <section className="py-16">
+            <section className="py-10 sm:py-12 md:py-16">
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-12">Luxury</h2>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 sm:mb-10 md:mb-12">Luxury</h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12">
                             {luxuryBuildings.map((building, index) => (
                                 <motion.div
                                     key={building.id}
@@ -193,32 +193,27 @@ export default function BuildingGuidesPage() {
                                 >
                                     <div className="relative overflow-hidden rounded-lg shadow-lg bg-emerald-600">
                                         <div
-                                            className="h-64 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+                                            className="h-48 sm:h-56 md:h-64 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
                                             style={{ backgroundImage: `url(${building.image})` }}
                                         >
                                             <div className="absolute inset-0 bg-black/30" />
-                                            <div className="absolute top-4 left-4">
-                                                <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+                                            <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
+                                                <span className="bg-yellow-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium flex items-center gap-1">
                                                     <Star className="h-3 w-3" />
                                                     {building.status}
                                                 </span>
                                             </div>
-                                            <div className="absolute top-4 right-4 text-white text-right">
-                                                <div className="text-sm font-semibold">{building.floors} floors</div>
+                                            <div className="absolute top-3 sm:top-4 right-3 sm:right-4 text-white text-right">
+                                                <div className="text-xs sm:text-sm font-semibold">{building.floors} floors</div>
                                                 <div className="text-xs opacity-90">{building.units} units</div>
                                             </div>
-                                            <div className="absolute bottom-4 left-4 right-4 text-white">
-                                                <h3 className="font-semibold text-lg mb-1">{building.name}</h3>
-                                                <div className="flex items-center gap-1 text-sm opacity-90 mb-2">
-                                                    <MapPin className="h-3 w-3" />
-                                                    {building.location}
+                                            <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 text-white">
+                                                <h3 className="font-semibold text-sm sm:text-base md:text-lg mb-1 truncate">{building.name}</h3>
+                                                <div className="flex items-center gap-1 text-xs sm:text-sm opacity-90 mb-1 sm:mb-2">
+                                                    <MapPin className="h-3 w-3 flex-shrink-0" />
+                                                    <span className="truncate">{building.location}</span>
                                                 </div>
-                                                <p className="text-xs opacity-90">{building.description}</p>
-                                            </div>
-                                            <div className="absolute top-4 left-4">
-                                                <span className="bg-yellow-500 text-white px-2 py-1 rounded text-xs font-medium">
-                                                    Luxury
-                                                </span>
+                                                <p className="text-xs opacity-90 line-clamp-2">{building.description}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -227,9 +222,9 @@ export default function BuildingGuidesPage() {
                         </div>
 
                         <div className="text-center">
-                            <Button variant="outline" className="group">
+                            <Button variant="outline" className="group px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm">
                                 VIEW ALL LUXURY BUILDINGS IN CANADA
-                                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
                             </Button>
                         </div>
                     </motion.div>
@@ -237,16 +232,16 @@ export default function BuildingGuidesPage() {
             </section>
 
             {/* Affordable Buildings Section */}
-            <section className="py-16 bg-white">
+            <section className="py-10 sm:py-12 md:py-16 bg-white">
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-12">Affordable</h2>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 sm:mb-10 md:mb-12">Affordable</h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12">
                             {affordableBuildings.map((building, index) => (
                                 <motion.div
                                     key={building.id}
@@ -291,9 +286,9 @@ export default function BuildingGuidesPage() {
                         </div>
 
                         <div className="text-center">
-                            <Button variant="outline" className="group">
+                            <Button variant="outline" className="group px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm">
                                 VIEW ALL AFFORDABLE BUILDINGS IN CANADA
-                                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
                             </Button>
                         </div>
                     </motion.div>
@@ -301,16 +296,16 @@ export default function BuildingGuidesPage() {
             </section>
 
             {/* Coming Soon Buildings Section */}
-            <section className="py-16">
+            <section className="py-10 sm:py-12 md:py-16">
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-12">Coming Soon</h2>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 sm:mb-10 md:mb-12">Coming Soon</h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12">
                             {comingSoonBuildings.map((building, index) => (
                                 <motion.div
                                     key={building.id}
@@ -355,9 +350,9 @@ export default function BuildingGuidesPage() {
                         </div>
 
                         <div className="text-center">
-                            <Button variant="outline" className="group">
+                            <Button variant="outline" className="group px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm">
                                 VIEW ALL UPCOMING BUILDINGS IN CANADA
-                                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
                             </Button>
                         </div>
                     </motion.div>

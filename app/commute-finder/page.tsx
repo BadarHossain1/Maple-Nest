@@ -76,71 +76,73 @@ export default function CommuteFinderPage() {
         <div className="min-h-screen bg-gray-50">
             {/* Header */}
             <div className="bg-white border-b border-gray-200 sticky top-0 z-50">
-                <div className="container mx-auto px-4 py-4">
+                <div className="section-padding py-3 sm:py-4">
                     <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                            <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-emerald-600 transition-colors">
-                                <ArrowLeft className="h-5 w-5" />
-                                <span>Back to Home</span>
+                        <div className="flex items-center gap-2 sm:gap-4 min-w-0">
+                            <Link href="/" className="flex items-center gap-1 sm:gap-2 text-gray-600 hover:text-emerald-600 transition-colors">
+                                <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+                                <span className="hidden sm:inline">Back to Home</span>
+                                <span className="sm:hidden text-sm">Back</span>
                             </Link>
-                            <div className="h-6 w-px bg-gray-300"></div>
-                            <h1 className="text-xl font-semibold text-gray-900">Commute Finder</h1>
+                            <div className="h-4 sm:h-6 w-px bg-gray-300"></div>
+                            <h1 className="text-lg sm:text-xl font-semibold text-gray-900">Commute Finder</h1>
                         </div>
-                        <Button variant="outline" size="sm">
-                            <Settings2 className="h-4 w-4 mr-2" />
-                            Advanced Filters
+                        <Button variant="outline" size="sm" className="text-xs sm:text-sm whitespace-nowrap">
+                            <Settings2 className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                            <span className="hidden sm:inline">Advanced Filters</span>
+                            <span className="sm:hidden">Filters</span>
                         </Button>
                     </div>
                 </div>
             </div>
 
-            <div className="container mx-auto px-4 py-6">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="section-padding py-4 sm:py-6">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
                     {/* Search & Filters Panel */}
-                    <div className="lg:col-span-1 space-y-6">
+                    <div className="lg:col-span-1 space-y-4 sm:space-y-6">
                         {/* Commute Search */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+                            className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 sm:p-6"
                         >
-                            <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                                <Clock className="h-5 w-5 text-emerald-600" />
+                            <h2 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2">
+                                <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-emerald-600" />
                                 Commute Details
                             </h2>
 
-                            <div className="space-y-4">
+                            <div className="space-y-3 sm:space-y-4">
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">From (Home)</label>
+                                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">From (Home)</label>
                                     <div className="relative">
-                                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4 sm:h-5 sm:w-5" />
                                         <input
                                             type="text"
                                             value={fromLocation}
                                             onChange={(e) => setFromLocation(e.target.value)}
                                             placeholder="Enter your work location"
-                                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                            className="w-full pl-8 sm:pl-10 pr-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm sm:text-base"
                                         />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">To (Work)</label>
+                                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">To (Work)</label>
                                     <div className="relative">
-                                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4 sm:h-5 sm:w-5" />
                                         <input
                                             type="text"
                                             value={toLocation}
                                             onChange={(e) => setToLocation(e.target.value)}
                                             placeholder="Enter your preferred area"
-                                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                            className="w-full pl-8 sm:pl-10 pr-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm sm:text-base"
                                         />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
                                         Max Commute Time: {commuteTime} minutes
                                     </label>
                                     <input
@@ -158,7 +160,7 @@ export default function CommuteFinderPage() {
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-3">Transportation</label>
+                                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2 sm:mb-3">Transportation</label>
                                     <div className="grid grid-cols-3 gap-2">
                                         {transportModes.map((mode) => {
                                             const IconComponent = mode.icon;
@@ -166,12 +168,12 @@ export default function CommuteFinderPage() {
                                                 <button
                                                     key={mode.id}
                                                     onClick={() => setTransportMode(mode.id)}
-                                                    className={`p-3 rounded-lg border-2 transition-all duration-200 flex flex-col items-center gap-2 ${transportMode === mode.id
+                                                    className={`p-2 sm:p-3 rounded-lg border-2 transition-all duration-200 flex flex-col items-center gap-1 sm:gap-2 ${transportMode === mode.id
                                                             ? `border-${mode.color}-500 bg-${mode.color}-50 text-${mode.color}-700`
                                                             : 'border-gray-200 hover:border-gray-300 text-gray-600'
                                                         }`}
                                                 >
-                                                    <IconComponent className="h-5 w-5" />
+                                                    <IconComponent className="h-4 w-4 sm:h-5 sm:w-5" />
                                                     <span className="text-xs font-medium">{mode.label}</span>
                                                 </button>
                                             );
@@ -186,20 +188,20 @@ export default function CommuteFinderPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
-                            className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+                            className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 sm:p-6"
                         >
-                            <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                                <Filter className="h-5 w-5 text-emerald-600" />
+                            <h2 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2">
+                                <Filter className="h-4 w-4 sm:h-5 sm:w-5 text-emerald-600" />
                                 Property Filters
                             </h2>
 
-                            <div className="space-y-4">
+                            <div className="space-y-3 sm:space-y-4">
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
+                                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">Price Range</label>
                                     <select
                                         value={priceRange}
                                         onChange={(e) => setPriceRange(e.target.value)}
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                        className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm sm:text-base"
                                     >
                                         <option value="all">All Prices</option>
                                         <option value="under500k">Under CAD 500K</option>
@@ -211,11 +213,11 @@ export default function CommuteFinderPage() {
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Property Type</label>
+                                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">Property Type</label>
                                     <select
                                         value={propertyType}
                                         onChange={(e) => setPropertyType(e.target.value)}
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                        className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm sm:text-base"
                                     >
                                         <option value="all">All Types</option>
                                         <option value="house">House</option>
@@ -226,11 +228,11 @@ export default function CommuteFinderPage() {
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Bedrooms</label>
+                                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">Bedrooms</label>
                                     <select
                                         value={bedrooms}
                                         onChange={(e) => setBedrooms(e.target.value)}
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                        className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm sm:text-base"
                                     >
                                         <option value="all">Any</option>
                                         <option value="1">1+ Bedroom</option>
@@ -241,8 +243,8 @@ export default function CommuteFinderPage() {
                                 </div>
                             </div>
 
-                            <Button className="w-full mt-6 bg-emerald-600 hover:bg-emerald-700">
-                                <Search className="h-4 w-4 mr-2" />
+                            <Button className="w-full mt-4 sm:mt-6 bg-emerald-600 hover:bg-emerald-700 text-sm sm:text-base">
+                                <Search className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
                                 Find Properties
                             </Button>
                         </motion.div>
@@ -252,15 +254,15 @@ export default function CommuteFinderPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="bg-emerald-50 rounded-xl border border-emerald-200 p-4"
+                            className="bg-emerald-50 rounded-xl border border-emerald-200 p-3 sm:p-4"
                         >
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
-                                    <Home className="h-5 w-5 text-emerald-600" />
+                            <div className="flex items-center gap-2 sm:gap-3">
+                                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-emerald-100 rounded-full flex items-center justify-center">
+                                    <Home className="h-4 w-4 sm:h-5 sm:w-5 text-emerald-600" />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-medium text-emerald-800">Properties Found</p>
-                                    <p className="text-lg font-bold text-emerald-900">847 homes</p>
+                                    <p className="text-xs sm:text-sm font-medium text-emerald-800">Properties Found</p>
+                                    <p className="text-base sm:text-lg font-bold text-emerald-900">847 homes</p>
                                     <p className="text-xs text-emerald-600">Within your commute preferences</p>
                                 </div>
                             </div>
@@ -268,7 +270,7 @@ export default function CommuteFinderPage() {
                     </div>
 
                     {/* Map & Properties */}
-                    <div className="lg:col-span-2 space-y-6">
+                    <div className="lg:col-span-2 space-y-4 sm:space-y-6">
                         {/* Interactive Map */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.98 }}
@@ -276,7 +278,7 @@ export default function CommuteFinderPage() {
                             transition={{ duration: 0.6 }}
                             className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden"
                         >
-                            <div className="h-96 relative bg-gradient-to-br from-cyan-100 via-blue-50 to-emerald-50">
+                            <div className="h-64 sm:h-96 relative bg-gradient-to-br from-cyan-100 via-blue-50 to-emerald-50">
                                 {/* Mock Map Interface */}
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <svg viewBox="0 0 800 400" className="w-full h-full">
@@ -324,43 +326,43 @@ export default function CommuteFinderPage() {
                                 </div>
 
                                 {/* Map Controls */}
-                                <div className="absolute top-4 right-4 bg-white rounded-lg shadow-md p-2 space-y-2">
-                                    <button className="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded flex items-center justify-center text-gray-600">
+                                <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-white rounded-lg shadow-md p-1.5 sm:p-2 space-y-1 sm:space-y-2">
+                                    <button className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-100 hover:bg-gray-200 rounded flex items-center justify-center text-gray-600 text-sm sm:text-base">
                                         +
                                     </button>
-                                    <button className="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded flex items-center justify-center text-gray-600">
+                                    <button className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-100 hover:bg-gray-200 rounded flex items-center justify-center text-gray-600 text-sm sm:text-base">
                                         −
                                     </button>
                                 </div>
 
                                 {/* Map Legend */}
-                                <div className="absolute bottom-4 left-4 bg-white rounded-lg shadow-md p-3">
-                                    <div className="flex items-center gap-4 text-sm">
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
+                                <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 bg-white rounded-lg shadow-md p-2 sm:p-3">
+                                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm">
+                                        <div className="flex items-center gap-1.5 sm:gap-2">
+                                            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-emerald-500 rounded-full"></div>
                                             <span>Available</span>
                                         </div>
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                                        <div className="flex items-center gap-1.5 sm:gap-2">
+                                            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-red-500 rounded-full"></div>
                                             <span>Sold</span>
                                         </div>
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                                        <div className="flex items-center gap-1.5 sm:gap-2">
+                                            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-blue-500 rounded-full"></div>
                                             <span>New</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Interactive Info Panel */}
-                                <div className="absolute top-4 left-4 bg-white rounded-lg shadow-lg p-4 max-w-xs">
-                                    <h3 className="font-semibold text-gray-900 mb-2">Commute Preview</h3>
-                                    <div className="space-y-2 text-sm text-gray-600">
-                                        <div className="flex items-center gap-2">
-                                            <Car className="h-4 w-4 text-blue-600" />
+                                <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-white rounded-lg shadow-lg p-2.5 sm:p-4 max-w-xs">
+                                    <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Commute Preview</h3>
+                                    <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-600">
+                                        <div className="flex items-center gap-1.5 sm:gap-2">
+                                            <Car className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600" />
                                             <span>25 min drive to downtown</span>
                                         </div>
-                                        <div className="flex items-center gap-2">
-                                            <Train className="h-4 w-4 text-emerald-600" />
+                                        <div className="flex items-center gap-1.5 sm:gap-2">
+                                            <Train className="h-3 w-3 sm:h-4 sm:w-4 text-emerald-600" />
                                             <span>32 min by transit</span>
                                         </div>
                                     </div>
@@ -375,11 +377,11 @@ export default function CommuteFinderPage() {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="space-y-4"
                         >
-                            <div className="flex items-center justify-between">
-                                <h2 className="text-lg font-semibold text-gray-900">Properties Within Commute Range</h2>
-                                <div className="flex items-center gap-2 text-sm text-gray-600">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0">
+                                <h2 className="text-base sm:text-lg font-semibold text-gray-900">Properties Within Commute Range</h2>
+                                <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
                                     <span>Sort by:</span>
-                                    <select className="border border-gray-300 rounded px-3 py-1 text-sm">
+                                    <select className="border border-gray-300 rounded px-2 sm:px-3 py-1 text-xs sm:text-sm">
                                         <option>Commute Time</option>
                                         <option>Price: Low to High</option>
                                         <option>Price: High to Low</option>
@@ -397,55 +399,55 @@ export default function CommuteFinderPage() {
                                         transition={{ duration: 0.6, delay: 0.1 * index }}
                                         className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300"
                                     >
-                                        <div className="flex">
-                                            <div className="relative w-64 h-48">
+                                        <div className="flex flex-col sm:flex-row">
+                                            <div className="relative w-full sm:w-64 h-48">
                                                 <img
                                                     src={property.image}
                                                     alt={property.address}
                                                     className="w-full h-full object-cover"
                                                 />
                                                 {property.checked && (
-                                                    <div className="absolute top-3 left-3 bg-emerald-500 text-white px-2 py-1 rounded text-xs font-medium">
+                                                    <div className="absolute top-2 sm:top-3 left-2 sm:left-3 bg-emerald-500 text-white px-2 py-1 rounded text-xs font-medium">
                                                         ✓ Checked
                                                     </div>
                                                 )}
-                                                <button className="absolute top-3 right-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
-                                                    <Heart className="h-4 w-4 text-gray-600" />
+                                                <button className="absolute top-2 sm:top-3 right-2 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
+                                                    <Heart className="h-3 w-3 sm:h-4 sm:w-4 text-gray-600" />
                                                 </button>
-                                                <div className="absolute bottom-3 left-3 bg-black/70 text-white px-2 py-1 rounded text-xs">
+                                                <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 bg-black/70 text-white px-2 py-1 rounded text-xs">
                                                     {property.commuteTime}
                                                 </div>
                                             </div>
 
-                                            <div className="flex-1 p-6">
-                                                <div className="flex items-start justify-between mb-2">
-                                                    <h3 className="text-xl font-bold text-gray-900">{property.price}</h3>
+                                            <div className="flex-1 p-4 sm:p-6">
+                                                <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-2 gap-2 sm:gap-0">
+                                                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">{property.price}</h3>
                                                     <div className="flex items-center gap-1 text-emerald-600">
-                                                        <Clock className="h-4 w-4" />
-                                                        <span className="text-sm font-medium">{property.commuteTime}</span>
+                                                        <Clock className="h-3 w-3 sm:h-4 sm:w-4" />
+                                                        <span className="text-xs sm:text-sm font-medium">{property.commuteTime}</span>
                                                     </div>
                                                 </div>
 
-                                                <p className="text-gray-600 mb-4">{property.address}</p>
+                                                <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">{property.address}</p>
 
-                                                <div className="flex items-center gap-6 text-sm text-gray-600 mb-4">
+                                                <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4">
                                                     <div className="flex items-center gap-1">
-                                                        <Bed className="h-4 w-4" />
+                                                        <Bed className="h-3 w-3 sm:h-4 sm:w-4" />
                                                         <span>{property.beds} beds</span>
                                                     </div>
                                                     <div className="flex items-center gap-1">
-                                                        <Bath className="h-4 w-4" />
+                                                        <Bath className="h-3 w-3 sm:h-4 sm:w-4" />
                                                         <span>{property.baths} baths</span>
                                                     </div>
                                                     <div className="flex items-center gap-1">
-                                                        <Square className="h-4 w-4" />
+                                                        <Square className="h-3 w-3 sm:h-4 sm:w-4" />
                                                         <span>{property.sqft} sqft</span>
                                                     </div>
                                                 </div>
 
-                                                <div className="flex gap-3">
-                                                    <Button variant="outline" size="sm">View Details</Button>
-                                                    <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700">Contact Agent</Button>
+                                                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                                                    <Button variant="outline" size="sm" className="text-xs sm:text-sm">View Details</Button>
+                                                    <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700 text-xs sm:text-sm">Contact Agent</Button>
                                                 </div>
                                             </div>
                                         </div>

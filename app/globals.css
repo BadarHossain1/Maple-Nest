@@ -80,3 +80,90 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  /* Mobile-first responsive utilities */
+  .container {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Safe area for mobile devices */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  /* Mobile-friendly spacing */
+  .section-padding {
+    @apply py-8 sm:py-12 lg:py-16;
+  }
+  
+  .section-padding-sm {
+    @apply py-6 sm:py-8 lg:py-12;
+  }
+  
+  /* Mobile text sizes */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+  
+  .text-responsive-base {
+    @apply text-base sm:text-lg;
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl lg:text-2xl;
+  }
+  
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+  }
+  
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl lg:text-4xl;
+  }
+  
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl lg:text-5xl;
+  }
+  
+  /* Mobile-friendly buttons */
+  .btn-mobile {
+    @apply min-h-[44px] px-4 py-2 text-base sm:min-h-[40px] sm:px-6 sm:py-2 sm:text-sm;
+  }
+  
+  /* Touch-friendly spacing */
+  .touch-spacing {
+    @apply space-y-4 sm:space-y-2;
+  }
+  
+  /* Mobile grid utilities */
+  .grid-mobile {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3;
+  }
+  
+  .grid-mobile-2 {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2;
+  }
+  
+  .grid-mobile-auto {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+  
+  /* Scrollbar utilities */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

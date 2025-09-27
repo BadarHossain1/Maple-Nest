@@ -126,37 +126,37 @@ export default function NeighborhoodExplorerPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+        <div className="container mx-auto px-4 py-3 sm:py-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
             <div className="flex items-center gap-4">
               <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-emerald-600 transition-colors">
-                <ArrowLeft className="h-5 w-5" />
-                <span>Return to regular search</span>
+                <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+                <span className="text-sm sm:text-base">Return to regular search</span>
               </Link>
             </div>
             
             {/* Top Filters Bar */}
-            <div className="flex items-center gap-4">
-              <select className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4 w-full sm:w-auto">
+              <select className="px-2 sm:px-3 py-1.5 sm:py-2 border border-gray-300 rounded-md text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
                 <option>Buy</option>
                 <option>Rent</option>
               </select>
               
-              <div className="relative">
-                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <div className="relative flex-1 sm:flex-none">
+                <MapPin className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-3 w-3 sm:h-4 sm:w-4" />
                 <input
                   type="text"
                   placeholder="Enter location"
-                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 w-48"
+                  className="pl-7 sm:pl-10 pr-3 sm:pr-4 py-1.5 sm:py-2 border border-gray-300 rounded-md text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 w-full sm:w-48"
                 />
               </div>
 
-              <div className="flex bg-gray-100 rounded-md p-1">
+              <div className="flex bg-gray-100 rounded-md p-0.5 sm:p-1">
                 {filters.map((filter) => (
                   <button
                     key={filter.id}
                     onClick={() => setSelectedFilter(filter.label)}
-                    className={`px-4 py-1 text-sm font-medium rounded transition-all ${
+                    className={`px-2 sm:px-4 py-1 text-xs sm:text-sm font-medium rounded transition-all ${
                       selectedFilter === filter.label
                         ? 'bg-emerald-500 text-white shadow-sm'
                         : 'text-gray-600 hover:text-emerald-600'
@@ -167,7 +167,7 @@ export default function NeighborhoodExplorerPage() {
                 ))}
               </div>
 
-              <select className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+              <select className="px-2 sm:px-3 py-1.5 sm:py-2 border border-gray-300 rounded-md text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
                 <option>Residential</option>
                 <option>Commercial</option>
               </select>

@@ -156,7 +156,7 @@ export default function FloorPlansPage() {
             {/* Hero Section */}
             <section className="relative min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white overflow-hidden">
                 {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
+                <div className="absolute inset-0 opacity-5 sm:opacity-10">
                     <svg viewBox="0 0 1200 800" className="w-full h-full">
                         {/* Floor plan outlines */}
                         <g stroke="#059669" strokeWidth="2" fill="none">
@@ -184,7 +184,7 @@ export default function FloorPlansPage() {
                     </svg>
                 </div>
 
-                <div className="relative z-10 container mx-auto px-4 pt-32 pb-20">
+                <div className="relative z-10 container mx-auto px-4 pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-16 md:pb-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -192,16 +192,16 @@ export default function FloorPlansPage() {
                         className="text-center max-w-4xl mx-auto"
                     >
                         {/* Breadcrumb */}
-                        <div className="flex items-center justify-center gap-2 text-sm text-gray-600 mb-8">
+                        <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-gray-600 mb-6 sm:mb-8">
                             <Link href="/" className="text-emerald-600 hover:underline">MapleNest</Link>
                             <span>›</span>
                             <span>Floor plans</span>
                         </div>
 
-                        <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+                        <h1 className="text-responsive-h1 font-bold text-gray-800 mb-4 sm:mb-6">
                             Floor plans
                         </h1>
-                        <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                        <p className="text-sm sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto px-4">
                             Explore detailed floor plans and layouts from Canada's premier real estate developments.
                             Find your perfect home design across major Canadian cities.
                         </p>
@@ -211,19 +211,19 @@ export default function FloorPlansPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="bg-gray-800 rounded-2xl shadow-xl p-2 max-w-2xl mx-auto flex items-center"
+                            className="bg-gray-800 rounded-xl sm:rounded-2xl shadow-xl p-1.5 sm:p-2 max-w-xl sm:max-w-2xl mx-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-0"
                         >
                             <div className="flex-1 relative">
-                                <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                                <MapPin className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4 sm:h-5 sm:w-5" />
                                 <input
                                     type="text"
                                     value={searchLocation}
                                     onChange={(e) => setSearchLocation(e.target.value)}
                                     placeholder="Enter location"
-                                    className="w-full pl-12 pr-4 py-4 bg-transparent text-white placeholder-gray-400 focus:outline-none text-lg"
+                                    className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-transparent text-white placeholder-gray-400 focus:outline-none text-base sm:text-lg"
                                 />
                             </div>
-                            <Button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 font-semibold text-lg">
+                            <Button className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold text-sm sm:text-lg">
                                 Find
                             </Button>
                         </motion.div>
@@ -232,21 +232,21 @@ export default function FloorPlansPage() {
             </section>
 
             {/* Canadian Cities Showcase */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
+                        className="text-center mb-12 sm:mb-16"
                     >
-                        <p className="text-emerald-600 font-medium mb-4">CANADIAN FLOOR PLANS</p>
-                        <h2 className="text-3xl font-bold text-gray-900 mb-12">
+                        <p className="text-emerald-600 font-medium mb-2 sm:mb-4 text-xs sm:text-sm">CANADIAN FLOOR PLANS</p>
+                        <h2 className="text-responsive-h2 font-bold text-gray-900 mb-8 sm:mb-12">
                             Canada Floor plans
                         </h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                             {canadianCities.map((city, index) => (
                                 <motion.div
                                     key={city.id}
@@ -256,24 +256,24 @@ export default function FloorPlansPage() {
                                     transition={{ duration: 0.8, delay: index * 0.1 }}
                                     className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300 group cursor-pointer"
                                 >
-                                    <div className="relative h-48 overflow-hidden">
+                                    <div className="relative h-40 sm:h-48 overflow-hidden">
                                         <img
                                             src={city.image}
                                             alt={`${city.name} real estate`}
                                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                                        <div className="absolute bottom-4 left-4 text-white">
-                                            <h3 className="text-lg font-semibold">{city.name}</h3>
-                                            <p className="text-sm opacity-90">{city.province}</p>
+                                        <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white">
+                                            <h3 className="text-base sm:text-lg font-semibold">{city.name}</h3>
+                                            <p className="text-xs sm:text-sm opacity-90">{city.province}</p>
                                         </div>
                                     </div>
-                                    <div className="p-4">
-                                        <p className="text-gray-600 text-sm mb-2">{city.description}</p>
+                                    <div className="p-3 sm:p-4">
+                                        <p className="text-gray-600 text-xs sm:text-sm mb-2">{city.description}</p>
                                         <div className="flex items-center justify-between">
                                             <span className="text-xs text-emerald-600 font-medium">{city.properties}</span>
                                             <div className="flex items-center gap-1 text-yellow-500">
-                                                <Star className="h-4 w-4 fill-current" />
+                                                <Star className="h-3 w-3 sm:h-4 sm:w-4 fill-current" />
                                                 <span className="text-xs text-gray-600">Premium</span>
                                             </div>
                                         </div>
@@ -286,7 +286,7 @@ export default function FloorPlansPage() {
             </section>
 
             {/* Top Searched Locations */}
-            <section className="py-20 bg-white">
+            <section className="py-12 sm:py-16 md:py-20 bg-white">
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -295,11 +295,11 @@ export default function FloorPlansPage() {
                         transition={{ duration: 0.8 }}
                     >
                         {Object.entries(topSearchedLocations).map(([city, locations]) => (
-                            <div key={city} className="mb-12">
-                                <h3 className="text-xl font-semibold text-gray-900 mb-6">
+                            <div key={city} className="mb-8 sm:mb-12">
+                                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">
                                     Top Searched Locations - {city}
                                 </h3>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
                                     {locations.map((location, index) => (
                                         <motion.button
                                             key={location}
@@ -307,13 +307,13 @@ export default function FloorPlansPage() {
                                             whileInView={{ opacity: 1, x: 0 }}
                                             viewport={{ once: true }}
                                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                                            className="bg-gray-100 hover:bg-emerald-50 hover:border-emerald-200 border border-gray-200 rounded-lg p-4 text-left transition-colors duration-300 group"
+                                            className="bg-gray-100 hover:bg-emerald-50 hover:border-emerald-200 border border-gray-200 rounded-lg p-3 sm:p-4 text-left transition-colors duration-300 group"
                                         >
                                             <div className="flex items-center justify-between">
-                                                <span className="text-gray-700 group-hover:text-emerald-700 font-medium">
+                                                <span className="text-gray-700 group-hover:text-emerald-700 font-medium text-sm sm:text-base truncate pr-2">
                                                     {location}
                                                 </span>
-                                                <Building className="h-4 w-4 text-gray-400 group-hover:text-emerald-500" />
+                                                <Building className="h-3 w-3 sm:h-4 sm:w-4 text-gray-400 group-hover:text-emerald-500 flex-shrink-0" />
                                             </div>
                                         </motion.button>
                                     ))}
@@ -325,7 +325,7 @@ export default function FloorPlansPage() {
             </section>
 
             {/* Canadian Location List */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -333,16 +333,16 @@ export default function FloorPlansPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
                             Canadian Location List
                         </h3>
-                        <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+                        <p className="text-sm sm:text-base text-gray-600 text-center mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto px-4">
                             Discover floor plans and real estate opportunities across all major Canadian cities,
                             towns, and metropolitan areas. From coast to coast, explore diverse architectural
                             styles and layouts.
                         </p>
 
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3">
                             {allCanadianLocations.map((location, index) => (
                                 <motion.button
                                     key={location}
@@ -350,10 +350,10 @@ export default function FloorPlansPage() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: (index % 20) * 0.05 }}
-                                    className="bg-white hover:bg-emerald-50 border border-gray-200 hover:border-emerald-300 rounded-lg p-3 text-left transition-all duration-300 group text-sm"
+                                    className="bg-white hover:bg-emerald-50 border border-gray-200 hover:border-emerald-300 rounded-lg p-2 sm:p-3 text-left transition-all duration-300 group text-xs sm:text-sm"
                                 >
                                     <div className="flex items-center justify-between">
-                                        <span className="text-gray-700 group-hover:text-emerald-700 font-medium truncate pr-2">
+                                        <span className="text-gray-700 group-hover:text-emerald-700 font-medium truncate pr-1 sm:pr-2">
                                             {location}
                                         </span>
                                         <Home className="h-3 w-3 text-gray-400 group-hover:text-emerald-500 flex-shrink-0" />
@@ -362,8 +362,8 @@ export default function FloorPlansPage() {
                             ))}
                         </div>
 
-                        <div className="text-center mt-12">
-                            <Button variant="outline" className="px-8 py-3">
+                        <div className="text-center mt-8 sm:mt-10 md:mt-12">
+                            <Button variant="outline" className="px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base">
                                 Load More Locations
                             </Button>
                         </div>
@@ -372,7 +372,7 @@ export default function FloorPlansPage() {
             </section>
 
             {/* Stats & CTA */}
-            <section className="py-20 bg-emerald-600">
+            <section className="py-12 sm:py-16 md:py-20 bg-emerald-600">
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -381,30 +381,30 @@ export default function FloorPlansPage() {
                         transition={{ duration: 0.8 }}
                         className="text-center text-white"
                     >
-                        <h3 className="text-3xl font-bold mb-6">
+                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6">
                             Explore Canada's Real Estate Floor Plans
                         </h3>
-                        <p className="text-xl text-emerald-100 mb-12 max-w-3xl mx-auto">
+                        <p className="text-sm sm:text-lg md:text-xl text-emerald-100 mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto px-4">
                             Access detailed floor plans from thousands of Canadian properties.
                             Make informed decisions with comprehensive layout information.
                         </p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10 md:mb-12">
                             <div className="text-center">
-                                <div className="text-4xl font-bold mb-2">180,000+</div>
-                                <div className="text-emerald-200">Floor Plans Available</div>
+                                <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">180,000+</div>
+                                <div className="text-xs sm:text-sm md:text-base text-emerald-200">Floor Plans Available</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl font-bold mb-2">13</div>
-                                <div className="text-emerald-200">Provinces & Territories</div>
+                                <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">13</div>
+                                <div className="text-xs sm:text-sm md:text-base text-emerald-200">Provinces & Territories</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl font-bold mb-2">500+</div>
-                                <div className="text-emerald-200">Canadian Cities</div>
+                                <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">500+</div>
+                                <div className="text-xs sm:text-sm md:text-base text-emerald-200">Canadian Cities</div>
                             </div>
                         </div>
 
-                        <Button className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-3 font-semibold">
+                        <Button className="bg-white text-emerald-600 hover:bg-gray-100 px-6 sm:px-8 py-2.5 sm:py-3 font-semibold text-sm sm:text-base">
                             Start Exploring Floor Plans
                         </Button>
                     </motion.div>

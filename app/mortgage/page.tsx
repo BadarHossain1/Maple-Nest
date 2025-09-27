@@ -59,35 +59,35 @@ export default function MortgagePage() {
   const totalMonthlyPayment = results.monthlyPayment + monthlyPropertyTax + monthlyInsurance;
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gray-50 py-6 sm:py-8">
       <motion.div 
-        className="container mx-auto px-4"
+        className="container mx-auto px-4 sm:px-6 lg:px-8"
         {...fadeInUp}
       >
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
             Canadian Mortgage Calculator
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
             Calculate your monthly mortgage payments and explore different scenarios 
             to find the right mortgage for your Canadian home purchase.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {/* Calculator Form */}
           <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Calculator className="h-5 w-5" />
+                <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
+                  <Calculator className="h-4 w-4 sm:h-5 sm:w-5" />
                   Mortgage Calculator
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
+              <CardContent className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="homePrice">Home Price</Label>
+                    <Label htmlFor="homePrice" className="text-sm">Home Price</Label>
                     <div className="relative">
                       <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                       <Input
@@ -95,14 +95,14 @@ export default function MortgagePage() {
                         type="number"
                         value={formData.homePrice}
                         onChange={(e) => handleInputChange('homePrice', e.target.value)}
-                        className="pl-10"
+                        className="pl-10 text-sm sm:text-base"
                         placeholder="750,000"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="downPayment">Down Payment</Label>
+                    <Label htmlFor="downPayment" className="text-sm">Down Payment</Label>
                     <div className="relative">
                       <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                       <Input
@@ -110,7 +110,7 @@ export default function MortgagePage() {
                         type="number"
                         value={formData.downPayment}
                         onChange={(e) => handleInputChange('downPayment', e.target.value)}
-                        className="pl-10"
+                        className="pl-10 text-sm sm:text-base"
                         placeholder="150,000"
                       />
                     </div>
@@ -120,9 +120,9 @@ export default function MortgagePage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="interestRate">Interest Rate (%)</Label>
+                    <Label htmlFor="interestRate" className="text-sm">Interest Rate (%)</Label>
                     <div className="relative">
                       <Percent className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                       <Input
@@ -131,21 +131,21 @@ export default function MortgagePage() {
                         step="0.01"
                         value={formData.interestRate}
                         onChange={(e) => handleInputChange('interestRate', e.target.value)}
-                        className="pl-10"
+                        className="pl-10 text-sm sm:text-base"
                         placeholder="5.25"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="amortization">Amortization (years)</Label>
+                    <Label htmlFor="amortization" className="text-sm">Amortization (years)</Label>
                     <div className="relative">
                       <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                       <select
                         id="amortization"
                         value={formData.amortization}
                         onChange={(e) => handleInputChange('amortization', e.target.value)}
-                        className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
                       >
                         <option value="15">15 years</option>
                         <option value="20">20 years</option>
@@ -157,12 +157,12 @@ export default function MortgagePage() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="paymentFrequency">Payment Frequency</Label>
+                  <Label htmlFor="paymentFrequency" className="text-sm">Payment Frequency</Label>
                   <select
                     id="paymentFrequency"
                     value={formData.paymentFrequency}
                     onChange={(e) => setFormData({ ...formData, paymentFrequency: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
                   >
                     <option value="monthly">Monthly</option>
                     <option value="bi-weekly">Bi-weekly</option>
@@ -202,22 +202,22 @@ export default function MortgagePage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Principal & Interest</span>
-                    <span className="font-semibold">{formatCurrency(results.monthlyPayment)}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-0">
+                    <span className="text-gray-600 text-sm sm:text-base">Principal & Interest</span>
+                    <span className="font-semibold text-base sm:text-lg">{formatCurrency(results.monthlyPayment)}</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Property Tax (est.)</span>
-                    <span className="font-semibold">{formatCurrency(monthlyPropertyTax)}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-0">
+                    <span className="text-gray-600 text-sm sm:text-base">Property Tax (est.)</span>
+                    <span className="font-semibold text-base sm:text-lg">{formatCurrency(monthlyPropertyTax)}</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Home Insurance (est.)</span>
-                    <span className="font-semibold">{formatCurrency(monthlyInsurance)}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-0">
+                    <span className="text-gray-600 text-sm sm:text-base">Home Insurance (est.)</span>
+                    <span className="font-semibold text-base sm:text-lg">{formatCurrency(monthlyInsurance)}</span>
                   </div>
                   <Separator />
-                  <div className="flex justify-between items-center text-lg">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-0 text-base sm:text-lg">
                     <span className="font-semibold text-gray-900">Total Monthly Payment</span>
-                    <span className="font-bold text-emerald-600">{formatCurrency(totalMonthlyPayment)}</span>
+                    <span className="font-bold text-emerald-600 text-lg sm:text-xl">{formatCurrency(totalMonthlyPayment)}</span>
                   </div>
                 </div>
               </CardContent>
@@ -231,22 +231,22 @@ export default function MortgagePage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <p className="text-sm text-gray-600 mb-1">Loan Amount</p>
-                    <p className="text-xl font-bold text-gray-900">{formatCurrency(results.loanAmount)}</p>
+                    <p className="text-xs sm:text-sm text-gray-600 mb-1">Loan Amount</p>
+                    <p className="text-lg sm:text-xl font-bold text-gray-900">{formatCurrency(results.loanAmount)}</p>
                   </div>
                   <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <p className="text-sm text-gray-600 mb-1">Total Interest</p>
-                    <p className="text-xl font-bold text-gray-900">{formatCurrency(results.totalInterest)}</p>
+                    <p className="text-xs sm:text-sm text-gray-600 mb-1">Total Interest</p>
+                    <p className="text-lg sm:text-xl font-bold text-gray-900">{formatCurrency(results.totalInterest)}</p>
                   </div>
                   <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <p className="text-sm text-gray-600 mb-1">Total Payments</p>
-                    <p className="text-xl font-bold text-gray-900">{formatCurrency(results.totalPayment)}</p>
+                    <p className="text-xs sm:text-sm text-gray-600 mb-1">Total Payments</p>
+                    <p className="text-lg sm:text-xl font-bold text-gray-900">{formatCurrency(results.totalPayment)}</p>
                   </div>
                   <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <p className="text-sm text-gray-600 mb-1">Loan-to-Value</p>
-                    <p className="text-xl font-bold text-gray-900">{loanToValue.toFixed(1)}%</p>
+                    <p className="text-xs sm:text-sm text-gray-600 mb-1">Loan-to-Value</p>
+                    <p className="text-lg sm:text-xl font-bold text-gray-900">{loanToValue.toFixed(1)}%</p>
                   </div>
                 </div>
               </CardContent>

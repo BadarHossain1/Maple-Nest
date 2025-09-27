@@ -52,9 +52,9 @@ export default function PropertyValuationPage() {
     return (
         <div className="min-h-screen bg-white">
             {/* Hero Section */}
-            <section className="relative min-h-screen bg-gradient-to-b from-emerald-100 via-teal-50 to-cyan-100 overflow-hidden">
+            <section className="relative min-h-[80vh] sm:min-h-screen bg-gradient-to-b from-emerald-100 via-teal-50 to-cyan-100 overflow-hidden">
                 {/* Canadian Cityscape Background */}
-                <div className="absolute bottom-0 left-0 right-0 h-64">
+                <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-64">
                     <svg viewBox="0 0 1400 400" className="w-full h-full">
                         {/* Toronto CN Tower */}
                         <rect x="200" y="120" width="8" height="200" fill="#4a90e2" />
@@ -93,17 +93,17 @@ export default function PropertyValuationPage() {
                     </svg>
                 </div>
 
-                <div className="relative z-10 container mx-auto px-4 pt-32 pb-20">
+                <div className="relative z-10 section-padding pt-20 sm:pt-32 pb-12 sm:pb-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         className="text-center max-w-4xl mx-auto"
                     >
-                        <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+                        <h1 className="text-responsive-h1 font-bold text-gray-800 mb-4 sm:mb-6">
                             Property Valuation™
                         </h1>
-                        <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                        <p className="text-responsive-lg text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto">
                             Get a comprehensive, data-backed property valuation in Canada for your freehold property,
                             including an accurate sale estimate and market insights.
                         </p>
@@ -113,20 +113,22 @@ export default function PropertyValuationPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="bg-white rounded-xl shadow-lg p-2 mb-8 inline-flex"
+                            className="bg-white rounded-xl shadow-lg p-1 sm:p-2 mb-6 sm:mb-8 inline-flex overflow-x-auto scrollbar-hide max-w-full"
                         >
-                            {tabs.map((tab) => (
-                                <button
-                                    key={tab}
-                                    onClick={() => setActiveTab(tab)}
-                                    className={`px-6 py-3 font-medium rounded-lg transition-all duration-300 ${activeTab === tab
-                                            ? 'bg-emerald-500 text-white shadow-md'
-                                            : 'text-gray-600 hover:text-emerald-600'
-                                        }`}
-                                >
-                                    {tab}
-                                </button>
-                            ))}
+                            <div className="flex space-x-1 sm:space-x-2 min-w-max">
+                                {tabs.map((tab) => (
+                                    <button
+                                        key={tab}
+                                        onClick={() => setActiveTab(tab)}
+                                        className={`px-3 sm:px-6 py-2 sm:py-3 font-medium rounded-lg transition-all duration-300 whitespace-nowrap text-sm sm:text-base ${activeTab === tab
+                                                ? 'bg-emerald-500 text-white shadow-md'
+                                                : 'text-gray-600 hover:text-emerald-600'
+                                            }`}
+                                    >
+                                        {tab}
+                                    </button>
+                                ))}
+                            </div>
                         </motion.div>
 
                         {/* Search Form */}
@@ -134,47 +136,49 @@ export default function PropertyValuationPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
-                            className="bg-white rounded-xl shadow-xl p-8 max-w-4xl mx-auto"
+                            className="bg-white rounded-xl shadow-xl p-4 sm:p-8 max-w-4xl mx-auto"
                         >
                             {/* Search Type Tabs */}
-                            <div className="flex flex-wrap justify-center gap-2 mb-6">
-                                <span className="text-gray-600 font-medium mr-4">Search by</span>
-                                {searchTypes.map((type) => (
-                                    <button
-                                        key={type}
-                                        onClick={() => setSearchType(type)}
-                                        className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${searchType === type
-                                                ? 'bg-emerald-500 text-white'
-                                                : 'bg-gray-100 text-gray-600 hover:bg-emerald-100'
-                                            }`}
-                                    >
-                                        {type}
-                                    </button>
-                                ))}
+                            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-2 sm:gap-4 mb-6">
+                                <span className="text-gray-600 font-medium text-sm sm:text-base mb-2 sm:mb-0 sm:mr-4">Search by</span>
+                                <div className="flex flex-wrap justify-center gap-2">
+                                    {searchTypes.map((type) => (
+                                        <button
+                                            key={type}
+                                            onClick={() => setSearchType(type)}
+                                            className={`px-3 sm:px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm sm:text-base whitespace-nowrap ${searchType === type
+                                                    ? 'bg-emerald-500 text-white'
+                                                    : 'bg-gray-100 text-gray-600 hover:bg-emerald-100'
+                                                }`}
+                                        >
+                                            {type}
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
 
                             {/* Search Inputs */}
-                            <div className="flex flex-col md:flex-row gap-4 mb-4">
+                            <div className="flex flex-col sm:flex-row gap-4 mb-4">
                                 <div className="flex-1 relative">
-                                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4 sm:h-5 sm:w-5" />
                                     <input
                                         type="text"
                                         placeholder="Enter location name"
-                                        className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                        className="w-full pl-8 sm:pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm sm:text-base"
                                     />
                                 </div>
-                                <select className="px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-600">
+                                <select className="px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-600 text-sm sm:text-base">
                                     <option>Unit Number</option>
                                     <option>101</option>
                                     <option>102</option>
                                     <option>201</option>
                                 </select>
-                                <Button className="px-8 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium">
+                                <Button className="px-6 sm:px-8 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium text-sm sm:text-base whitespace-nowrap">
                                     Get Report
                                 </Button>
                             </div>
 
-                            <p className="text-sm text-gray-500 text-center">
+                            <p className="text-xs sm:text-sm text-gray-500 text-center">
                                 *Select the unit number as per the Title Deed. | <Link href="#" className="text-emerald-600 hover:underline">View Sample</Link>
                             </p>
                         </motion.div>
@@ -183,20 +187,20 @@ export default function PropertyValuationPage() {
             </section>
 
             {/* Property Value Display Section */}
-            <section className="py-20 bg-gradient-to-b from-cyan-50 to-white">
-                <div className="container mx-auto px-4">
+            <section className="section-padding bg-gradient-to-b from-cyan-50 to-white">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
+                        className="text-center mb-12 sm:mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-800 mb-8">
+                        <h2 className="text-responsive-h2 font-bold text-gray-800 mb-6 sm:mb-8">
                             What is Property Valuation™?
                         </h2>
 
-                        <div className="max-w-4xl mx-auto bg-gradient-to-r from-emerald-100 to-teal-100 rounded-3xl p-12 relative overflow-hidden">
+                        <div className="max-w-4xl mx-auto bg-gradient-to-r from-emerald-100 to-teal-100 rounded-2xl sm:rounded-3xl p-6 sm:p-12 relative overflow-hidden">
                             {/* Background Pattern */}
                             <div className="absolute inset-0 opacity-10">
                                 <svg viewBox="0 0 400 300" className="w-full h-full">
@@ -210,22 +214,22 @@ export default function PropertyValuationPage() {
                                 </svg>
                             </div>
 
-                            <div className="relative z-10 max-w-md mx-auto bg-white rounded-2xl shadow-xl p-8">
-                                <div className="flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mx-auto mb-6">
-                                    <Home className="h-8 w-8 text-emerald-600" />
+                            <div className="relative z-10 max-w-sm mx-auto bg-white rounded-xl sm:rounded-2xl shadow-xl p-6 sm:p-8">
+                                <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-emerald-100 rounded-full mx-auto mb-4 sm:mb-6">
+                                    <Home className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-600" />
                                 </div>
 
-                                <div className="text-center mb-6">
-                                    <p className="text-gray-600 text-lg mb-2">CAD</p>
-                                    <h3 className="text-4xl font-bold text-gray-800">3,620,000</h3>
-                                    <div className="flex items-center justify-center gap-2 mt-4">
-                                        <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
-                                        <span className="text-emerald-600 font-medium">High Confidence</span>
+                                <div className="text-center mb-4 sm:mb-6">
+                                    <p className="text-gray-600 text-base sm:text-lg mb-2">CAD</p>
+                                    <h3 className="text-2xl sm:text-4xl font-bold text-gray-800">3,620,000</h3>
+                                    <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">
+                                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-emerald-500 rounded-full"></div>
+                                        <span className="text-emerald-600 font-medium text-sm sm:text-base">High Confidence</span>
                                     </div>
                                 </div>
 
                                 {/* Mock Chart */}
-                                <div className="h-24 bg-gradient-to-r from-emerald-100 to-emerald-200 rounded-lg flex items-end justify-center p-4">
+                                <div className="h-16 sm:h-24 bg-gradient-to-r from-emerald-100 to-emerald-200 rounded-lg flex items-end justify-center p-2 sm:p-4">
                                     <svg viewBox="0 0 200 60" className="w-full h-full">
                                         <path
                                             d="M 10 50 Q 50 30 100 35 T 190 25"
@@ -239,8 +243,8 @@ export default function PropertyValuationPage() {
                             </div>
                         </div>
 
-                        <div className="max-w-3xl mx-auto mt-12 text-lg text-gray-600 leading-relaxed">
-                            <p className="mb-6">
+                        <div className="max-w-3xl mx-auto mt-8 sm:mt-12 text-responsive-base text-gray-600 leading-relaxed">
+                            <p className="mb-4 sm:mb-6">
                                 Property Valuation™ is an AI-powered online home value estimator that provides you an
                                 accurate and up-to-date, data-backed property value estimation to help you understand
                                 market dynamics and make informed real estate decisions in Canada.
@@ -256,20 +260,20 @@ export default function PropertyValuationPage() {
             </section>
 
             {/* Why Use Property Valuation Section */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-4">
+            <section className="section-padding bg-white">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
+                        className="text-center mb-12 sm:mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-800 mb-16">
+                        <h2 className="text-responsive-h2 font-bold text-gray-800 mb-12 sm:mb-16">
                             Why use Property Valuation™?
                         </h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+                        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12 max-w-6xl mx-auto">
                             {/* Data-Backed */}
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
@@ -278,11 +282,11 @@ export default function PropertyValuationPage() {
                                 transition={{ duration: 0.8, delay: 0.1 }}
                                 className="text-center"
                             >
-                                <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <BarChart3 className="h-10 w-10 text-blue-600" />
+                                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                                    <BarChart3 className="h-8 w-8 sm:h-10 sm:w-10 text-blue-600" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-800 mb-4">Data-Backed</h3>
-                                <p className="text-gray-600 leading-relaxed">
+                                <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Data-Backed</h3>
+                                <p className="text-gray-600 leading-relaxed text-sm sm:text-base px-4 sm:px-0">
                                     Our rich, AI powered solution ensures your estimates align with actual Canadian market trends
                                     across Toronto, Vancouver, Montreal, Calgary and other major cities.
                                 </p>
@@ -296,11 +300,11 @@ export default function PropertyValuationPage() {
                                 transition={{ duration: 0.8, delay: 0.2 }}
                                 className="text-center"
                             >
-                                <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <TrendingUp className="h-10 w-10 text-emerald-600" />
+                                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                                    <TrendingUp className="h-8 w-8 sm:h-10 sm:w-10 text-emerald-600" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-800 mb-4">Detailed Insights</h3>
-                                <p className="text-gray-600 leading-relaxed">
+                                <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Detailed Insights</h3>
+                                <p className="text-gray-600 leading-relaxed text-sm sm:text-base px-4 sm:px-0">
                                     Get your Canadian property's detailed value, rental yield, history and comparable properties,
                                     all in one comprehensive report tailored for the Canadian market.
                                 </p>
@@ -314,11 +318,11 @@ export default function PropertyValuationPage() {
                                 transition={{ duration: 0.8, delay: 0.3 }}
                                 className="text-center"
                             >
-                                <div className="w-20 h-20 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <Shield className="h-10 w-10 text-cyan-600" />
+                                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                                    <Shield className="h-8 w-8 sm:h-10 sm:w-10 text-cyan-600" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-800 mb-4">Trustworthy</h3>
-                                <p className="text-gray-600 leading-relaxed">
+                                <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Trustworthy</h3>
+                                <p className="text-gray-600 leading-relaxed text-sm sm:text-base px-4 sm:px-0">
                                     Designed with transparency in mind, a reliable choice for Canadian property owners, sellers,
                                     buyers and renters across all provinces and territories.
                                 </p>
@@ -329,16 +333,16 @@ export default function PropertyValuationPage() {
             </section>
 
             {/* FAQ Section */}
-            <section className="py-20 bg-gray-50">
-                <div className="container mx-auto px-4">
+            <section className="section-padding bg-gray-50">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
+                        className="text-center mb-12 sm:mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-800 mb-12">
+                        <h2 className="text-responsive-h2 font-bold text-gray-800 mb-8 sm:mb-12">
                             Frequently Asked Questions
                         </h2>
 
@@ -354,13 +358,13 @@ export default function PropertyValuationPage() {
                                 >
                                     <button
                                         onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                                        className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                                        className="w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                                     >
-                                        <span className="text-lg font-medium text-gray-800">{faq.question}</span>
+                                        <span className="text-base sm:text-lg font-medium text-gray-800 pr-4">{faq.question}</span>
                                         {openFaq === index ? (
-                                            <ChevronUp className="h-5 w-5 text-gray-600" />
+                                            <ChevronUp className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600 flex-shrink-0" />
                                         ) : (
-                                            <ChevronDown className="h-5 w-5 text-gray-600" />
+                                            <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600 flex-shrink-0" />
                                         )}
                                     </button>
                                     {openFaq === index && (
@@ -369,7 +373,7 @@ export default function PropertyValuationPage() {
                                             animate={{ opacity: 1, height: 'auto' }}
                                             exit={{ opacity: 0, height: 0 }}
                                             transition={{ duration: 0.3 }}
-                                            className="px-6 pb-4 text-gray-600 leading-relaxed"
+                                            className="px-4 sm:px-6 pb-3 sm:pb-4 text-gray-600 leading-relaxed text-sm sm:text-base"
                                         >
                                             {faq.answer}
                                         </motion.div>
@@ -382,8 +386,8 @@ export default function PropertyValuationPage() {
             </section>
 
             {/* Agent Contact Section */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-4">
+            <section className="section-padding bg-white">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -391,40 +395,40 @@ export default function PropertyValuationPage() {
                         transition={{ duration: 0.8 }}
                         className="text-center"
                     >
-                        <div className="flex justify-center mb-8">
-                            <div className="flex -space-x-4">
-                                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                        <div className="flex justify-center mb-6 sm:mb-8">
+                            <div className="flex -space-x-2 sm:-space-x-4">
+                                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-xl shadow-lg">
                                     JS
                                 </div>
-                                <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-xl shadow-lg">
                                     MR
                                 </div>
-                                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-xl shadow-lg">
                                     AL
                                 </div>
-                                <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-xl shadow-lg">
                                     SK
                                 </div>
                             </div>
                         </div>
 
-                        <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                        <h2 className="text-responsive-h3 font-bold text-gray-800 mb-3 sm:mb-4">
                             Need help selling or renting out your property?
                         </h2>
-                        <p className="text-lg text-gray-600 mb-8">
+                        <p className="text-responsive-base text-gray-600 mb-6 sm:mb-8">
                             Get in touch with our featured Canadian agents and agencies.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
                             <div className="relative flex-1 w-full">
-                                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4 sm:h-5 sm:w-5" />
                                 <input
                                     type="text"
                                     placeholder="Enter location"
-                                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                    className="w-full pl-8 sm:pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm sm:text-base"
                                 />
                             </div>
-                            <Button className="px-8 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium whitespace-nowrap">
+                            <Button className="px-6 sm:px-8 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium whitespace-nowrap text-sm sm:text-base w-full sm:w-auto">
                                 Search Agents
                             </Button>
                         </div>

@@ -74,25 +74,26 @@ export default function ListingDetailsClient({ slug }: ListingDetailsClientProps
   return (
     <div className="min-h-screen bg-gray-50">
       <motion.div
-        className="bg-white shadow-sm border-b sticky top-20 z-40"
+        className="bg-white shadow-sm border-b sticky top-16 sm:top-20 z-40"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             <Link
               href={listing.status === 'for-sale' ? '/buy' : '/rent'}
-              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm sm:text-base"
             >
-              <ArrowLeft className="h-5 w-5" />
-              <span>Back to listings</span>
+              <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="hidden sm:inline">Back to listings</span>
+              <span className="sm:hidden">Back</span>
             </Link>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1 sm:gap-2">
               <SaveButton listingId={listing.id} />
-              <Button variant="outline" size="sm">
-                <Share2 className="h-4 w-4 mr-2" />
-                Share
+              <Button variant="outline" size="sm" className="text-xs sm:text-sm px-2 sm:px-3">
+                <Share2 className="h-4 w-4 sm:mr-2" />
+                <span className="hidden sm:inline">Share</span>
               </Button>
             </div>
           </div>
@@ -104,58 +105,61 @@ export default function ListingDetailsClient({ slug }: ListingDetailsClientProps
       </motion.div>
 
       <motion.div
-        className="container mx-auto px-4 py-8"
+        className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8"
         {...fadeInUp}
         transition={{ delay: 0.2 }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="lg:col-span-2 space-y-6 sm:space-y-8">
             {/* Property Header */}
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-4 gap-4">
+                <div className="flex-1">
+                  <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                     {formatPrice(listing.priceCAD, listing.status === 'for-rent')}
                   </h1>
-                  <div className="flex items-center text-gray-600 mb-2">
-                    <MapPin className="h-4 w-4 mr-1" />
-                    <span>{listing.address}</span>
+                  <div className="flex items-center text-gray-600 mb-2 text-sm sm:text-base">
+                    <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
+                    <span className="truncate">{listing.address}</span>
                   </div>
-                  <p className="text-gray-600">{listing.city}, {listing.province}</p>
+                  <p className="text-gray-600 text-sm sm:text-base">{listing.city}, {listing.province}</p>
                 </div>
 
-                <div className="flex items-center gap-4 text-center">
+                <div className="flex items-center justify-center sm:justify-start gap-4 sm:gap-6 text-center bg-gray-50 sm:bg-transparent p-3 sm:p-0 rounded-lg sm:rounded-none">
                   {listing.beds > 0 && (
-                    <div className="flex items-center gap-1">
-                      <Bed className="h-5 w-5 text-gray-500" />
-                      <span className="font-medium">{listing.beds}</span>
+                    <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+                      <Bed className="h-4 w-4 sm:h-5 sm:w-5 text-gray-500" />
+                      <span className="font-medium text-sm sm:text-base">{listing.beds}</span>
+                      <span className="text-xs text-gray-500 sm:hidden">beds</span>
                     </div>
                   )}
-                  <div className="flex items-center gap-1">
-                    <Bath className="h-5 w-5 text-gray-500" />
-                    <span className="font-medium">{listing.baths}</span>
+                  <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+                    <Bath className="h-4 w-4 sm:h-5 sm:w-5 text-gray-500" />
+                    <span className="font-medium text-sm sm:text-base">{listing.baths}</span>
+                    <span className="text-xs text-gray-500 sm:hidden">baths</span>
                   </div>
-                  <div className="flex items-center gap-1">
-                    <Square className="h-5 w-5 text-gray-500" />
-                    <span className="font-medium">{formatSquareFeet(listing.areaSqft)}</span>
+                  <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+                    <Square className="h-4 w-4 sm:h-5 sm:w-5 text-gray-500" />
+                    <span className="font-medium text-xs sm:text-base">{formatSquareFeet(listing.areaSqft)}</span>
+                    <span className="text-xs text-gray-500 sm:hidden">sqft</span>
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+              <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600">
                 <div className="flex items-center gap-1">
-                  <Home className="h-4 w-4" />
+                  <Home className="h-4 w-4 flex-shrink-0" />
                   <span className="capitalize">{listing.propertyType.replace('-', ' ')}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <Calendar className="h-4 w-4" />
+                  <Calendar className="h-4 w-4 flex-shrink-0" />
                   <span>Built {listing.yearBuilt}</span>
                 </div>
-                <span>•</span>
+                <span className="hidden sm:inline">•</span>
                 <span>{listing.daysOnMarket} days on market</span>
                 {listing.verified && (
                   <>
-                    <span>•</span>
+                    <span className="hidden sm:inline">•</span>
                     <span className="text-emerald-600 font-medium">Verified</span>
                   </>
                 )}
@@ -163,28 +167,28 @@ export default function ListingDetailsClient({ slug }: ListingDetailsClientProps
             </div>
 
             {/* Description */}
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">Description</h2>
-              <p className="text-gray-600 leading-relaxed">{listing.description}</p>
+            <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
+              <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Description</h2>
+              <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{listing.description}</p>
             </div>
 
             {/* Features */}
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">Features & Amenities</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
+              <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Features & Amenities</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
                 {listing.features.map((feature: string, index: number) => (
                   <div key={index} className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                    <span className="text-gray-700">{feature}</span>
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700 text-sm sm:text-base">{feature}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Map */}
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">Location</h2>
-              <div className="h-80 rounded-lg overflow-hidden">
+            <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
+              <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Location</h2>
+              <div className="h-64 sm:h-80 rounded-lg overflow-hidden">
                 <MapView listings={[listing]} showSearch={false} />
               </div>
             </div>
@@ -192,26 +196,26 @@ export default function ListingDetailsClient({ slug }: ListingDetailsClientProps
 
           <div className="space-y-6">
             {/* Contact Form */}
-            <div className="bg-white rounded-lg shadow-sm p-6 sticky top-32">
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 lg:sticky lg:top-32">
+              <div className="mb-4 sm:mb-6">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">
                   Contact Agent
                 </h3>
                 {agent && (
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0">
                       <Image
                         src={agent.headshot}
                         alt={agent.name}
                         width={48}
                         height={48}
                         unoptimized
-                        className="object-cover w-12 h-12"
+                        className="object-cover w-10 h-10 sm:w-12 sm:h-12"
                       />
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900">{agent.name}</p>
-                      <p className="text-sm text-gray-600">{agent.brokerage}</p>
+                      <p className="font-medium text-gray-900 text-sm sm:text-base">{agent.name}</p>
+                      <p className="text-xs sm:text-sm text-gray-600">{agent.brokerage}</p>
                     </div>
                   </div>
                 )}

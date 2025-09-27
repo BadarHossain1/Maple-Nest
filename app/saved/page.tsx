@@ -329,23 +329,23 @@ export default function SavedPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-32">
-      <div className="container mx-auto px-4 pb-16">
+    <div className="min-h-screen bg-gray-50 pt-20 sm:pt-24 md:pt-32">
+      <div className="container mx-auto px-4 pb-12 sm:pb-16">
         {/* Header */}
         <motion.div
-          className="mb-8"
+          className="mb-6 sm:mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="text-center mb-8">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full">
-                <Heart className="h-8 w-8 text-red-500 fill-current" />
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
+              <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-red-100 rounded-full">
+                <Heart className="h-6 w-6 sm:h-8 sm:w-8 text-red-500 fill-current" />
               </div>
-              <div>
-                <h1 className="text-4xl font-bold text-gray-900">Your Favorites</h1>
-                <p className="text-lg text-gray-600">
+              <div className="text-center sm:text-left">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Your Favorites</h1>
+                <p className="text-sm sm:text-base md:text-lg text-gray-600">
                   Manage your saved properties and searches
                 </p>
               </div>
@@ -353,30 +353,34 @@ export default function SavedPage() {
           </div>
 
           {/* Tabs */}
-          <div className="flex justify-center mb-8">
-            <div className="flex bg-white rounded-xl shadow-sm p-1 border">
+          <div className="flex justify-center mb-6 sm:mb-8">
+            <div className="flex bg-white rounded-xl shadow-sm p-1 border w-full max-w-md">
               <button
                 onClick={() => setActiveTab('properties')}
-                className={`px-8 py-3 rounded-lg font-medium transition-all ${activeTab === 'properties'
+                className={`flex-1 px-4 sm:px-8 py-2.5 sm:py-3 rounded-lg font-medium transition-all text-sm sm:text-base ${activeTab === 'properties'
                   ? 'bg-emerald-500 text-white shadow-sm'
                   : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                   }`}
               >
-                <div className="flex items-center gap-2">
-                  <Heart className="h-4 w-4" />
-                  Properties ({savedProperties.length})
+                <div className="flex items-center justify-center gap-1 sm:gap-2">
+                  <Heart className="h-3 w-3 sm:h-4 sm:w-4" />
+                  <span className="hidden sm:inline">Properties</span>
+                  <span className="sm:hidden">Props</span>
+                  ({savedProperties.length})
                 </div>
               </button>
               <button
                 onClick={() => setActiveTab('searches')}
-                className={`px-8 py-3 rounded-lg font-medium transition-all ${activeTab === 'searches'
+                className={`flex-1 px-4 sm:px-8 py-2.5 sm:py-3 rounded-lg font-medium transition-all text-sm sm:text-base ${activeTab === 'searches'
                   ? 'bg-emerald-500 text-white shadow-sm'
                   : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                   }`}
               >
-                <div className="flex items-center gap-2">
-                  <Search className="h-4 w-4" />
-                  Searches ({savedSearches.length})
+                <div className="flex items-center justify-center gap-1 sm:gap-2">
+                  <Search className="h-3 w-3 sm:h-4 sm:w-4" />
+                  <span className="hidden sm:inline">Searches</span>
+                  <span className="sm:hidden">Search</span>
+                  ({savedSearches.length})
                 </div>
               </button>
             </div>

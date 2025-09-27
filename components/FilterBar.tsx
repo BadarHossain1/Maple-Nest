@@ -41,21 +41,21 @@ export function FilterBar({
   const cities = ['Toronto', 'Vancouver', 'Montreal', 'Calgary', 'Ottawa'];
 
   return (
-    <div className="bg-white border-b border-gray-200 sticky top-32 z-30">
-      <div className="container mx-auto px-4">
+    <div className="bg-white border-b border-gray-200 sticky top-24 sm:top-32 z-30">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Quick Filters */}
-        <div className="flex items-center gap-4 py-4 overflow-x-auto">
+        <div className="flex items-center gap-2 sm:gap-4 py-3 sm:py-4 overflow-x-auto scrollbar-hide">
           <Button
             variant="outline"
             size="sm"
             onClick={() => setIsExpanded(!isExpanded)}
             className={cn(
-              'flex items-center gap-2 whitespace-nowrap',
+              'flex items-center gap-2 whitespace-nowrap flex-shrink-0',
               hasActiveFilters && 'border-emerald-500 text-emerald-600'
             )}
           >
             <Filter className="h-4 w-4" />
-            Filters
+            <span className="hidden sm:inline">Filters</span>
             {hasActiveFilters && (
               <span className="bg-emerald-100 text-emerald-700 px-1.5 py-0.5 rounded-full text-xs">
                 {Object.keys(filters).length}
@@ -64,13 +64,13 @@ export function FilterBar({
           </Button>
 
           {/* Price Range Quick Filters */}
-          <div className="flex items-center gap-2">
-            {['Under $500K', '$500K-$1M', '$1M-$2M', 'Over $2M'].map((range) => (
+          <div className="flex items-center gap-2 overflow-x-auto">
+            {['<$500K', '$500K-$1M', '$1M-$2M', '>$2M'].map((range) => (
               <Button
                 key={range}
                 variant="outline"
                 size="sm"
-                className="whitespace-nowrap"
+                className="whitespace-nowrap flex-shrink-0 text-xs sm:text-sm px-2 sm:px-3"
                 onClick={() => {
                   // Implement price range logic
                   console.log('Price range:', range);
@@ -87,7 +87,7 @@ export function FilterBar({
               variant="ghost"
               size="sm"
               onClick={clearFilters}
-              className="text-red-600 hover:text-red-700 hover:bg-red-50"
+              className="text-red-600 hover:text-red-700 hover:bg-red-50 whitespace-nowrap flex-shrink-0 text-xs sm:text-sm"
             >
               Clear All
             </Button>
@@ -101,16 +101,16 @@ export function FilterBar({
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="border-t border-gray-200 py-6 space-y-6"
+            className="border-t border-gray-200 py-4 sm:py-6 space-y-4 sm:space-y-6"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {/* Location */}
               <div className="space-y-2">
-                <Label className="font-medium text-gray-900">City</Label>
+                <Label className="font-medium text-gray-900 text-sm sm:text-base">City</Label>
                 <select
                   value={filters.city || ''}
                   onChange={(e) => updateFilter('city', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
                 >
                   <option value="">All Cities</option>
                   {cities.map(city => (
@@ -122,11 +122,11 @@ export function FilterBar({
               {/* Property Type */}
               {showPropertyType && (
                 <div className="space-y-2">
-                  <Label className="font-medium text-gray-900">Property Type</Label>
+                  <Label className="font-medium text-gray-900 text-sm sm:text-base">Property Type</Label>
                   <select
                     value={filters.propertyType || ''}
                     onChange={(e) => updateFilter('propertyType', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
                   >
                     <option value="">All Types</option>
                     {propertyTypes.map(type => (
@@ -140,21 +140,21 @@ export function FilterBar({
 
               {/* Price Range */}
               <div className="space-y-2">
-                <Label className="font-medium text-gray-900">Price Range</Label>
+                <Label className="font-medium text-gray-900 text-sm sm:text-base">Price Range</Label>
                 <div className="flex gap-2">
                   <Input
                     type="number"
                     placeholder="Min"
                     value={filters.minPrice || ''}
                     onChange={(e) => updateFilter('minPrice', e.target.value)}
-                    className="flex-1"
+                    className="flex-1 text-sm sm:text-base"
                   />
                   <Input
                     type="number"
                     placeholder="Max"
                     value={filters.maxPrice || ''}
                     onChange={(e) => updateFilter('maxPrice', e.target.value)}
-                    className="flex-1"
+                    className="flex-1 text-sm sm:text-base"
                   />
                 </div>
               </div>
@@ -162,7 +162,7 @@ export function FilterBar({
               {/* Bedrooms/Bathrooms (not for commercial) */}
               {!showCommercialFilters && (
                 <div className="space-y-2">
-                  <Label className="font-medium text-gray-900">Bedrooms</Label>
+                  <Label className="font-medium text-gray-900 text-sm sm:text-base">Bedrooms</Label>
                   <div className="flex gap-1">
                     {[1, 2, 3, 4, 5].map((num) => (
                       <Button
@@ -170,7 +170,7 @@ export function FilterBar({
                         variant={filters.beds === num ? 'default' : 'outline'}
                         size="sm"
                         onClick={() => updateFilter('beds', num)}
-                        className="flex-1"
+                        className="flex-1 text-xs sm:text-sm px-1 sm:px-2"
                       >
                         {num}+
                       </Button>
@@ -181,11 +181,11 @@ export function FilterBar({
             </div>
 
             {/* Second Row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {/* Bathrooms (not for commercial) */}
               {!showCommercialFilters && (
                 <div className="space-y-2">
-                  <Label className="font-medium text-gray-900">Bathrooms</Label>
+                  <Label className="font-medium text-gray-900 text-sm sm:text-base">Bathrooms</Label>
                   <div className="flex gap-1">
                     {[1, 2, 3, 4].map((num) => (
                       <Button
@@ -193,7 +193,7 @@ export function FilterBar({
                         variant={filters.baths === num ? 'default' : 'outline'}
                         size="sm"
                         onClick={() => updateFilter('baths', num)}
-                        className="flex-1"
+                        className="flex-1 text-xs sm:text-sm px-1 sm:px-2"
                       >
                         {num}+
                       </Button>
@@ -204,32 +204,32 @@ export function FilterBar({
 
               {/* Square Footage */}
               <div className="space-y-2">
-                <Label className="font-medium text-gray-900">Square Footage</Label>
+                <Label className="font-medium text-gray-900 text-sm sm:text-base">Square Footage</Label>
                 <div className="flex gap-2">
                   <Input
                     type="number"
                     placeholder="Min sq ft"
                     value={filters.minSqft || ''}
                     onChange={(e) => updateFilter('minSqft', e.target.value)}
-                    className="flex-1"
+                    className="flex-1 text-sm sm:text-base"
                   />
                   <Input
                     type="number"
                     placeholder="Max sq ft"
                     value={filters.maxSqft || ''}
                     onChange={(e) => updateFilter('maxSqft', e.target.value)}
-                    className="flex-1"
+                    className="flex-1 text-sm sm:text-base"
                   />
                 </div>
               </div>
 
               {/* Year Built */}
               <div className="space-y-2">
-                <Label className="font-medium text-gray-900">Year Built</Label>
+                <Label className="font-medium text-gray-900 text-sm sm:text-base">Year Built</Label>
                 <select
                   value={filters.yearBuilt || ''}
                   onChange={(e) => updateFilter('yearBuilt', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
                 >
                   <option value="">Any Year</option>
                   <option value="2020+">2020 or newer</option>
@@ -241,8 +241,8 @@ export function FilterBar({
 
               {/* Features */}
               <div className="space-y-2">
-                <Label className="font-medium text-gray-900">Features</Label>
-                <div className="space-y-2">
+                <Label className="font-medium text-gray-900 text-sm sm:text-base">Features</Label>
+                <div className="space-y-1 sm:space-y-2">
                   {['Parking', 'Gym', 'Concierge', 'Balcony', 'Pet Friendly'].map((feature) => (
                     <label key={feature} className="flex items-center space-x-2">
                       <input
@@ -257,7 +257,7 @@ export function FilterBar({
                         }}
                         className="rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
                       />
-                      <span className="text-sm text-gray-700">{feature}</span>
+                      <span className="text-xs sm:text-sm text-gray-700">{feature}</span>
                     </label>
                   ))}
                 </div>
@@ -267,7 +267,7 @@ export function FilterBar({
             <div className="flex justify-end pt-4 border-t border-gray-200">
               <Button
                 onClick={() => setIsExpanded(false)}
-                className="px-8"
+                className="px-6 sm:px-8 text-sm sm:text-base btn-mobile"
               >
                 Apply Filters
               </Button>

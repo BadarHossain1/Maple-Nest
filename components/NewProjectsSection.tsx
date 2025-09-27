@@ -258,7 +258,7 @@ function PropertySlider({ projects, city }: PropertySliderProps) {
                     {projects.map((project) => (
                         <div key={project.id} className="flex-shrink-0" style={{ width: `${100 / projects.length}%` }}>
                             <div className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
-                                <div className="relative h-48">
+                                <div className="relative h-40 sm:h-48">
                                     <Image
                                         src={project.image}
                                         alt={project.name}
@@ -267,27 +267,27 @@ function PropertySlider({ projects, city }: PropertySliderProps) {
                                         className="object-cover"
                                     />
                                 </div>
-                                <div className="p-6">
-                                    <h3 className="text-lg font-semibold text-gray-900 mb-1">{project.name}</h3>
-                                    <p className="text-sm text-gray-500 mb-2">{project.type}</p>
-                                    <div className="flex items-start gap-1 text-sm text-gray-600 mb-4">
-                                        <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                                <div className="p-4 sm:p-6">
+                                    <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1 truncate">{project.name}</h3>
+                                    <p className="text-xs sm:text-sm text-gray-500 mb-2">{project.type}</p>
+                                    <div className="flex items-start gap-1 text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4">
+                                        <MapPin className="h-3 w-3 sm:h-4 sm:w-4 mt-0.5 flex-shrink-0" />
                                         <span className="line-clamp-2">{project.location}</span>
                                     </div>
 
-                                    <div className="flex justify-between items-center mb-4">
+                                    <div className="flex justify-between items-center mb-3 sm:mb-4">
                                         <div>
                                             <p className="text-xs text-gray-500">Launch Price</p>
-                                            <p className="text-lg font-bold text-green-600">{project.launchPrice}</p>
+                                            <p className="text-base sm:text-lg font-bold text-green-600">{project.launchPrice}</p>
                                         </div>
                                         <div className="text-right">
                                             <p className="text-xs text-gray-500">Handover</p>
-                                            <p className="text-sm font-medium text-gray-900">{project.handover}</p>
+                                            <p className="text-xs sm:text-sm font-medium text-gray-900">{project.handover}</p>
                                         </div>
                                     </div>
 
                                     <Button
-                                        className="w-full bg-green-50 text-green-700 hover:bg-green-100 border border-green-200"
+                                        className="w-full bg-green-50 text-green-700 hover:bg-green-100 border border-green-200 text-xs sm:text-sm"
                                         variant="outline"
                                     >
                                         <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -308,16 +308,16 @@ function PropertySlider({ projects, city }: PropertySliderProps) {
                     <button
                         onClick={prevSlide}
                         disabled={currentIndex === 0}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors"
+                        className="absolute left-0 sm:left-1 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full shadow-lg flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors z-10"
                     >
-                        <ChevronLeft className="h-5 w-5 text-gray-600" />
+                        <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" />
                     </button>
                     <button
                         onClick={nextSlide}
                         disabled={currentIndex >= maxIndex}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors"
+                        className="absolute right-0 sm:right-1 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full shadow-lg flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors z-10"
                     >
-                        <ChevronRight className="h-5 w-5 text-gray-600" />
+                        <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" />
                     </button>
                 </>
             )}
@@ -329,22 +329,22 @@ export function NewProjectsSection() {
     const [activeCity, setActiveCity] = useState<CityName>('Toronto');
 
     return (
-        <section className="py-16 bg-white">
-            <div className="max-w-7xl mx-auto px-4">
+        <section className="section-padding bg-white">
+            <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-12"
+                    className="text-center mb-8 sm:mb-12"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    <h2 className="text-responsive-h2 font-bold text-gray-900 mb-3 sm:mb-4">
                         Browse New Projects in Canada
                     </h2>
                 </motion.div>
 
                 {/* City Tabs */}
                 <motion.div
-                    className="flex flex-wrap justify-center gap-2 mb-12"
+                    className="flex flex-wrap justify-center gap-2 mb-8 sm:mb-12 overflow-x-auto pb-2"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
@@ -353,7 +353,7 @@ export function NewProjectsSection() {
                         <button
                             key={city}
                             onClick={() => setActiveCity(city)}
-                            className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeCity === city
+                            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 text-sm sm:text-base whitespace-nowrap ${activeCity === city
                                     ? 'bg-green-100 text-green-700 border border-green-200'
                                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200 border border-transparent'
                                 }`}

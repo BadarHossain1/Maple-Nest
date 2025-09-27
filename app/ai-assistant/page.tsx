@@ -206,63 +206,64 @@ export default function AIAssistantPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Header */}
       <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-        <div className="container mx-auto px-4 py-4">
+        <div className="section-padding py-3 sm:py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4 min-w-0">
               <Link href="/">
-                <Button variant="ghost" size="sm">
-                  <ArrowLeft className="h-4 w-4 mr-2" />
+                <Button variant="ghost" size="sm" className="text-xs sm:text-sm">
+                  <ArrowLeft className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                   Back
                 </Button>
               </Link>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 sm:gap-3 min-w-0">
                 <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center">
-                    <Bot className="h-6 w-6 text-white" />
+                  <div className="w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center">
+                    <Bot className="h-4 w-4 sm:h-6 sm:w-6 text-white" />
                   </div>
-                  <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+                  <div className="absolute -bottom-0.5 -right-0.5 sm:-bottom-1 sm:-right-1 w-3 h-3 sm:w-4 sm:h-4 bg-green-500 rounded-full border-2 border-white"></div>
                 </div>
-                <div>
-                  <h1 className="text-xl font-bold text-gray-900">PropertyGPT</h1>
-                  <p className="text-sm text-gray-600">AI Real Estate Assistant</p>
+                <div className="min-w-0">
+                  <h1 className="text-base sm:text-xl font-bold text-gray-900 truncate">PropertyGPT</h1>
+                  <p className="text-xs sm:text-sm text-gray-600 truncate">AI Real Estate Assistant</p>
                 </div>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Badge variant="secondary" className="bg-green-100 text-green-700">
-                <Sparkles className="h-3 w-3 mr-1" />
-                Online
+              <Badge variant="secondary" className="bg-green-100 text-green-700 text-xs">
+                <Sparkles className="h-2.5 w-2.5 sm:h-3 sm:w-3 mr-1" />
+                <span className="hidden sm:inline">Online</span>
+                <span className="sm:hidden">●</span>
               </Badge>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <div className="section-padding py-4 sm:py-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-8">
           {/* Sidebar */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-4 sm:space-y-6">
             {/* Quick Actions */}
             <Card>
-              <CardContent className="p-6">
-                <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <Lightbulb className="h-4 w-4 text-yellow-500" />
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2 text-sm sm:text-base">
+                  <Lightbulb className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-500" />
                   Quick Actions
                 </h3>
-                <div className="space-y-3">
+                <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 sm:gap-3">
                   {quickActions.map((action, index) => (
                     <motion.button
                       key={index}
                       onClick={() => handleSendMessage(action.prompt)}
-                      className="w-full p-3 text-left rounded-lg border border-gray-200 hover:border-emerald-300 hover:bg-emerald-50 transition-all duration-200 group"
+                      className="w-full p-2.5 sm:p-3 text-left rounded-lg border border-gray-200 hover:border-emerald-300 hover:bg-emerald-50 transition-all duration-200 group"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <div className="flex items-center gap-3">
-                        <div className={`w-8 h-8 ${action.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                          <action.icon className="h-4 w-4 text-white" />
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <div className={`w-6 h-6 sm:w-8 sm:h-8 ${action.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                          <action.icon className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
                         </div>
-                        <span className="font-medium text-gray-700 group-hover:text-emerald-700">
+                        <span className="font-medium text-gray-700 group-hover:text-emerald-700 text-xs sm:text-sm truncate">
                           {action.label}
                         </span>
                       </div>
@@ -273,10 +274,10 @@ export default function AIAssistantPage() {
             </Card>
 
             {/* Example Questions */}
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <MessageSquare className="h-4 w-4 text-blue-500" />
+            <Card className="hidden lg:block">
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2 text-sm sm:text-base">
+                  <MessageSquare className="h-3 w-3 sm:h-4 sm:w-4 text-blue-500" />
                   Popular Questions
                 </h3>
                 <div className="space-y-2">
@@ -284,7 +285,7 @@ export default function AIAssistantPage() {
                     <button
                       key={index}
                       onClick={() => handleSendMessage(question)}
-                      className="w-full text-left text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 p-2 rounded transition-all duration-200"
+                      className="w-full text-left text-xs sm:text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 p-2 rounded transition-all duration-200"
                     >
                       {question}
                     </button>
@@ -296,9 +297,9 @@ export default function AIAssistantPage() {
 
           {/* Chat Interface */}
           <div className="lg:col-span-3">
-            <Card className="h-[700px] flex flex-col">
+            <Card className="h-[60vh] sm:h-[70vh] lg:h-[700px] flex flex-col">
               {/* Chat Messages */}
-              <div className="flex-1 overflow-y-auto p-6 space-y-6">
+              <div className="flex-1 overflow-y-auto p-3 sm:p-6 space-y-4 sm:space-y-6">
                 <AnimatePresence>
                   {messages.map((message) => (
                     <motion.div
@@ -306,37 +307,37 @@ export default function AIAssistantPage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}
-                      className={`flex gap-4 ${message.type === 'user' ? 'flex-row-reverse' : 'flex-row'}`}
+                      className={`flex gap-2 sm:gap-4 ${message.type === 'user' ? 'flex-row-reverse' : 'flex-row'}`}
                     >
                       {/* Avatar */}
-                      <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center ${
+                      <div className={`flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center ${
                         message.type === 'user' 
                           ? 'bg-blue-500' 
                           : 'bg-gradient-to-br from-emerald-500 to-teal-600'
                       }`}>
                         {message.type === 'user' ? (
-                          <User className="h-5 w-5 text-white" />
+                          <User className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                         ) : (
-                          <Bot className="h-5 w-5 text-white" />
+                          <Bot className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                         )}
                       </div>
 
                       {/* Message Content */}
-                      <div className={`flex-1 max-w-3xl ${message.type === 'user' ? 'text-right' : 'text-left'}`}>
-                        <div className={`inline-block p-4 rounded-2xl ${
+                      <div className={`flex-1 max-w-[85%] sm:max-w-3xl ${message.type === 'user' ? 'text-right' : 'text-left'}`}>
+                        <div className={`inline-block p-3 sm:p-4 rounded-2xl text-sm sm:text-base ${
                           message.type === 'user'
                             ? 'bg-blue-500 text-white rounded-br-md'
                             : 'bg-white border border-gray-200 text-gray-800 rounded-bl-md shadow-sm'
                         }`}>
                           <div className="prose prose-sm max-w-none">
                             {message.content.split('\n').map((line, index) => (
-                              <div key={index} className={message.type === 'user' ? 'text-white' : ''}>
+                              <div key={index} className={`${message.type === 'user' ? 'text-white' : ''} text-xs sm:text-sm leading-relaxed`}>
                                 {line.startsWith('**') && line.endsWith('**') ? (
                                   <strong>{line.replace(/\*\*/g, '')}</strong>
                                 ) : line.startsWith('•') ? (
-                                  <div className="ml-4">{line}</div>
+                                  <div className="ml-3 sm:ml-4">{line}</div>
                                 ) : line.startsWith('#') ? (
-                                  <h3 className="font-semibold mt-2 mb-1">{line.replace(/^#+\s/, '')}</h3>
+                                  <h3 className="font-semibold mt-2 mb-1 text-sm sm:text-base">{line.replace(/^#+\s/, '')}</h3>
                                 ) : (
                                   line
                                 )}
@@ -345,14 +346,14 @@ export default function AIAssistantPage() {
                           </div>
                           
                           {message.type === 'assistant' && (
-                            <div className="flex items-center gap-2 mt-3 pt-2 border-t border-gray-100">
-                              <Button variant="ghost" size="sm" onClick={() => copyMessage(message.content)}>
+                            <div className="flex items-center gap-1 sm:gap-2 mt-2 sm:mt-3 pt-2 border-t border-gray-100">
+                              <Button variant="ghost" size="sm" onClick={() => copyMessage(message.content)} className="p-1 sm:p-2">
                                 <Copy className="h-3 w-3" />
                               </Button>
-                              <Button variant="ghost" size="sm">
+                              <Button variant="ghost" size="sm" className="p-1 sm:p-2">
                                 <ThumbsUp className="h-3 w-3" />
                               </Button>
-                              <Button variant="ghost" size="sm">
+                              <Button variant="ghost" size="sm" className="p-1 sm:p-2">
                                 <ThumbsDown className="h-3 w-3" />
                               </Button>
                               <span className="text-xs text-gray-500 ml-auto">
@@ -364,14 +365,14 @@ export default function AIAssistantPage() {
 
                         {/* Suggestions */}
                         {message.suggestions && (
-                          <div className="flex flex-wrap gap-2 mt-3">
+                          <div className="flex flex-wrap gap-1 sm:gap-2 mt-2 sm:mt-3">
                             {message.suggestions.map((suggestion, index) => (
                               <Button
                                 key={index}
                                 variant="outline"
                                 size="sm"
                                 onClick={() => handleSendMessage(suggestion)}
-                                className="text-xs hover:bg-emerald-50 hover:border-emerald-300"
+                                className="text-xs hover:bg-emerald-50 hover:border-emerald-300 px-2 sm:px-3 py-1"
                               >
                                 {suggestion}
                               </Button>
@@ -387,20 +388,20 @@ export default function AIAssistantPage() {
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex gap-4"
+                    className="flex gap-2 sm:gap-4"
                   >
-                    <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center">
-                      <Bot className="h-5 w-5 text-white" />
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center">
+                      <Bot className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                     </div>
                     <div className="flex-1">
-                      <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-md p-4 shadow-sm">
+                      <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-md p-3 sm:p-4 shadow-sm">
                         <div className="flex items-center gap-2">
                           <div className="flex gap-1">
                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce"></div>
                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                           </div>
-                          <span className="text-sm text-gray-500">PropertyGPT is typing...</span>
+                          <span className="text-xs sm:text-sm text-gray-500">PropertyGPT is typing...</span>
                         </div>
                       </div>
                     </div>
@@ -411,13 +412,13 @@ export default function AIAssistantPage() {
               </div>
 
               {/* Input Area */}
-              <div className="border-t border-gray-200 p-6">
+              <div className="border-t border-gray-200 p-3 sm:p-6">
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
                     handleSendMessage();
                   }}
-                  className="flex gap-4 items-end"
+                  className="flex gap-2 sm:gap-4 items-end"
                 >
                   <div className="flex-1 relative">
                     <input
@@ -426,7 +427,7 @@ export default function AIAssistantPage() {
                       value={inputValue}
                       onChange={(e) => setInputValue(e.target.value)}
                       placeholder="Ask me anything about Canadian real estate..."
-                      className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-none"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 pr-10 sm:pr-12 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-none text-sm sm:text-base"
                       disabled={isLoading}
                     />
                     <Button
@@ -434,22 +435,22 @@ export default function AIAssistantPage() {
                       variant="ghost"
                       size="sm"
                       onClick={toggleListening}
-                      className={`absolute right-2 top-1/2 transform -translate-y-1/2 ${
+                      className={`absolute right-1 sm:right-2 top-1/2 transform -translate-y-1/2 p-1 sm:p-2 ${
                         isListening ? 'text-red-500' : 'text-gray-400'
                       }`}
                     >
-                      {isListening ? <MicOff className="h-4 w-4" /> : <Mic className="h-4 w-4" />}
+                      {isListening ? <MicOff className="h-3 w-3 sm:h-4 sm:w-4" /> : <Mic className="h-3 w-3 sm:h-4 sm:w-4" />}
                     </Button>
                   </div>
                   <Button
                     type="submit"
                     disabled={!inputValue.trim() || isLoading}
-                    className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-xl"
+                    className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl"
                   >
                     {isLoading ? (
-                      <RefreshCw className="h-4 w-4 animate-spin" />
+                      <RefreshCw className="h-3 w-3 sm:h-4 sm:w-4 animate-spin" />
                     ) : (
-                      <Send className="h-4 w-4" />
+                      <Send className="h-3 w-3 sm:h-4 sm:w-4" />
                     )}
                   </Button>
                 </form>

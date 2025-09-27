@@ -59,26 +59,26 @@ export default function ContactPage() {
 
     if (isSubmitted) {
         return (
-            <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-white flex items-center justify-center">
+            <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-white flex items-center justify-center px-4">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6 }}
-                    className="bg-white rounded-2xl shadow-xl p-12 text-center max-w-md mx-4"
+                    className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 md:p-12 text-center max-w-md mx-auto w-full"
                 >
-                    <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <CheckCircle className="h-8 w-8 text-emerald-600" />
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <CheckCircle className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-600" />
                     </div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">Thank You!</h2>
-                    <p className="text-gray-600 mb-8">
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Thank You!</h2>
+                    <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8">
                         Your message has been sent successfully. Our team will get back to you within 24 hours.
                     </p>
                     <div className="space-y-3">
-                        <Button onClick={() => setIsSubmitted(false)} className="w-full">
+                        <Button onClick={() => setIsSubmitted(false)} className="w-full text-sm sm:text-base">
                             Send Another Message
                         </Button>
                         <Link href="/">
-                            <Button variant="outline" className="w-full">
+                            <Button variant="outline" className="w-full text-sm sm:text-base">
                                 Return to Home
                             </Button>
                         </Link>
@@ -92,16 +92,16 @@ export default function ContactPage() {
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
             {/* Header */}
             <div className="bg-white border-b border-gray-200">
-                <div className="container mx-auto px-4 py-6">
+                <div className="container mx-auto px-4 py-4 sm:py-6">
                     <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-emerald-600 transition-colors w-fit">
-                        <ArrowLeft className="h-5 w-5" />
-                        <span>Back to Home</span>
+                        <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+                        <span className="text-sm sm:text-base">Back to Home</span>
                     </Link>
                 </div>
             </div>
 
-            <div className="container mx-auto px-4 py-12">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+            <div className="container mx-auto px-4 py-8 sm:py-10 md:py-12">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 max-w-7xl mx-auto">
                     {/* Contact Information */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
@@ -109,42 +109,42 @@ export default function ContactPage() {
                         transition={{ duration: 0.8 }}
                         className="lg:col-span-1"
                     >
-                        <div className="bg-emerald-600 rounded-2xl p-8 text-white h-fit">
-                            <h2 className="text-2xl font-bold mb-2">Get in Touch</h2>
-                            <p className="text-emerald-100 mb-8">
+                        <div className="bg-emerald-600 rounded-2xl p-6 sm:p-8 text-white h-fit">
+                            <h2 className="text-xl sm:text-2xl font-bold mb-2">Get in Touch</h2>
+                            <p className="text-emerald-100 mb-6 sm:mb-8 text-sm sm:text-base">
                                 Ready to find your dream home? Our expert team is here to help you navigate Canada&apos;s real estate market.
                             </p>
 
-                            <div className="space-y-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <Phone className="h-5 w-5" />
+                            <div className="space-y-4 sm:space-y-6">
+                                <div className="flex items-start gap-3 sm:gap-4">
+                                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
                                     </div>
                                     <div>
-                                        <h3 className="font-semibold mb-1">Phone</h3>
-                                        <p className="text-emerald-100">+1 (416) 555-0123</p>
-                                        <p className="text-emerald-100">+1 (604) 555-0456</p>
+                                        <h3 className="font-semibold mb-1 text-sm sm:text-base">Phone</h3>
+                                        <p className="text-emerald-100 text-sm sm:text-base">+1 (416) 555-0123</p>
+                                        <p className="text-emerald-100 text-sm sm:text-base">+1 (604) 555-0456</p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <Mail className="h-5 w-5" />
+                                <div className="flex items-start gap-3 sm:gap-4">
+                                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
                                     </div>
                                     <div>
-                                        <h3 className="font-semibold mb-1">Email</h3>
-                                        <p className="text-emerald-100">info@maplenest.ca</p>
-                                        <p className="text-emerald-100">support@maplenest.ca</p>
+                                        <h3 className="font-semibold mb-1 text-sm sm:text-base">Email</h3>
+                                        <p className="text-emerald-100 text-sm sm:text-base">info@maplenest.ca</p>
+                                        <p className="text-emerald-100 text-sm sm:text-base">support@maplenest.ca</p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <MapPin className="h-5 w-5" />
+                                <div className="flex items-start gap-3 sm:gap-4">
+                                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <MapPin className="h-4 w-4 sm:h-5 sm:w-5" />
                                     </div>
                                     <div>
-                                        <h3 className="font-semibold mb-1">Offices</h3>
-                                        <p className="text-emerald-100 mb-2">
+                                        <h3 className="font-semibold mb-1 text-sm sm:text-base">Offices</h3>
+                                        <p className="text-emerald-100 mb-2 text-sm sm:text-base">
                                             Toronto: 123 Bay Street<br />
                                             Toronto, ON M5K 1A1
                                         </p>
@@ -194,56 +194,56 @@ export default function ContactPage() {
                         transition={{ duration: 0.8 }}
                         className="lg:col-span-2"
                     >
-                        <div className="bg-white rounded-2xl shadow-xl p-8">
-                            <div className="mb-8">
-                                <h1 className="text-3xl font-bold text-gray-900 mb-4">Contact Us</h1>
-                                <p className="text-gray-600">
+                        <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8">
+                            <div className="mb-6 sm:mb-8">
+                                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Contact Us</h1>
+                                <p className="text-sm sm:text-base text-gray-600">
                                     Fill out the form below and we&apos;ll get back to you as soon as possible.
                                     Let us help you find your perfect Canadian home.
                                 </p>
                             </div>
 
-                            <form onSubmit={handleSubmit} className="space-y-6">
+                            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                                 {/* Personal Information */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                                        <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
                                             First Name *
                                         </label>
                                         <div className="relative">
-                                            <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                                            <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4 sm:h-5 sm:w-5" />
                                             <input
                                                 type="text"
                                                 name="firstName"
                                                 value={formData.firstName}
                                                 onChange={handleInputChange}
                                                 required
-                                                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                                                className="w-full pl-9 sm:pl-10 pr-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
                                                 placeholder="John"
                                             />
                                         </div>
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                                        <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
                                             Last Name *
                                         </label>
                                         <div className="relative">
-                                            <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                                            <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4 sm:h-5 sm:w-5" />
                                             <input
                                                 type="text"
                                                 name="lastName"
                                                 value={formData.lastName}
                                                 onChange={handleInputChange}
                                                 required
-                                                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                                                className="w-full pl-9 sm:pl-10 pr-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
                                                 placeholder="Doe"
                                             />
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                                     <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-2">
                                             Email Address *
