@@ -92,7 +92,7 @@ export function Header() {
               <button
                 className={cn(
                   'flex items-center gap-1 text-sm font-medium transition-colors relative',
-                  pathname.startsWith('/area-guides') || pathname.startsWith('/building-guides') || pathname.startsWith('/school-guides')
+                  pathname && (pathname.startsWith('/area-guides') || pathname.startsWith('/building-guides') || pathname.startsWith('/school-guides'))
                     ? 'text-emerald-600'
                     : 'text-gray-700 hover:text-emerald-600'
                 )}
@@ -101,7 +101,7 @@ export function Header() {
               >
                 Guides
                 <ChevronDown className="h-4 w-4" />
-                {(pathname.startsWith('/area-guides') || pathname.startsWith('/building-guides') || pathname.startsWith('/school-guides')) && (
+                {pathname && (pathname.startsWith('/area-guides') || pathname.startsWith('/building-guides') || pathname.startsWith('/school-guides')) && (
                   <motion.div
                     className="absolute -bottom-8 left-0 right-0 h-0.5 bg-emerald-600"
                     layoutId="activeNav"

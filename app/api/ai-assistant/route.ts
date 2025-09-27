@@ -22,14 +22,16 @@ CORE EXPERTISE:
 - Property valuation and pricing
 
 RESPONSE GUIDELINES:
-- Always provide specific, actionable information
-- Use current Canadian market data when possible
-- Include relevant examples with Canadian cities and prices
+- Always provide complete, well-structured responses
+- Ensure every response ends with a proper conclusion
+- Use specific, actionable information with Canadian examples
+- Include relevant market data and pricing when possible
 - Format responses with clear sections and bullet points
 - Add relevant emojis to make responses engaging
 - Always end with a helpful follow-up question
-- Keep responses concise but comprehensive (200-400 words)
+- Keep responses comprehensive but digestible (250-500 words)
 - Use Canadian terminology (e.g., realtor, MLS, CMHC, etc.)
+- Never cut off responses mid-sentence - always complete your thoughts
 
 MARKET CONTEXT (2025):
 - Average home prices: Toronto $1.3M, Vancouver $1.5M, Montreal $550K, Calgary $500K
@@ -87,7 +89,9 @@ export async function POST(request: NextRequest) {
           model: modelName,
           generationConfig: {
             temperature: 0.7,
-            maxOutputTokens: 1000,
+            maxOutputTokens: 2048, // Increased from 1000 to allow longer responses
+            topP: 0.9,
+            topK: 40,
           },
         });
         console.log(`Successfully initialized model: ${modelName}`);
@@ -129,7 +133,9 @@ export async function POST(request: NextRequest) {
     // Generate response with better error handling
     let result;
     try {
+      console.log('Generating content with prompt length:', prompt.length);
       result = await model.generateContent(prompt);
+      console.log('Content generation completed successfully');
     } catch (modelError: any) {
       console.error('Model error:', modelError);
       
@@ -156,11 +162,20 @@ export async function POST(request: NextRequest) {
         ]
       }, { status: 500 });
     }
-    
+
     const response = await result.response;
     const text = response.text();
-
-    // Generate follow-up suggestions based on the response
+    
+    console.log('Generated response length:', text.length);
+    console.log('Response preview:', text.substring(0, 100) + '...');
+    
+    // Check if response seems incomplete (ends abruptly)
+    const lastChar = text.trim().slice(-1);
+    const isIncomplete = !['.', '!', '?', ':', ')'].includes(lastChar) && text.length > 50;
+    
+    if (isIncomplete) {
+      console.warn('Response appears incomplete, last char:', lastChar);
+    }    // Generate follow-up suggestions based on the response
     const suggestions = await generateFollowUpSuggestions(message, text);
 
     return NextResponse.json({
