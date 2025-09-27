@@ -6,16 +6,22 @@ import Link from 'next/link';
 export function Hero() {
   return (
     <section className="relative min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source 
+            src="https://res.cloudinary.com/ddatffr7f/video/upload/v1759001835/Untitled_video_-_Made_with_Clipchamp_1_sktylb.mp4" 
+            type="video/mp4" 
+          />
+          {/* Fallback image if video doesn't load */}
+          Your browser does not support the video tag.
+        </video>
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
@@ -194,7 +200,7 @@ export function FeatureCards() {
                 </div>
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
-                Property Valuation™
+                AI Property Valuation™
               </h3>
               <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
                 Get accurate market valuations for your Canadian property instantly
@@ -232,7 +238,7 @@ export function FeatureCards() {
                 </div>
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
-                Commute Finder
+                Smart Commute Finder
               </h3>
               <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
                 Find homes based on your daily commute time across Canadian cities
