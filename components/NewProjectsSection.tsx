@@ -19,214 +19,214 @@ interface Project {
 }
 
 // City type
-type CityName = 'Toronto' | 'Vancouver' | 'Montreal' | 'Calgary' | 'Ottawa' | 'Halifax';
+type CityName = 'London' | 'Manchester' | 'Edinburgh' | 'Bristol' | 'Birmingham' | 'Leeds';
 
-// Dummy Canadian new project data
+// Dummy UK new project data
 const newProjectsData: Record<CityName, Project[]> = {
-    Toronto: [
+    London: [
         {
-            id: 'skyview-condos-toronto',
+            id: 'skyview-condos-London',
             name: 'SkyView Condos',
             type: 'Apartments',
-            location: 'SkyView Condos, Downtown, Toronto, ON',
-            launchPrice: 'CAD 650K',
+            location: 'SkyView Condos, Downtown, London, ON',
+            launchPrice: 'GBP 650K',
             handover: 'Q4 2025',
             image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         },
         {
-            id: 'liberty-towers-toronto',
+            id: 'liberty-towers-London',
             name: 'Liberty Towers',
             type: 'Condominiums',
-            location: 'Liberty Village, Toronto, ON',
-            launchPrice: 'CAD 750K',
+            location: 'Liberty Village, London, ON',
+            launchPrice: 'GBP 750K',
             handover: 'Q2 2026',
             image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         },
         {
-            id: 'harbourfront-residences-toronto',
+            id: 'harbourfront-residences-London',
             name: 'Harbourfront Residences',
             type: 'Luxury Condos',
-            location: 'Harbourfront, Toronto, ON',
-            launchPrice: 'CAD 900K',
+            location: 'Harbourfront, London, ON',
+            launchPrice: 'GBP 900K',
             handover: 'Q1 2027',
             image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         },
         {
-            id: 'yorkville-heights-toronto',
+            id: 'yorkville-heights-London',
             name: 'Yorkville Heights',
             type: 'Penthouses',
-            location: 'Yorkville, Toronto, ON',
-            launchPrice: 'CAD 1.2M',
+            location: 'Yorkville, London, ON',
+            launchPrice: 'GBP 1.2M',
             handover: 'Q3 2026',
             image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         }
     ],
-    Vancouver: [
+    Manchester: [
         {
-            id: 'pacific-view-vancouver',
+            id: 'pacific-view-Manchester',
             name: 'Pacific View',
             type: 'Waterfront Condos',
-            location: 'Coal Harbour, Vancouver, BC',
-            launchPrice: 'CAD 850K',
+            location: 'Coal Harbour, Manchester, BC',
+            launchPrice: 'GBP 850K',
             handover: 'Q3 2025',
             image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         },
         {
-            id: 'mountain-ridge-vancouver',
+            id: 'mountain-ridge-Manchester',
             name: 'Mountain Ridge',
             type: 'Townhouses',
-            location: 'North Vancouver, BC',
-            launchPrice: 'CAD 1.1M',
+            location: 'North Manchester, BC',
+            launchPrice: 'GBP 1.1M',
             handover: 'Q1 2026',
             image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         },
         {
-            id: 'olympic-village-vancouver',
+            id: 'olympic-village-Manchester',
             name: 'Olympic Village Lofts',
             type: 'Lofts',
-            location: 'Olympic Village, Vancouver, BC',
-            launchPrice: 'CAD 720K',
+            location: 'Olympic Village, Manchester, BC',
+            launchPrice: 'GBP 720K',
             handover: 'Q4 2026',
             image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         },
         {
-            id: 'west-end-towers-vancouver',
+            id: 'west-end-towers-Manchester',
             name: 'West End Towers',
             type: 'High-rise Condos',
-            location: 'West End, Vancouver, BC',
-            launchPrice: 'CAD 950K',
+            location: 'West End, Manchester, BC',
+            launchPrice: 'GBP 950K',
             handover: 'Q2 2027',
             image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         }
     ],
-    Montreal: [
+    Edinburgh: [
         {
-            id: 'plateau-lofts-montreal',
+            id: 'plateau-lofts-Edinburgh',
             name: 'Plateau Lofts',
             type: 'Urban Lofts',
-            location: 'Plateau-Mont-Royal, Montreal, QC',
-            launchPrice: 'CAD 450K',
+            location: 'Plateau-Mont-Royal, Edinburgh, QC',
+            launchPrice: 'GBP 450K',
             handover: 'Q3 2025',
             image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         },
         {
-            id: 'old-port-condos-montreal',
+            id: 'old-port-condos-Edinburgh',
             name: 'Old Port Condos',
             type: 'Heritage Condos',
-            location: 'Old Port, Montreal, QC',
-            launchPrice: 'CAD 550K',
+            location: 'Old Port, Edinburgh, QC',
+            launchPrice: 'GBP 550K',
             handover: 'Q1 2026',
             image: 'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         },
         {
-            id: 'downtown-suites-montreal',
+            id: 'downtown-suites-Edinburgh',
             name: 'Downtown Suites',
             type: 'Studio & 1BR',
-            location: 'Downtown, Montreal, QC',
-            launchPrice: 'CAD 380K',
+            location: 'Downtown, Edinburgh, QC',
+            launchPrice: 'GBP 380K',
             handover: 'Q4 2025',
             image: 'https://images.unsplash.com/photo-1560185007-5f0bb1866cab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         },
         {
-            id: 'griffintown-towers-montreal',
+            id: 'griffintown-towers-Edinburgh',
             name: 'Griffintown Towers',
             type: 'Modern Condos',
-            location: 'Griffintown, Montreal, QC',
-            launchPrice: 'CAD 520K',
+            location: 'Griffintown, Edinburgh, QC',
+            launchPrice: 'GBP 520K',
             handover: 'Q2 2026',
             image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         }
     ],
-    Calgary: [
+    Bristol: [
         {
-            id: 'bow-river-residences-calgary',
+            id: 'bow-river-residences-Bristol',
             name: 'Bow River Residences',
             type: 'Riverside Condos',
-            location: 'Bow River, Calgary, AB',
-            launchPrice: 'CAD 420K',
+            location: 'Bow River, Bristol, AB',
+            launchPrice: 'GBP 420K',
             handover: 'Q3 2025',
             image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         },
         {
-            id: 'downtown-core-calgary',
+            id: 'downtown-core-Bristol',
             name: 'Downtown Core',
             type: 'Office Condos',
-            location: 'Downtown, Calgary, AB',
-            launchPrice: 'CAD 380K',
+            location: 'Downtown, Bristol, AB',
+            launchPrice: 'GBP 380K',
             handover: 'Q1 2026',
             image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         },
         {
-            id: 'kensington-heights-calgary',
+            id: 'kensington-heights-Bristol',
             name: 'Kensington Heights',
             type: 'Family Condos',
-            location: 'Kensington, Calgary, AB',
-            launchPrice: 'CAD 480K',
+            location: 'Kensington, Bristol, AB',
+            launchPrice: 'GBP 480K',
             handover: 'Q4 2026',
             image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         },
         {
-            id: 'mission-district-calgary',
+            id: 'mission-district-Bristol',
             name: 'Mission District',
             type: 'Urban Living',
-            location: 'Mission, Calgary, AB',
-            launchPrice: 'CAD 350K',
+            location: 'Mission, Bristol, AB',
+            launchPrice: 'GBP 350K',
             handover: 'Q2 2027',
             image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         }
     ],
-    Ottawa: [
+    Birmingham: [
         {
-            id: 'byward-market-condos-ottawa',
+            id: 'byward-market-condos-Birmingham',
             name: 'ByWard Market Condos',
             type: 'Historic Lofts',
-            location: 'ByWard Market, Ottawa, ON',
-            launchPrice: 'CAD 420K',
+            location: 'ByWard Market, Birmingham, ON',
+            launchPrice: 'GBP 420K',
             handover: 'Q4 2025',
             image: 'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         },
         {
-            id: 'rideau-centre-ottawa',
+            id: 'rideau-centre-Birmingham',
             name: 'Rideau Centre Living',
             type: 'Mixed-use',
-            location: 'Rideau Centre, Ottawa, ON',
-            launchPrice: 'CAD 450K',
+            location: 'Rideau Centre, Birmingham, ON',
+            launchPrice: 'GBP 450K',
             handover: 'Q2 2026',
             image: 'https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         },
         {
-            id: 'westboro-village-ottawa',
+            id: 'westboro-village-Birmingham',
             name: 'Westboro Village',
             type: 'Community Living',
-            location: 'Westboro, Ottawa, ON',
-            launchPrice: 'CAD 380K',
+            location: 'Westboro, Birmingham, ON',
+            launchPrice: 'GBP 380K',
             handover: 'Q1 2027',
             image: 'https://images.unsplash.com/photo-1600607688960-e095d9c3c0e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         }
     ],
-    Halifax: [
+    Leeds: [
         {
-            id: 'waterfront-district-halifax',
+            id: 'waterfront-district-Leeds',
             name: 'Waterfront District',
             type: 'Coastal Condos',
-            location: 'Halifax Waterfront, NS',
-            launchPrice: 'CAD 320K',
+            location: 'Leeds Waterfront, NS',
+            launchPrice: 'GBP 320K',
             handover: 'Q3 2025',
             image: 'https://images.unsplash.com/photo-1600607688618-94e3e39e2adf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         },
         {
-            id: 'downtown-halifax-towers',
-            name: 'Downtown Halifax Towers',
+            id: 'downtown-Leeds-towers',
+            name: 'Downtown Leeds Towers',
             type: 'Urban Condos',
-            location: 'Downtown, Halifax, NS',
-            launchPrice: 'CAD 280K',
+            location: 'Downtown, Leeds, NS',
+            launchPrice: 'GBP 280K',
             handover: 'Q1 2026',
             image: 'https://images.unsplash.com/photo-1600607688822-6b5c0a7b9d16?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         }
     ]
 };
 
-const cities: CityName[] = ['Toronto', 'Vancouver', 'Montreal', 'Calgary', 'Ottawa', 'Halifax'];
+const cities: CityName[] = ['London', 'Manchester', 'Edinburgh', 'Bristol', 'Birmingham', 'Leeds'];
 
 interface PropertySliderProps {
     projects: Project[];
@@ -326,7 +326,7 @@ function PropertySlider({ projects, city }: PropertySliderProps) {
 }
 
 export function NewProjectsSection() {
-    const [activeCity, setActiveCity] = useState<CityName>('Toronto');
+    const [activeCity, setActiveCity] = useState<CityName>('London');
 
     return (
         <section className="section-padding bg-white">
@@ -338,7 +338,7 @@ export function NewProjectsSection() {
                     className="text-center mb-8 sm:mb-12"
                 >
                     <h2 className="text-responsive-h2 font-bold text-gray-900 mb-3 sm:mb-4">
-                        Browse New Projects in Canada
+                        Browse New Projects in UK
                     </h2>
                 </motion.div>
 
@@ -397,3 +397,5 @@ export function NewProjectsSection() {
         </section>
     );
 }
+
+

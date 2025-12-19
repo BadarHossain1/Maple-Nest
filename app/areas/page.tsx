@@ -35,7 +35,7 @@ export default function AreasPage() {
               Neighborhood Guides
             </h1>
             <p className="text-base sm:text-lg text-gray-600">
-              Discover the best neighborhoods across Canada. Get insights into local lifestyle, 
+              Discover the best neighborhoods across UK. Get insights into local lifestyle, 
               amenities, schools, and real estate trends to find your perfect community.
             </p>
           </motion.div>

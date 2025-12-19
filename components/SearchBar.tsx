@@ -17,11 +17,11 @@ export function SearchBar({ featured = false, onSearch }: SearchBarProps) {
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   const popularSearches = [
-    'Toronto condos',
-    'Vancouver waterfront',
-    'Montreal lofts',
-    'Calgary family homes',
-    'Ottawa rentals',
+    'London condos',
+    'Manchester waterfront',
+    'Edinburgh lofts',
+    'Bristol family homes',
+    'Birmingham rentals',
   ];
 
   const handleSearch = () => {

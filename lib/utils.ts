@@ -7,11 +7,11 @@ export function cn(...inputs: ClassValue[]) {
 
 export function formatPrice(price: number, isRental: boolean = false): string {
   if (price >= 1000000) {
-    return `$${(price / 1000000).toFixed(1)}M`;
+    return `£${(price / 1000000).toFixed(1)}M`;
   } else if (price >= 1000) {
-    return `$${Math.round(price / 1000)}K`;
+    return `£${Math.round(price / 1000)}K`;
   } else {
-    return `$${price.toLocaleString()}`;
+    return `£${price.toLocaleString()}`;
   }
 }
 
@@ -20,9 +20,9 @@ export function formatSquareFeet(sqft: number): string {
 }
 
 export function formatCurrency(amount: number): string {
-  return new Intl.NumberFormat('en-CA', {
+  return new Intl.NumberFormat('en-GB', {
     style: 'currency',
-    currency: 'CAD',
+    currency: 'GBP',
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   }).format(amount);
@@ -97,7 +97,7 @@ export function truncateText(text: string, maxLength: number): string {
 
 export function formatDate(date: Date | string): string {
   const dateObj = typeof date === 'string' ? new Date(date) : date;
-  return dateObj.toLocaleDateString('en-CA', {
+  return dateObj.toLocaleDateString('en-GB', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'

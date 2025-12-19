@@ -19,12 +19,12 @@ export function Footer() {
               <span className="text-xl sm:text-2xl font-bold">MapleNest</span>
             </div>
             <p className="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
-              Find your perfect home across Canada. Discover exceptional properties 
-              in Toronto, Vancouver, Montreal, Calgary, and Ottawa.
+              Find your perfect home across UK. Discover exceptional properties 
+              in London, Manchester, Edinburgh, Bristol, and Birmingham.
             </p>
             <div className="flex items-center gap-2 text-gray-400 text-sm sm:text-base">
               <MapPin className="h-4 w-4" />
-              <span>Serving Canada Coast to Coast</span>
+              <span>Serving UK Coast to Coast</span>
             </div>
           </div>
 
@@ -62,7 +62,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2 text-gray-400 text-sm sm:text-base">
                 <Mail className="h-4 w-4 flex-shrink-0" />
-                <span className="break-all">hello@maplenest.ca</span>
+                <span className="break-all">hello@maplenest.co.uk</span>
               </div>
             </div>
             

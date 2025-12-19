@@ -56,7 +56,7 @@ export function FeaturedListings() {
             Featured Properties
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover our hand-picked selection of exceptional properties across Canada's 
+            Discover our hand-picked selection of exceptional properties across UK's 
             most desirable locations.
           </p>
         </motion.div>

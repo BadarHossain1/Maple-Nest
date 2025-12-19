@@ -12,12 +12,12 @@ import { Textarea } from '@/components/ui/textarea';
 // Extended project data (same as in AllNewProjectsPage)
 const allNewProjects = [
     {
-        id: 'skyview-condos-toronto',
+        id: 'skyview-condos-london',
         name: 'SkyView Condos',
         type: 'Apartments',
-        city: 'Toronto',
+        city: 'london',
         province: 'ON',
-        location: 'SkyView Condos, Downtown, Toronto, ON',
+        location: 'SkyView Condos, Downtown, london, England',
         launchPrice: 650000,
         handover: 'Q4 2025',
         images: [
@@ -28,7 +28,7 @@ const allNewProjects = [
         beds: 2,
         baths: 2,
         sqft: 950,
-        description: 'Experience modern urban living at SkyView Condos, located in the heart of downtown Toronto. These stunning condominiums offer breathtaking city views, premium finishes, and unparalleled access to the city\'s best dining, shopping, and entertainment. With spacious layouts and floor-to-ceiling windows, each unit is designed to maximize natural light and provide a luxurious living experience.',
+        description: 'Experience modern urban living at SkyView Condos, located in the heart of downtown london. These stunning condominiums offer breathtaking city views, premium finishes, and unparalleled access to the city\'s best dining, shopping, and entertainment. With spacious layouts and floor-to-ceiling windows, each unit is designed to maximize natural light and provide a luxurious living experience.',
         features: [
             'Floor-to-ceiling windows',
             'Premium kitchen appliances',
@@ -43,17 +43,17 @@ const allNewProjects = [
         ],
         developer: {
             name: 'SkyLine Developments',
-            contact: 'info@skylinedevelopments.ca',
+            contact: 'info@skylinedevelopments\.co\.uk',
             phone: '+1 (416) 555-0123'
         }
     },
     {
-        id: 'liberty-towers-toronto',
+        id: 'liberty-towers-london',
         name: 'Liberty Towers',
         type: 'Condominiums',
-        city: 'Toronto',
+        city: 'london',
         province: 'ON',
-        location: 'Liberty Village, Toronto, ON',
+        location: 'Liberty Village, london, England',
         launchPrice: 750000,
         handover: 'Q2 2026',
         images: [
@@ -64,7 +64,7 @@ const allNewProjects = [
         beds: 3,
         baths: 2,
         sqft: 1200,
-        description: 'Liberty Towers brings luxury living to Toronto\'s trendy Liberty Village. These sophisticated condominiums feature open-concept designs, premium materials, and state-of-the-art amenities. Located in one of the city\'s most vibrant neighborhoods, residents enjoy easy access to parks, restaurants, and public transit.',
+        description: 'Liberty Towers brings luxury living to london\'s trendy Liberty Village. These sophisticated condominiums feature open-concept designs, premium materials, and state-of-the-art amenities. Located in one of the city\'s most vibrant neighborhoods, residents enjoy easy access to parks, restaurants, and public transit.',
         features: [
             'Open-concept design',
             'Quartz countertops',
@@ -79,17 +79,17 @@ const allNewProjects = [
         ],
         developer: {
             name: 'Liberty Development Corp',
-            contact: 'sales@libertydev.ca',
+            contact: 'sales@libertydev\.co\.uk',
             phone: '+1 (416) 555-0456'
         }
     },
     {
-        id: 'pacific-view-vancouver',
+        id: 'pacific-view-manchester',
         name: 'Pacific View',
         type: 'Waterfront Condos',
-        city: 'Vancouver',
+        city: 'manchester',
         province: 'BC',
-        location: 'Coal Harbour, Vancouver, BC',
+        location: 'Coal Harbour, manchester, England',
         launchPrice: 850000,
         handover: 'Q3 2025',
         images: [
@@ -100,7 +100,7 @@ const allNewProjects = [
         beds: 2,
         baths: 2,
         sqft: 1000,
-        description: 'Pacific View offers unparalleled waterfront living in Vancouver\'s prestigious Coal Harbour. With stunning mountain and ocean views, these luxury condos feature the finest finishes and world-class amenities. Experience the pinnacle of West Coast living in this iconic development.',
+        description: 'Pacific View offers unparalleled waterfront living in manchester\'s prestigious Coal Harbour. With stunning mountain and ocean views, these luxury condos feature the finest finishes and world-class amenities. Experience the pinnacle of West Coast living in this iconic development.',
         features: [
             'Ocean and mountain views',
             'Premium appliances',
@@ -115,23 +115,23 @@ const allNewProjects = [
         ],
         developer: {
             name: 'Pacific Coast Properties',
-            contact: 'info@pacificcoast.ca',
+            contact: 'info@pacificcoast\.co\.uk',
             phone: '+1 (604) 555-0789'
         }
     }
 ];
 
 const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('en-CA', {
+    return new Intl.NumberFormat('en-GB', {
         style: 'currency',
-        currency: 'CAD',
+        currency: 'GBP',
         minimumFractionDigits: 0,
         maximumFractionDigits: 0,
     }).format(price);
 };
 
 const formatSquareFeet = (sqft: number) => {
-    return new Intl.NumberFormat('en-CA').format(sqft) + ' sq ft';
+    return new Intl.NumberFormat('en-GB').format(sqft) + ' sq ft';
 };
 
 const fadeInUp = {
@@ -420,3 +420,4 @@ export function NewProjectDetailsClient({ slug }: NewProjectDetailsClientProps) 
         </div>
     );
 }
+

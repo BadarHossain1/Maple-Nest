@@ -12,7 +12,7 @@ interface CityData {
   other: string[];
 }
 
-type CityName = 'Toronto' | 'Vancouver' | 'Montreal';
+type CityName = 'London' | 'Manchester' | 'Edinburgh';
 
 interface PopularSearchesData {
   sale: Record<CityName, CityData>;
@@ -21,144 +21,144 @@ interface PopularSearchesData {
 
 const popularSearchesData: PopularSearchesData = {
   sale: {
-    Toronto: {
+    London: {
       apartments: [
-        'Apartments for sale in Toronto',
-        'Apartments for sale in Downtown Toronto',
-        'Apartments for sale in Yorkville',
-        'Apartments for sale in Toronto Marina',
-        'Apartments for sale in Business Bay Toronto'
+        'Flats for sale in London',
+        'Flats for sale in Central London',
+        'Flats for sale in Mayfair',
+        'Flats for sale in Canary Wharf',
+        'Flats for sale in Chelsea'
       ],
       villas: [
-        'Villas for sale in Toronto',
-        'Villas for sale in The Beaches',
-        'Villas for sale in Toronto Hills Estate',
-        'Villas for sale in High Park (Roncesvalles by TRIDEL)',
-        'Villas for sale in Distillery District'
+        'Houses for sale in London',
+        'Houses for sale in Kensington',
+        'Houses for sale in Hampstead',
+        'Houses for sale in Richmond',
+        'Houses for sale in Greenwich'
       ],
       other: [
-        'Properties for sale in Toronto',
-        'Townhouses for sale in Toronto',
-        'Penthouses for sale in Toronto',
-        'Hotel Apartments for sale in Toronto',
-        'Residential Plots for sale in Toronto'
+        'Properties for sale in London',
+        'Townhouses for sale in London',
+        'Penthouses for sale in London',
+        'Serviced Apartments for sale in London',
+        'Development Plots for sale in London'
       ]
     },
-    Vancouver: {
+    Manchester: {
       apartments: [
-        'Apartments for sale in Vancouver',
-        'Apartments for sale in Downtown Vancouver',
-        'Apartments for sale in Coal Harbour',
-        'Apartments for sale in Vancouver Marina',
-        'Apartments for sale in Yaletown'
+        'Flats for sale in Manchester',
+        'Flats for sale in Manchester City Centre',
+        'Flats for sale in Northern Quarter',
+        'Flats for sale in Deansgate',
+        'Flats for sale in Salford Quays'
       ],
       villas: [
-        'Villas for sale in Vancouver',
-        'Villas for sale in West Vancouver',
-        'Villas for sale in Vancouver Hills Estate',
-        'Villas for sale in Kitsilano (Aqua by Concord Pacific)',
-        'Villas for sale in Richmond'
+        'Houses for sale in Manchester',
+        'Houses for sale in Didsbury',
+        'Houses for sale in Chorlton',
+        'Houses for sale in Alderley Edge',
+        'Houses for sale in Prestbury'
       ],
       other: [
-        'Properties for sale in Vancouver',
-        'Townhouses for sale in Vancouver',
-        'Penthouses for sale in Vancouver',
-        'Hotel Apartments for sale in Vancouver',
-        'Residential Plots for sale in Vancouver'
+        'Properties for sale in Manchester',
+        'Townhouses for sale in Manchester',
+        'Penthouses for sale in Manchester',
+        'Serviced Apartments for sale in Manchester',
+        'Development Plots for sale in Manchester'
       ]
     },
-    Montreal: {
+    Edinburgh: {
       apartments: [
-        'Apartments for sale in Montreal',
-        'Apartments for sale in Downtown Montreal',
-        'Apartments for sale in Old Montreal',
-        'Apartments for sale in Plateau',
-        'Apartments for sale in Griffintown'
+        'Flats for sale in Edinburgh',
+        'Flats for sale in New Town',
+        'Flats for sale in Old Town',
+        'Flats for sale in Leith',
+        'Flats for sale in Stockbridge'
       ],
       villas: [
-        'Villas for sale in Montreal',
-        'Villas for sale in Westmount',
-        'Villas for sale in Montreal Hills Estate',
-        'Villas for sale in NDG (Notre-Dame-de-Grâce)',
-        'Villas for sale in Mount Royal'
+        'Houses for sale in Edinburgh',
+        'Houses for sale in Morningside',
+        'Houses for sale in Corstorphine',
+        'Houses for sale in Bruntsfield',
+        'Houses for sale in Cramond'
       ],
       other: [
-        'Properties for sale in Montreal',
-        'Townhouses for sale in Montreal',
-        'Penthouses for sale in Montreal',
-        'Hotel Apartments for sale in Montreal',
-        'Residential Plots for sale in Montreal'
+        'Properties for sale in Edinburgh',
+        'Townhouses for sale in Edinburgh',
+        'Penthouses for sale in Edinburgh',
+        'Serviced Apartments for sale in Edinburgh',
+        'Development Plots for sale in Edinburgh'
       ]
     }
   },
   offPlan: {
-    Toronto: {
+    London: {
       apartments: [
-        'Off Plan Apartments in Toronto',
-        'Off Plan Apartments in Yorkville',
-        'Off Plan Apartments in Business Bay Toronto',
-        'Off Plan Apartments in Distillery District',
-        'Off Plan Apartments in Toronto Land Residence Complex'
+        'Off Plan Flats in London',
+        'Off Plan Flats in Mayfair',
+        'Off Plan Flats in Chelsea',
+        'Off Plan Flats in Shoreditch',
+        'Off Plan Flats in Nine Elms'
       ],
       villas: [
-        'Off Plan Villas in Toronto',
-        'Off Plan Villas in High Park (Roncesvalles by TRIDEL)',
-        'Off Plan Villas in The Beaches',
-        'Off Plan Villas in The Annex',
-        'Off Plan Villas in Liberty Village'
+        'Off Plan Houses in London',
+        'Off Plan Houses in Kensington',
+        'Off Plan Houses in Hampstead',
+        'Off Plan Houses in Richmond',
+        'Off Plan Houses in Dulwich'
       ],
       other: [
-        'Off Plan Properties in Toronto',
-        'Off Plan Townhouses in Toronto',
-        'Off Plan Penthouses in Toronto',
-        'Off Plan Commercial Properties in Toronto',
-        'Off Plan Townhouses in The Junction by Daniels'
+        'Off Plan Properties in London',
+        'Off Plan Townhouses in London',
+        'Off Plan Penthouses in London',
+        'Off Plan Commercial Properties in London',
+        'Off Plan Developments in Battersea'
       ]
     },
-    Vancouver: {
+    Manchester: {
       apartments: [
-        'Off Plan Apartments in Vancouver',
-        'Off Plan Apartments in Coal Harbour',
-        'Off Plan Apartments in Yaletown',
-        'Off Plan Apartments in Richmond',
-        'Off Plan Apartments in Vancouver Land Residence Complex'
+        'Off Plan Flats in Manchester',
+        'Off Plan Flats in Northern Quarter',
+        'Off Plan Flats in Salford Quays',
+        'Off Plan Flats in Ancoats',
+        'Off Plan Flats in Spinningfields'
       ],
       villas: [
-        'Off Plan Villas in Vancouver',
-        'Off Plan Villas in Kitsilano (Aqua by Concord Pacific)',
-        'Off Plan Villas in West Vancouver',
-        'Off Plan Villas in North Shore',
-        'Off Plan Villas in Burnaby Heights'
+        'Off Plan Houses in Manchester',
+        'Off Plan Houses in Didsbury',
+        'Off Plan Houses in Chorlton',
+        'Off Plan Houses in Altrincham',
+        'Off Plan Houses in Wilmslow'
       ],
       other: [
-        'Off Plan Properties in Vancouver',
-        'Off Plan Townhouses in Vancouver',
-        'Off Plan Penthouses in Vancouver',
-        'Off Plan Commercial Properties in Vancouver',
-        'Off Plan Townhouses in Surrey by Polygon'
+        'Off Plan Properties in Manchester',
+        'Off Plan Townhouses in Manchester',
+        'Off Plan Penthouses in Manchester',
+        'Off Plan Commercial Properties in Manchester',
+        'Off Plan Developments in MediaCityUK'
       ]
     },
-    Montreal: {
+    Edinburgh: {
       apartments: [
-        'Off Plan Apartments in Montreal',
-        'Off Plan Apartments in Griffintown',
-        'Off Plan Apartments in Old Montreal',
-        'Off Plan Apartments in Plateau',
-        'Off Plan Apartments in Montreal Land Residence Complex'
+        'Off Plan Flats in Edinburgh',
+        'Off Plan Flats in New Town',
+        'Off Plan Flats in Leith',
+        'Off Plan Flats in Granton',
+        'Off Plan Flats in Quartermile'
       ],
       villas: [
-        'Off Plan Villas in Montreal',
-        'Off Plan Villas in NDG (Notre-Dame-de-Grâce)',
-        'Off Plan Villas in Westmount',
-        'Off Plan Villas in Mount Royal',
-        'Off Plan Villas in Laval'
+        'Off Plan Houses in Edinburgh',
+        'Off Plan Houses in Morningside',
+        'Off Plan Houses in Barnton',
+        'Off Plan Houses in Corstorphine',
+        'Off Plan Houses in Cramond'
       ],
       other: [
-        'Off Plan Properties in Montreal',
-        'Off Plan Townhouses in Montreal',
-        'Off Plan Penthouses in Montreal',
-        'Off Plan Commercial Properties in Montreal',
-        'Off Plan Townhouses in Brossard by DevMcGill'
+        'Off Plan Properties in Edinburgh',
+        'Off Plan Townhouses in Edinburgh',
+        'Off Plan Penthouses in Edinburgh',
+        'Off Plan Commercial Properties in Edinburgh',
+        'Off Plan Developments in Waterfront'
       ]
     }
   }
@@ -166,11 +166,11 @@ const popularSearchesData: PopularSearchesData = {
 
 export function PopularSection() {
   const [activeTab, setActiveTab] = useState<'sale' | 'rent'>('sale');
-  const [activeCity, setActiveCity] = useState<CityName>('Toronto');
+  const [activeCity, setActiveCity] = useState<CityName>('London');
   const [showMoreSale, setShowMoreSale] = useState(false);
   const [showMoreOffPlan, setShowMoreOffPlan] = useState(false);
 
-  const cities: CityName[] = ['Toronto', 'Vancouver', 'Montreal'];
+  const cities: CityName[] = ['London', 'Manchester', 'Edinburgh'];
 
   // For rent, we'll use the same structure but change the wording
   const getRentData = (cityData: CityData): CityData => {

@@ -5,12 +5,12 @@ import Link from 'next/link';
 import { ArrowRight, Building, Star, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-// Canadian luxury buildings data
+// UK luxury buildings data
 const luxuryBuildings = [
     {
         id: 1,
         name: 'One Bloor East',
-        location: 'Toronto, ON',
+        location: 'London, England',
         status: 'Luxury',
         floors: 75,
         units: 711,
@@ -20,7 +20,7 @@ const luxuryBuildings = [
     {
         id: 2,
         name: 'Trump International Hotel & Tower',
-        location: 'Vancouver, BC',
+        location: 'Manchester, England',
         status: 'Luxury',
         floors: 69,
         units: 290,
@@ -30,22 +30,22 @@ const luxuryBuildings = [
     {
         id: 3,
         name: 'The Bow',
-        location: 'Calgary, AB',
+        location: 'Bristol, England',
         status: 'Luxury',
         floors: 58,
         units: 345,
         image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop',
-        description: 'Modern architecture in Calgary\'s business district'
+        description: 'Modern architecture in Bristol\'s business district'
     },
     {
         id: 4,
         name: 'Tour des Canadiens',
-        location: 'Montreal, QC',
+        location: 'Edinburgh, Scotland',
         status: 'Luxury',
         floors: 50,
         units: 552,
         image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&h=600&fit=crop',
-        description: 'Contemporary living in downtown Montreal'
+        description: 'Contemporary living in downtown Edinburgh'
     }
 ];
 
@@ -53,27 +53,27 @@ const affordableBuildings = [
     {
         id: 5,
         name: 'The Residences of 488 University',
-        location: 'Toronto, ON',
+        location: 'London, England',
         status: 'Affordable',
         floors: 35,
         units: 420,
         image: 'https://images.unsplash.com/photo-1515263487990-61b07816b04f?w=800&h=600&fit=crop',
-        description: 'Modern living in Toronto\'s Entertainment District'
+        description: 'Modern living in London\'s Entertainment District'
     },
     {
         id: 6,
         name: 'Marine Gateway',
-        location: 'Vancouver, BC',
+        location: 'Manchester, England',
         status: 'Affordable',
         floors: 28,
         units: 398,
         image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop',
-        description: 'Transit-oriented development in South Vancouver'
+        description: 'Transit-oriented development in South Manchester'
     },
     {
         id: 7,
         name: 'The Hat',
-        location: 'Calgary, AB',
+        location: 'Bristol, England',
         status: 'Affordable',
         floors: 24,
         units: 324,
@@ -83,7 +83,7 @@ const affordableBuildings = [
     {
         id: 8,
         name: 'YUL Condominiums',
-        location: 'Montreal, QC',
+        location: 'Edinburgh, Scotland',
         status: 'Affordable',
         floors: 30,
         units: 387,
@@ -96,17 +96,17 @@ const comingSoonBuildings = [
     {
         id: 9,
         name: 'The One',
-        location: 'Toronto, ON',
+        location: 'London, England',
         status: 'Coming Soon',
         floors: 85,
         units: 416,
         image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop',
-        description: 'Canada\'s tallest residential building'
+        description: 'UK\'s tallest residential building'
     },
     {
         id: 10,
         name: 'Oakridge Centre',
-        location: 'Vancouver, BC',
+        location: 'Manchester, England',
         status: 'Coming Soon',
         floors: 42,
         units: 290,
@@ -116,7 +116,7 @@ const comingSoonBuildings = [
     {
         id: 11,
         name: 'The District on 10th',
-        location: 'Calgary, AB',
+        location: 'Bristol, England',
         status: 'Coming Soon',
         floors: 32,
         units: 268,
@@ -126,7 +126,7 @@ const comingSoonBuildings = [
     {
         id: 12,
         name: 'District Griffin',
-        location: 'Montreal, QC',
+        location: 'Edinburgh, Scotland',
         status: 'Coming Soon',
         floors: 38,
         units: 312,
@@ -154,7 +154,7 @@ export default function BuildingGuidesPage() {
                         transition={{ duration: 0.8 }}
                     >
                         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">Explore These Skyscrapers!</h1>
-                        <p className="text-sm sm:text-lg md:text-xl mb-6 sm:mb-8 px-4">Discover Canada&apos;s most impressive residential buildings</p>
+                        <p className="text-sm sm:text-lg md:text-xl mb-6 sm:mb-8 px-4">Discover UK&apos;s most impressive residential buildings</p>
                         <div className="flex justify-center px-4">
                             <div className="flex flex-col sm:flex-row items-stretch sm:items-center bg-white rounded-lg overflow-hidden shadow-lg max-w-md w-full gap-0 sm:gap-0">
                                 <input
@@ -223,7 +223,7 @@ export default function BuildingGuidesPage() {
 
                         <div className="text-center">
                             <Button variant="outline" className="group px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm">
-                                VIEW ALL LUXURY BUILDINGS IN CANADA
+                                VIEW ALL LUXURY BUILDINGS IN UK
                                 <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
                             </Button>
                         </div>
@@ -287,7 +287,7 @@ export default function BuildingGuidesPage() {
 
                         <div className="text-center">
                             <Button variant="outline" className="group px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm">
-                                VIEW ALL AFFORDABLE BUILDINGS IN CANADA
+                                VIEW ALL AFFORDABLE BUILDINGS IN UK
                                 <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
                             </Button>
                         </div>
@@ -351,7 +351,7 @@ export default function BuildingGuidesPage() {
 
                         <div className="text-center">
                             <Button variant="outline" className="group px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm">
-                                VIEW ALL UPCOMING BUILDINGS IN CANADA
+                                VIEW ALL UPCOMING BUILDINGS IN UK
                                 <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
                             </Button>
                         </div>
@@ -361,3 +361,4 @@ export default function BuildingGuidesPage() {
         </div>
     );
 }
+

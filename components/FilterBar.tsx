@@ -38,7 +38,7 @@ export function FilterBar({
     ? ['office', 'retail', 'warehouse', 'mixed-use']
     : ['condo', 'detached', 'semi-detached', 'townhouse', 'loft'];
 
-  const cities = ['Toronto', 'Vancouver', 'Montreal', 'Calgary', 'Ottawa'];
+  const cities = ['London', 'Manchester', 'Edinburgh', 'Bristol', 'Birmingham'];
 
   return (
     <div className="bg-white border-b border-gray-200 sticky top-24 sm:top-32 z-30">
@@ -65,7 +65,7 @@ export function FilterBar({
 
           {/* Price Range Quick Filters */}
           <div className="flex items-center gap-2 overflow-x-auto">
-            {['<$500K', '$500K-$1M', '$1M-$2M', '>$2M'].map((range) => (
+            {['<£500K', '£500K-£1M', '£1M-£2M', '>£2M'].map((range) => (
               <Button
                 key={range}
                 variant="outline"

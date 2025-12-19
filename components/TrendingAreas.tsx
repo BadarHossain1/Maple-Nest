@@ -39,7 +39,7 @@ export function TrendingAreas() {
             Trending Neighborhoods
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Explore Canada's most sought-after neighborhoods where lifestyle meets opportunity.
+            Explore UK's most sought-after neighborhoods where lifestyle meets opportunity.
           </p>
         </motion.div>
 

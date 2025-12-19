@@ -38,7 +38,7 @@ export default function NeighborhoodExplorerPage() {
   const mockProperties = [
     {
       id: 1,
-      price: 'CAD 1,690,000',
+      price: 'GBP 1,690,000',
       beds: 4,
       baths: 3,
       sqft: '2,250',
@@ -52,7 +52,7 @@ export default function NeighborhoodExplorerPage() {
     },
     {
       id: 2,
-      price: 'CAD 2,850,000',
+      price: 'GBP 2,850,000',
       beds: 5,
       baths: 4,
       sqft: '3,120',
@@ -66,7 +66,7 @@ export default function NeighborhoodExplorerPage() {
     },
     {
       id: 3,
-      price: 'CAD 26,500,000',
+      price: 'GBP 26,500,000',
       beds: 7,
       baths: 8,
       sqft: '8,500',
@@ -80,7 +80,7 @@ export default function NeighborhoodExplorerPage() {
     },
     {
       id: 4,
-      price: 'CAD 2,900,000',
+      price: 'GBP 2,900,000',
       beds: 4,
       baths: 5,
       sqft: '2,850',
@@ -94,7 +94,7 @@ export default function NeighborhoodExplorerPage() {
     },
     {
       id: 5,
-      price: 'CAD 1,949,999',
+      price: 'GBP 1,949,999',
       beds: 3,
       baths: 4,
       sqft: '1,875',
@@ -108,7 +108,7 @@ export default function NeighborhoodExplorerPage() {
     },
     {
       id: 6,
-      price: 'CAD 8,950,000',
+      price: 'GBP 8,950,000',
       beds: 6,
       baths: 7,
       sqft: '5,200',
@@ -180,10 +180,10 @@ export default function NeighborhoodExplorerPage() {
               </select>
 
               <select className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
-                <option>Price (CAD)</option>
-                <option>Under $500K</option>
-                <option>$500K - $1M</option>
-                <option>$1M+</option>
+                <option>Price (GBP)</option>
+                <option>Under £500K</option>
+                <option>£500K - £1M</option>
+                <option>£1M+</option>
               </select>
 
               <select className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
@@ -224,7 +224,7 @@ export default function NeighborhoodExplorerPage() {
         <div className="w-1/2 bg-white border-r border-gray-200 h-screen overflow-y-auto">
           <div className="p-4">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold text-gray-900">Properties for sale in Canada</h2>
+              <h2 className="text-lg font-semibold text-gray-900">Properties for sale in UK</h2>
               <button className="text-emerald-600 text-sm hover:underline">Clear Filters</button>
             </div>
 
@@ -318,39 +318,39 @@ export default function NeighborhoodExplorerPage() {
             {/* Interactive Map */}
             <div className="absolute inset-0">
               <svg viewBox="0 0 800 600" className="w-full h-full">
-                {/* Map Background with Canadian Geography */}
-                <rect width="800" height="600" fill="url(#canadaMapGradient)" />
+                {/* Map Background with UK Geography */}
+                <rect width="800" height="600" fill="url(#UKMapGradient)" />
                 
                 {/* Water Bodies */}
                 <path d="M0,200 Q100,180 200,200 Q300,220 400,200 Q500,180 600,200 Q700,220 800,200 L800,0 L0,0 Z" fill="#a7f3d0" opacity="0.6" />
                 <path d="M0,600 Q100,580 200,600 Q300,620 400,600 Q500,580 600,600 Q700,620 800,600 L800,400 Q700,380 600,400 Q500,420 400,400 Q300,380 200,400 Q100,420 0,400 Z" fill="#a7f3d0" opacity="0.6" />
                 
-                {/* Major Canadian Cities Areas */}
-                {/* Toronto Area */}
+                {/* Major UK Cities Areas */}
+                {/* London Area */}
                 <g transform="translate(600, 300)">
                   <circle cx="0" cy="0" r="60" fill="#f0fdf4" opacity="0.8" />
-                  <text x="0" y="5" textAnchor="middle" className="text-sm font-medium fill-emerald-700">Toronto</text>
+                  <text x="0" y="5" textAnchor="middle" className="text-sm font-medium fill-emerald-700">London</text>
                   {/* CN Tower landmark */}
                   <line x1="0" y1="-20" x2="0" y2="-40" stroke="#4ade80" strokeWidth="2" />
                   <circle cx="0" cy="-40" r="3" fill="#4ade80" />
                 </g>
 
-                {/* Vancouver Area */}
+                {/* Manchester Area */}
                 <g transform="translate(150, 250)">
                   <circle cx="0" cy="0" r="50" fill="#f0fdf4" opacity="0.8" />
-                  <text x="0" y="5" textAnchor="middle" className="text-sm font-medium fill-emerald-700">Vancouver</text>
+                  <text x="0" y="5" textAnchor="middle" className="text-sm font-medium fill-emerald-700">Manchester</text>
                 </g>
 
-                {/* Montreal Area */}
+                {/* Edinburgh Area */}
                 <g transform="translate(650, 200)">
                   <circle cx="0" cy="0" r="45" fill="#f0fdf4" opacity="0.8" />
-                  <text x="0" y="5" textAnchor="middle" className="text-sm font-medium fill-emerald-700">Montreal</text>
+                  <text x="0" y="5" textAnchor="middle" className="text-sm font-medium fill-emerald-700">Edinburgh</text>
                 </g>
 
-                {/* Calgary Area */}
+                {/* Bristol Area */}
                 <g transform="translate(350, 280)">
                   <circle cx="0" cy="0" r="40" fill="#f0fdf4" opacity="0.8" />
-                  <text x="0" y="5" textAnchor="middle" className="text-sm font-medium fill-emerald-700">Calgary</text>
+                  <text x="0" y="5" textAnchor="middle" className="text-sm font-medium fill-emerald-700">Bristol</text>
                 </g>
 
                 {/* Property Markers */}
@@ -394,7 +394,7 @@ export default function NeighborhoodExplorerPage() {
                           textAnchor="middle"
                           className="text-xs font-medium fill-gray-800"
                         >
-                          {property.price.replace('CAD ', '')}
+                          {property.price.replace('GBP ', '')}
                         </text>
                       </g>
                     </g>
@@ -406,7 +406,7 @@ export default function NeighborhoodExplorerPage() {
                 <path d="M300,0 Q320,200 300,400 Q280,500 300,600" stroke="#cbd5e1" strokeWidth="3" fill="none" opacity="0.7" />
 
                 <defs>
-                  <linearGradient id="canadaMapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient id="UKMapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#f0f9ff" />
                     <stop offset="30%" stopColor="#e0f2fe" />
                     <stop offset="70%" stopColor="#ecfdf5" />
@@ -460,3 +460,4 @@ export default function NeighborhoodExplorerPage() {
     </div>
   );
 }
+

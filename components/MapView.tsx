@@ -21,7 +21,7 @@ interface MapViewProps {
 
 export function MapView({ 
   listings, 
-  center = [45.4215, -75.6972], // Default to Ottawa
+  center = [51.5074, -0.1278], // Default to London
   showSearch = true,
   className = 'h-full w-full'
 }: MapViewProps) {
@@ -72,7 +72,7 @@ export function MapView({
               <img src="${listing.images[0]}" alt="${listing.title}" class="w-full h-24 object-cover rounded mb-2" />
               <h3 class="font-semibold text-sm mb-1">${listing.title}</h3>
               <p class="text-xs text-gray-600 mb-2">${listing.address}</p>
-              <p class="font-bold text-emerald-600">$${listing.priceCAD.toLocaleString()}</p>
+              <p class="font-bold text-emerald-600">£${listing.priceCAD.toLocaleString()}</p>
               <a href="/listing/${listing.slug}" class="inline-block mt-2 px-3 py-1 bg-emerald-600 text-white text-xs rounded hover:bg-emerald-700">
                 View Details
               </a>

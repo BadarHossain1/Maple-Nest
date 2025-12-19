@@ -10,9 +10,9 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  title: 'MapleNest - Find Your Perfect Home in Canada',
-  description: 'Discover exceptional properties across Canada with MapleNest. Search homes for sale and rent in Toronto, Vancouver, Montreal, Calgary, and Ottawa.',
-  keywords: ['real estate', 'Canada', 'homes for sale', 'rentals', 'Toronto', 'Vancouver', 'Montreal', 'Calgary', 'Ottawa'],
+  title: 'MapleNest - Find Your Perfect Home in UK',
+  description: 'Discover exceptional properties across UK with MapleNest. Search homes for sale and rent in London, Manchester, Edinburgh, Bristol, and Birmingham.',
+  keywords: ['real estate', 'UK', 'homes for sale', 'rentals', 'London', 'Manchester', 'Edinburgh', 'Bristol', 'Birmingham'],
   authors: [{ name: 'MapleNest Team' }],
   viewport: {
     width: 'device-width',
@@ -21,15 +21,15 @@ export const metadata: Metadata = {
     userScalable: true,
   },
   openGraph: {
-    title: 'MapleNest - Find Your Perfect Home in Canada',
-    description: 'Discover exceptional properties across Canada with MapleNest.',
+    title: 'MapleNest - Find Your Perfect Home in UK',
+    description: 'Discover exceptional properties across UK with MapleNest.',
     images: ['/og-image.jpg'],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MapleNest - Find Your Perfect Home in Canada',
-    description: 'Discover exceptional properties across Canada with MapleNest.',
+    title: 'MapleNest - Find Your Perfect Home in UK',
+    description: 'Discover exceptional properties across UK with MapleNest.',
   },
 };
 

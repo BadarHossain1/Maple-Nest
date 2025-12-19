@@ -49,38 +49,38 @@ const quickActions: QuickAction[] = [
   {
     icon: Home,
     label: "Find Properties",
-    prompt: "I'm looking for a family home in Toronto with 3 bedrooms under $900K. Can you help me understand what's available and what neighborhoods to consider?",
+    prompt: "I'm looking for a family home in London with 3 bedrooms under 700K. Can you help me understand what's available and what neighborhoods to consider?",
     color: "bg-blue-500"
   },
   {
     icon: Calculator,
     label: "Mortgage Calculator",
-    prompt: "Can you calculate mortgage payments for a $650K home with 15% down payment? Include all the costs I should expect in Canada.",
+    prompt: "Can you calculate mortgage payments for a 500K home with 15% down payment? Include all the costs I should expect in UK.",
     color: "bg-green-500"
   },
   {
     icon: MapPin,
     label: "Neighborhood Guide",
-    prompt: "What are the best family-friendly neighborhoods in Vancouver? I care about schools, safety, and commute to downtown.",
+    prompt: "What are the best family-friendly neighborhoods in Manchester? I care about schools, safety, and commute to downtown.",
     color: "bg-purple-500"
   },
   {
     icon: TrendingUp,
     label: "Market Analysis",
-    prompt: "What's happening in the Canadian real estate market right now? Should I buy now or wait for better prices?",
+    prompt: "What's happening in the UK real estate market right now? Should I buy now or wait for better prices?",
     color: "bg-orange-500"
   }
 ];
 
 const exampleQuestions = [
-  "What's the average home price in Montreal for condos?",
-  "How do I get pre-approved for a mortgage in Canada?",
-  "What are the best investment opportunities in Calgary?",
-  "Compare rental yields between Toronto and Vancouver",
+  "What's the average home price in Edinburgh for condos?",
+  "How do I get pre-approved for a mortgage in UK?",
+  "What are the best investment opportunities in Bristol?",
+  "Compare rental yields between London and Manchester",
   "What documents do I need as a first-time home buyer?",
   "How much should I budget for closing costs in Ontario?",
   "Is it better to rent or buy in the current market?",
-  "What areas in Canada have the most growth potential?"
+  "What areas in UK have the most growth potential?"
 ];
 
 export default function AIAssistantPage() {
@@ -104,7 +104,7 @@ export default function AIAssistantPage() {
     const welcomeMessage: Message = {
       id: '1',
       type: 'assistant',
-      content: "🏠 **Welcome to PropertyGPT!** \n\nI'm your AI-powered Canadian real estate assistant, backed by advanced AI technology. I can help you with:\n\n✨ **Real-time market analysis** across all Canadian cities\n💰 **Accurate mortgage calculations** and financing options\n🏘️ **Neighborhood insights** and comparisons\n📊 **Investment opportunities** and ROI analysis\n📋 **Step-by-step guidance** for buying/selling\n🔍 **Property search** based on your criteria\n\nWhat would you like to explore today? You can ask me anything about Canadian real estate!",
+      content: "🏠 **Welcome to PropertyGPT!** \n\nI'm your AI-powered UK real estate assistant, backed by advanced AI technology. I can help you with:\n\n✨ **Real-time market analysis** across all UK cities\n💰 **Accurate mortgage calculations** and financing options\n🏘️ **Neighborhood insights** and comparisons\n📊 **Investment opportunities** and ROI analysis\n📋 **Step-by-step guidance** for buying/selling\n🔍 **Property search** based on your criteria\n\nWhat would you like to explore today? You can ask me anything about UK real estate!",
       timestamp: new Date(),
       suggestions: [
         "Find properties in my budget",
@@ -169,13 +169,13 @@ export default function AIAssistantPage() {
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         type: 'assistant',
-        content: "🔧 I'm experiencing some technical difficulties right now, but I'm still here to help! \n\nIn the meantime, I can assist you with:\n\n• **Property Search** - Finding homes in your budget and preferred areas\n• **Mortgage Calculations** - Payment estimates and financing options\n• **Market Analysis** - Current trends across Canadian cities\n• **Neighborhood Insights** - Area comparisons and recommendations\n\nPlease try your question again, or feel free to ask about any Canadian real estate topic!",
+        content: "🔧 I'm experiencing some technical difficulties right now, but I'm still here to help! \n\nIn the meantime, I can assist you with:\n\n• **Property Search** - Finding homes in your budget and preferred areas\n• **Mortgage Calculations** - Payment estimates and financing options\n• **Market Analysis** - Current trends across UK cities\n• **Neighborhood Insights** - Area comparisons and recommendations\n\nPlease try your question again, or feel free to ask about any UK real estate topic!",
         timestamp: new Date(),
         suggestions: [
           "Find properties in my budget",
           "Calculate mortgage payments",
           "Best neighborhoods for families",
-          "Current market trends in Canada"
+          "Current market trends in UK"
         ]
       };
       setMessages(prev => [...prev, errorMessage]);
@@ -197,7 +197,7 @@ export default function AIAssistantPage() {
     const welcomeMessage: Message = {
       id: Date.now().toString(),
       type: 'assistant',
-      content: "🏠 **Welcome to PropertyGPT!** \n\nI'm your AI-powered Canadian real estate assistant, backed by advanced AI technology. I can help you with:\n\n✨ **Real-time market analysis** across all Canadian cities\n💰 **Accurate mortgage calculations** and financing options\n🏘️ **Neighborhood insights** and comparisons\n📊 **Investment opportunities** and ROI analysis\n📋 **Step-by-step guidance** for buying/selling\n🔍 **Property search** based on your criteria\n\nWhat would you like to explore today? You can ask me anything about Canadian real estate!",
+      content: "🏠 **Welcome to PropertyGPT!** \n\nI'm your AI-powered UK real estate assistant, backed by advanced AI technology. I can help you with:\n\n✨ **Real-time market analysis** across all UK cities\n💰 **Accurate mortgage calculations** and financing options\n🏘️ **Neighborhood insights** and comparisons\n📊 **Investment opportunities** and ROI analysis\n📋 **Step-by-step guidance** for buying/selling\n🔍 **Property search** based on your criteria\n\nWhat would you like to explore today? You can ask me anything about UK real estate!",
       timestamp: new Date(),
       suggestions: [
         "Find properties in my budget",
@@ -461,7 +461,7 @@ export default function AIAssistantPage() {
                       type="text"
                       value={inputValue}
                       onChange={(e) => setInputValue(e.target.value)}
-                      placeholder="Ask me anything about Canadian real estate..."
+                      placeholder="Ask me anything about UK real estate..."
                       className="w-full px-3 sm:px-4 py-2.5 sm:py-3 pr-10 sm:pr-12 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-none text-sm sm:text-base"
                       disabled={isLoading}
                     />
@@ -501,3 +501,6 @@ export default function AIAssistantPage() {
     </div>
   );
 }
+
+
+

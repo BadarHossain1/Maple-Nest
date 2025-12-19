@@ -1,6 +1,6 @@
-# MapleNest - Canadian Real Estate Platform
+# MapleNest - UK Real Estate Platform
 
-A modern, production-ready real estate website built for the Canadian market using Next.js 14, TypeScript, and Tailwind CSS.
+A modern, production-ready real estate website built for the UK market using Next.js 14, TypeScript, and Tailwind CSS.
 
 ## Features
 
@@ -12,8 +12,8 @@ A modern, production-ready real estate website built for the Canadian market usi
 - Comprehensive property details with photo galleries
 
 ### 🗺️ Geographic Coverage
-- **Major Cities**: Toronto, Vancouver, Montreal, Calgary, Ottawa
-- **30+ Properties**: Diverse mix of condos, detached homes, townhouses, and commercial spaces
+- **Major Cities**: London, Manchester, Edinburgh, Bristol, Birmingham
+- **30+ Properties**: Diverse mix of flats, detached homes, townhouses, and commercial spaces
 - **Neighborhood Guides**: Detailed area information with lifestyle insights, amenities, and market data
 
 ### 👥 Agent Directory
@@ -23,7 +23,7 @@ A modern, production-ready real estate website built for the Canadian market usi
 - Direct contact integration with phone and email
 
 ### 💰 Financial Tools
-- **Canadian Mortgage Calculator** with CMHC insurance calculations
+- **UK Mortgage Calculator** with stamp duty calculations
 - Property tax and insurance estimates
 - Multiple payment frequency options (monthly, bi-weekly, weekly)
 - Loan-to-value ratio calculations
@@ -40,7 +40,7 @@ A modern, production-ready real estate website built for the Canadian market usi
 - **Search History**: Track and revisit previous searches
 
 ### 🎨 Design System
-- **Emerald Green Theme**: Professional Canadian-inspired color palette
+- **Emerald Green Theme**: Professional UK-inspired color palette
 - **Modern Typography**: Inter font with clear hierarchy
 - **Consistent Spacing**: 8px grid system throughout
 - **Card-based Layouts**: Clean, organized information presentation
@@ -164,9 +164,9 @@ Neighborhood guides include:
 - Property comparison functionality
 - Persistent user preferences
 
-### Canadian Market Focus
-- CAD pricing throughout
-- Canadian mortgage calculations with CMHC
+### UK Market Focus
+- GBP pricing throughout
+- UK mortgage calculations with stamp duty
 - Provincial and city-specific data
 - Bilingual content support (English/French)
 
@@ -215,4 +215,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-**MapleNest** - Find Your Perfect Canadian Home 🍁
+**MapleNest** - Find Your Perfect UK Home 🍁
+

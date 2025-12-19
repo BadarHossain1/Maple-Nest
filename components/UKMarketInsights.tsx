@@ -8,39 +8,39 @@ import { ChevronRight, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
 const cities = [
-    { id: 'toronto', name: 'Toronto', active: true },
-    { id: 'vancouver', name: 'Vancouver', active: false },
-    { id: 'montreal', name: 'Montreal', active: false },
-    { id: 'calgary', name: 'Calgary', active: false },
-    { id: 'ottawa', name: 'Ottawa', active: false },
+    { id: 'london', name: 'London', active: true },
+    { id: 'manchester', name: 'Manchester', active: false },
+    { id: 'edinburgh', name: 'Edinburgh', active: false },
+    { id: 'bristol', name: 'Bristol', active: false },
+    { id: 'birmingham', name: 'Birmingham', active: false },
 ];
 
 const marketTrends = [
     {
         id: 1,
-        title: 'Best areas to rent affordable apartments in the Greater Toronto Area',
-        image: 'https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg',
+        title: 'Best areas to rent affordable flats in Greater London',
+        image: 'https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg',
         badge: 'MARKET TRENDS',
         badgeColor: 'bg-purple-600'
     },
     {
         id: 2,
-        title: 'Popular areas to buy condominiums and houses in Downtown Toronto',
-        image: 'https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg',
+        title: 'Popular areas to buy properties in Central London',
+        image: 'https://images.pexels.com/photos/1796736/pexels-photo-1796736.jpeg',
         badge: 'MARKET TRENDS',
         badgeColor: 'bg-purple-600'
     },
     {
         id: 3,
-        title: 'Premium residences in Toronto: The pinnacle of luxury living',
-        image: 'https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg',
+        title: 'Premium residences in London: The pinnacle of luxury living',
+        image: 'https://images.pexels.com/photos/2224861/pexels-photo-2224861.jpeg',
         badge: 'MARKET TRENDS',
         badgeColor: 'bg-purple-600'
     },
     {
         id: 4,
-        title: 'The most sought-after properties in North York and Scarborough',
-        image: 'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg',
+        title: 'The most sought-after properties in Mayfair and Chelsea',
+        image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg',
         badge: 'MARKET TRENDS',
         badgeColor: 'bg-purple-600'
     }
@@ -49,26 +49,26 @@ const marketTrends = [
 const neighborhoods = [
     {
         id: 1,
-        name: 'Liberty Village',
-        image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg',
+        name: 'Mayfair',
+        image: 'https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg',
         status: 'Ready'
     },
     {
         id: 2,
-        name: 'Financial District',
-        image: 'https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg',
+        name: 'Canary Wharf',
+        image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg',
         status: 'Ready'
     },
     {
         id: 3,
-        name: 'King West',
-        image: 'https://images.pexels.com/photos/532908/pexels-photo-532908.jpeg',
+        name: 'Shoreditch',
+        image: 'https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg',
         status: 'Ready'
     },
     {
         id: 4,
-        name: 'Entertainment District',
-        image: 'https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg',
+        name: 'Chelsea',
+        image: 'https://images.pexels.com/photos/1796736/pexels-photo-1796736.jpeg',
         status: 'Ready'
     }
 ];
@@ -76,40 +76,40 @@ const neighborhoods = [
 const topBuildings = [
     {
         id: 1,
-        name: 'The One, Toronto Downtown',
-        image: 'https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg',
+        name: 'The Shard, London Bridge',
+        image: 'https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg',
         status: 'Ready',
         details: 'Luxury Living',
-        price: 'Starting $800K'
+        price: 'Starting £950K'
     },
     {
         id: 2,
-        name: 'Lakefront Tower, Harbourfront',
-        image: 'https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg',
+        name: 'Thames Tower, Canary Wharf',
+        image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg',
         status: 'Ready',
-        details: 'Waterfront Views',
-        price: 'Starting $650K'
+        details: 'Riverside Views',
+        price: 'Starting £720K'
     },
     {
         id: 3,
-        name: 'Sky Tower, North York',
-        image: 'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg',
+        name: 'Beetham Tower, Manchester',
+        image: 'https://images.pexels.com/photos/1802255/pexels-photo-1802255.jpeg',
         status: 'Ready',
         details: 'Modern Living',
-        price: 'Starting $500K'
+        price: 'Starting £320K'
     },
     {
         id: 4,
-        name: 'Urban Heights, Mississauga',
-        image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg',
+        name: 'Deansgate Square, Manchester',
+        image: 'https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg',
         status: 'Ready',
-        details: 'Family Friendly',
-        price: 'Starting $450K'
+        details: 'City Centre',
+        price: 'Starting £285K'
     }
 ];
 
-const CanadaMarketInsights = () => {
-    const [activeCity, setActiveCity] = useState('toronto');
+const UKMarketInsights = () => {
+    const [activeCity, setActiveCity] = useState('london');
 
     return (
         <section className="py-16 bg-gray-50">
@@ -117,7 +117,7 @@ const CanadaMarketInsights = () => {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                        Learn more about Canada&apos;s property market
+                        Learn more about the UK property market
                     </h2>
 
                     {/* City Tabs */}
@@ -143,7 +143,7 @@ const CanadaMarketInsights = () => {
                     <div className="flex items-center justify-between mb-8">
                         <div className="flex items-center gap-2">
                             <span className="text-sm font-medium text-gray-600">Real Estate Updates From</span>
-                            <span className="text-teal-600 font-bold text-lg">PropertyCA</span>
+                            <span className="text-teal-600 font-bold text-lg">PropertyUK</span>
                         </div>
                         <Button variant="ghost" className="text-teal-600 hover:text-teal-700">
                             View All <ChevronRight className="ml-1 h-4 w-4" />
@@ -181,7 +181,7 @@ const CanadaMarketInsights = () => {
                 <div className="mb-16">
                     <div className="flex items-center justify-between mb-8">
                         <div className="flex items-center gap-2">
-                            <h3 className="text-xl font-bold text-gray-900">Discover Popular Neighbourhoods in Toronto</h3>
+                            <h3 className="text-xl font-bold text-gray-900">Discover Popular Neighbourhoods in London</h3>
                             <Badge variant="secondary" className="bg-gray-200 text-gray-700">
                                 Off-Plan Only
                             </Badge>
@@ -222,7 +222,7 @@ const CanadaMarketInsights = () => {
                 <div>
                     <div className="flex items-center justify-between mb-8">
                         <div className="flex items-center gap-2">
-                            <h3 className="text-xl font-bold text-gray-900">Explore Top Buildings in Toronto</h3>
+                            <h3 className="text-xl font-bold text-gray-900">Explore Top Buildings in London</h3>
                             <Badge variant="secondary" className="bg-gray-200 text-gray-700">
                                 Off-Plan Only
                             </Badge>
@@ -269,4 +269,4 @@ const CanadaMarketInsights = () => {
     );
 };
 
-export default CanadaMarketInsights;
+export default UKMarketInsights;

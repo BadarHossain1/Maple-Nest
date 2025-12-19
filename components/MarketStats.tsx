@@ -8,13 +8,13 @@ const stats = [
     icon: Home,
     value: '10,000+',
     label: 'Active Listings',
-    description: 'Properties across Canada'
+    description: 'Properties across UK'
   },
   {
     icon: MapPin,
     value: '5',
     label: 'Major Cities',
-    description: 'Toronto, Vancouver, Montreal, Calgary, Ottawa'
+    description: 'London, Manchester, Edinburgh, Bristol, Birmingham'
   },
   {
     icon: Users,
@@ -57,10 +57,10 @@ export function MarketStats() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Canada's Trusted Real Estate Platform
+            UK's Trusted Real Estate Platform
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Join thousands of Canadians who have found their perfect home through MapleNest.
+            Join thousands of UK residents who have found their perfect home through MapleNest.
           </p>
         </motion.div>
 
@@ -96,3 +96,4 @@ export function MarketStats() {
     </section>
   );
 }
+

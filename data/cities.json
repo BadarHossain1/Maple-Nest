@@ -1,47 +1,47 @@
 [
   {
-    "name": "Toronto",
-    "province": "Ontario",
-    "coordinates": [43.6532, -79.3832],
-    "population": 2930000,
-    "averagePrice": 1200000,
-    "neighborhoods": ["Yorkville", "The Junction", "The Beaches", "Liberty Village", "Corktown"],
-    "description": "Canada's largest city and financial capital"
+    "name": "London",
+    "province": "Greater London",
+    "coordinates": [51.5074, -0.1278],
+    "population": 9000000,
+    "averagePrice": 700000,
+    "neighborhoods": ["Mayfair", "Shoreditch", "Chelsea", "Canary Wharf", "Notting Hill"],
+    "description": "UK's capital and global financial centre"
   },
   {
-    "name": "Vancouver",
-    "province": "British Columbia",
-    "coordinates": [49.2827, -123.1207],
-    "population": 675000,
-    "averagePrice": 1350000,
-    "neighborhoods": ["Yaletown", "Kitsilano", "Mount Pleasant", "West End", "Commercial Drive"],
-    "description": "Pacific coast metropolis known for natural beauty"
+    "name": "Manchester",
+    "province": "Greater Manchester",
+    "coordinates": [53.4808, -2.2426],
+    "population": 550000,
+    "averagePrice": 250000,
+    "neighborhoods": ["Northern Quarter", "Deansgate", "Spinningfields", "Ancoats", "Castlefield"],
+    "description": "Northern powerhouse known for culture and innovation"
   },
   {
-    "name": "Montreal",
-    "province": "Quebec",
-    "coordinates": [45.5017, -73.5673],
-    "population": 1780000,
-    "averagePrice": 550000,
-    "neighborhoods": ["Plateau Mont-Royal", "Old Montreal", "Griffintown", "Mile End", "Westmount"],
-    "description": "Cultural capital with European charm"
+    "name": "Birmingham",
+    "province": "West Midlands",
+    "coordinates": [52.4862, -1.8904],
+    "population": 1140000,
+    "averagePrice": 220000,
+    "neighborhoods": ["Jewellery Quarter", "Digbeth", "Harborne", "Moseley", "Edgbaston"],
+    "description": "UK's second city with vibrant culture"
   },
   {
-    "name": "Calgary",
-    "province": "Alberta",
-    "coordinates": [51.0447, -114.0719],
-    "population": 1340000,
-    "averagePrice": 520000,
-    "neighborhoods": ["Kensington", "Mission", "Bridgeland", "Hillhurst", "Eau Claire"],
-    "description": "Energy capital with mountain proximity"
+    "name": "Edinburgh",
+    "province": "Scotland",
+    "coordinates": [55.9533, -3.1883],
+    "population": 530000,
+    "averagePrice": 280000,
+    "neighborhoods": ["Old Town", "New Town", "Leith", "Stockbridge", "Morningside"],
+    "description": "Scotland's historic capital with stunning architecture"
   },
   {
-    "name": "Ottawa",
-    "province": "Ontario",
-    "coordinates": [45.4215, -75.6972],
-    "population": 1017000,
-    "averagePrice": 650000,
-    "neighborhoods": ["ByWard Market", "Westboro", "The Glebe", "Sandy Hill", "Hintonburg"],
-    "description": "National capital with rich history"
+    "name": "Bristol",
+    "province": "South West England",
+    "coordinates": [51.4545, -2.5879],
+    "population": 465000,
+    "averagePrice": 320000,
+    "neighborhoods": ["Clifton", "Harbourside", "Stokes Croft", "Redland", "Southville"],
+    "description": "Creative city with maritime heritage"
   }
 ]

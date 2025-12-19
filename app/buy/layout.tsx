@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Homes for Sale in Canada | MapleNest',
-  description: 'Browse homes for sale across Canada. Find your perfect property in Toronto, Vancouver, Montreal, Calgary, Ottawa and more.',
+  title: 'Homes for Sale in UK | MapleNest',
+  description: 'Browse homes for sale across UK. Find your perfect property in London, Manchester, Edinburgh, Bristol, Birmingham and more.',
 };
 
 export default function BuyLayout({

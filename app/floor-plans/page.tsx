@@ -18,137 +18,139 @@ import { Button } from '@/components/ui/button';
 export default function FloorPlansPage() {
     const [searchLocation, setSearchLocation] = useState('');
 
-    const canadianCities = [
+    const ukCities = [
         {
             id: 1,
-            name: 'Toronto',
-            province: 'Ontario',
-            image: 'https://images.unsplash.com/photo-1517391815110-ca1ca1aeddb7?w=600&h=400&fit=crop',
-            description: 'Canada\'s largest city with diverse floor plan options',
-            properties: '45,000+ properties'
+            name: 'London',
+            province: 'Greater London',
+            image: 'https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?w=600&h=400&fit=crop',
+            description: 'UK\'s capital with diverse floor plan options',
+            properties: '125,000+ properties'
         },
         {
             id: 2,
-            name: 'Vancouver',
-            province: 'British Columbia',
-            image: 'https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=600&h=400&fit=crop',
-            description: 'Coastal city with modern architectural designs',
-            properties: '28,500+ properties'
+            name: 'Manchester',
+            province: 'Greater Manchester',
+            image: 'https://images.pexels.com/photos/1802255/pexels-photo-1802255.jpeg?w=600&h=400&fit=crop',
+            description: 'Northern powerhouse with modern architectural designs',
+            properties: '45,500+ properties'
         },
         {
             id: 3,
-            name: 'Montreal',
-            province: 'Quebec',
-            image: 'https://images.unsplash.com/photo-1518687751798-0dcaac50a4a8?w=600&h=400&fit=crop',
+            name: 'Edinburgh',
+            province: 'Scotland',
+            image: 'https://images.pexels.com/photos/2724664/pexels-photo-2724664.jpeg?w=600&h=400&fit=crop',
             description: 'Historic charm meets contemporary living spaces',
-            properties: '32,200+ properties'
+            properties: '28,200+ properties'
         },
         {
             id: 4,
-            name: 'Calgary',
-            province: 'Alberta',
-            image: 'https://images.unsplash.com/photo-1605538883669-825200433431?w=600&h=400&fit=crop',
-            description: 'Prairie city with spacious floor plan layouts',
-            properties: '18,700+ properties'
+            name: 'Bristol',
+            province: 'South West England',
+            image: 'https://images.pexels.com/photos/1470405/pexels-photo-1470405.jpeg?w=600&h=400&fit=crop',
+            description: 'Creative city with spacious floor plan layouts',
+            properties: '22,700+ properties'
         },
         {
             id: 5,
-            name: 'Ottawa',
-            province: 'Ontario',
-            image: 'https://images.unsplash.com/photo-1594736797933-d0bdb6695772?w=600&h=400&fit=crop',
-            description: 'Canada\'s capital with government and residential zones',
-            properties: '15,400+ properties'
+            name: 'Birmingham',
+            province: 'West Midlands',
+            image: 'https://images.pexels.com/photos/1722183/pexels-photo-1722183.jpeg?w=600&h=400&fit=crop',
+            description: 'UK\'s second city with diverse residential zones',
+            properties: '38,400+ properties'
         },
         {
             id: 6,
-            name: 'Edmonton',
-            province: 'Alberta',
+            name: 'Leeds',
+            province: 'West Yorkshire',
             image: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=600&h=400&fit=crop',
-            description: 'Northern gateway with affordable housing options',
-            properties: '12,800+ properties'
+            description: 'Yorkshire hub with affordable housing options',
+            properties: '25,800+ properties'
         },
         {
             id: 7,
-            name: 'Halifax',
-            province: 'Nova Scotia',
+            name: 'Liverpool',
+            province: 'Merseyside',
             image: 'https://images.unsplash.com/photo-1552832230-8b3734516ed0?w=600&h=400&fit=crop',
             description: 'Maritime city with waterfront floor plans',
-            properties: '8,900+ properties'
+            properties: '19,900+ properties'
         }
     ];
 
     const topSearchedLocations = {
-        'Toronto': [
-            'Downtown Toronto (CORE)', 'Yorkville', 'The Beaches',
-            'Distillery District', 'King West', 'Liberty Village'
+        'London': [
+            'Mayfair', 'Chelsea', 'Kensington',
+            'Shoreditch', 'Canary Wharf', 'Notting Hill'
         ],
-        'Vancouver': [
-            'Coal Harbour', 'Yaletown', 'Kitsilano',
-            'Gastown', 'West End', 'Olympic Village'
+        'Manchester': [
+            'Northern Quarter', 'Deansgate', 'Ancoats',
+            'Spinningfields', 'Castlefield', 'Didsbury'
         ],
-        'Montreal': [
-            'Old Montreal', 'Plateau Mont-Royal', 'Mile End',
-            'Griffintown', 'Westmount', 'Outremont'
+        'Edinburgh': [
+            'Old Town', 'New Town', 'Leith',
+            'Stockbridge', 'Morningside', 'Bruntsfield'
         ],
-        'Calgary': [
-            'Beltline', 'Kensington', 'Hillhurst',
-            'Mission', 'Eau Claire', 'Inglewood'
+        'Bristol': [
+            'Clifton', 'Harbourside', 'Redland',
+            'Stokes Croft', 'Southville', 'Bishopston'
         ],
-        'Ottawa': [
-            'ByWard Market', 'Glebe', 'Westboro',
-            'New Edinburgh', 'Hintonburg', 'Little Italy'
+        'Birmingham': [
+            'Jewellery Quarter', 'Digbeth', 'Moseley',
+            'Harborne', 'Edgbaston', 'Kings Heath'
         ],
-        'Edmonton': [
-            'Oliver', 'Strathcona', 'Garneau',
-            'Highlands', 'Bonnie Doon', 'Crestwood'
+        'Leeds': [
+            'City Centre', 'Headingley', 'Chapel Allerton',
+            'Roundhay', 'Horsforth', 'Meanwood'
         ]
     };
 
-    const allCanadianLocations = [
-        // Ontario
-        'Greater Toronto Area (GTA)', 'Ottawa-Gatineau', 'Hamilton', 'London', 'Kitchener-Waterloo',
-        'Windsor', 'Oshawa', 'St. Catharines', 'Barrie', 'Kingston', 'Thunder Bay', 'Sudbury',
-        'Guelph', 'Peterborough', 'Brantford', 'Chatham-Kent', 'Sarnia', 'North Bay', 'Cornwall',
-        'Belleville', 'Timmins', 'Woodstock', 'Stratford', 'Orillia', 'Cobourg', 'Brockville',
+    const allUKLocations = [
+        // London & South East
+        'Greater London', 'Westminster', 'Kensington', 'Chelsea', 'Mayfair', 'Shoreditch',
+        'Camden', 'Islington', 'Hackney', 'Greenwich', 'Richmond', 'Kingston', 'Croydon',
+        'Bromley', 'Sutton', 'Merton', 'Wandsworth', 'Lambeth', 'Southwark', 'Tower Hamlets',
+        'Reading', 'Slough', 'Oxford', 'Cambridge', 'Brighton', 'Guildford', 'Crawley',
 
-        // Quebec
-        'Montreal Metropolitan Area', 'Quebec City', 'Gatineau', 'Sherbrooke', 'Trois-Rivières',
-        'Chicoutimi', 'Saint-Jean-sur-Richelieu', 'Laval', 'Longueuil', 'Granby', 'Drummondville',
-        'Saint-Hyacinthe', 'Shawinigan', 'Joliette', 'Victoriaville', 'Rimouski', 'Saguenay',
+        // Greater Manchester
+        'Manchester City Centre', 'Northern Quarter', 'Deansgate', 'Ancoats', 'Spinningfields',
+        'Castlefield', 'Didsbury', 'Chorlton', 'Salford Quays', 'Altrincham', 'Stockport',
+        'Bolton', 'Bury', 'Rochdale', 'Oldham', 'Wigan', 'Trafford', 'Sale', 'Cheadle',
 
-        // British Columbia
-        'Greater Vancouver Area', 'Victoria', 'Kelowna', 'Abbotsford', 'Kamloops', 'Nanaimo',
-        'Prince George', 'Chilliwack', 'Vernon', 'Courtenay', 'Campbell River', 'Cranbrook',
-        'Fort St. John', 'Penticton', 'Port Alberni', 'Quesnel', 'Williams Lake', 'Dawson Creek',
+        // West Midlands
+        'Birmingham City Centre', 'Jewellery Quarter', 'Digbeth', 'Edgbaston', 'Harborne',
+        'Moseley', 'Kings Heath', 'Sutton Coldfield', 'Solihull', 'Coventry', 'Wolverhampton',
+        'Walsall', 'West Bromwich', 'Dudley', 'Stourbridge', 'Halesowen', 'Redditch',
 
-        // Alberta
-        'Calgary Metropolitan Area', 'Edmonton Metropolitan Area', 'Red Deer', 'Lethbridge',
-        'Medicine Hat', 'Grande Prairie', 'Airdrie', 'Spruce Grove', 'Okotoks', 'Cochrane',
-        'Lloydminster', 'Camrose', 'Brooks', 'Cold Lake', 'Wetaskiwin', 'Leduc', 'Fort McMurray',
+        // Scotland
+        'Edinburgh City Centre', 'Old Town', 'New Town', 'Leith', 'Stockbridge', 'Morningside',
+        'Bruntsfield', 'Portobello', 'Corstorphine', 'Glasgow City Centre', 'West End Glasgow',
+        'Merchant City', 'Finnieston', 'Shawlands', 'Aberdeen', 'Dundee', 'Inverness',
 
-        // Saskatchewan
-        'Saskatoon', 'Regina', 'Prince Albert', 'Moose Jaw', 'Swift Current', 'Yorkton',
-        'North Battleford', 'Estevan', 'Weyburn', 'Lloydminster', 'Melfort', 'Humboldt',
+        // Yorkshire
+        'Leeds City Centre', 'Headingley', 'Chapel Allerton', 'Roundhay', 'Horsforth',
+        'Sheffield City Centre', 'Ecclesall', 'Kelham Island', 'York', 'Bradford', 'Hull',
+        'Harrogate', 'Wakefield', 'Huddersfield', 'Doncaster', 'Rotherham', 'Barnsley',
 
-        // Manitoba
-        'Winnipeg Metropolitan Area', 'Brandon', 'Steinbach', 'Thompson', 'Portage la Prairie',
-        'Winkler', 'Selkirk', 'Morden', 'Dauphin', 'The Pas', 'Flin Flon', 'Gimli',
+        // North West
+        'Liverpool City Centre', 'Baltic Triangle', 'Georgian Quarter', 'Woolton', 'Allerton',
+        'Preston', 'Blackpool', 'Lancaster', 'Carlisle', 'Chester', 'Warrington', 'Blackburn',
 
-        // Nova Scotia
-        'Halifax Regional Municipality', 'Sydney', 'Truro', 'New Glasgow', 'Yarmouth',
-        'Kentville', 'Amherst', 'Bridgewater', 'Antigonish', 'Wolfville', 'Liverpool',
+        // South West
+        'Bristol City Centre', 'Clifton', 'Harbourside', 'Redland', 'Stokes Croft', 'Southville',
+        'Bath', 'Exeter', 'Plymouth', 'Gloucester', 'Cheltenham', 'Swindon', 'Bournemouth',
+        'Poole', 'Taunton', 'Truro', 'Torquay', 'Salisbury', 'Wells', 'Yeovil',
 
-        // New Brunswick
-        'Moncton', 'Saint John', 'Fredericton', 'Bathurst', 'Miramichi', 'Campbellton',
-        'Edmundston', 'Dieppe', 'Riverview', 'Quispamsis', 'Rothesay', 'Oromocto',
+        // Wales
+        'Cardiff City Centre', 'Cardiff Bay', 'Pontcanna', 'Roath', 'Swansea', 'Newport',
+        'Wrexham', 'Bangor', 'Aberystwyth', 'Llandudno', 'Carmarthen', 'Brecon', 'Conwy',
 
-        // Newfoundland and Labrador
-        'St. John\'s', 'Mount Pearl', 'Corner Brook', 'Conception Bay South', 'Paradise',
-        'Grand Falls-Windsor', 'Happy Valley-Goose Bay', 'Labrador City', 'Stephenville',
+        // East Midlands
+        'Nottingham City Centre', 'Derby', 'Leicester', 'Northampton', 'Peterborough',
+        'Lincoln', 'Chesterfield', 'Mansfield', 'Corby', 'Kettering', 'Loughborough',
 
-        // Prince Edward Island
-        'Charlottetown', 'Summerside', 'Stratford', 'Cornwall', 'Montague', 'Kensington',
-        'Souris', 'Alberton', 'Georgetown', 'Tignish', 'O\'Leary', 'Borden-Carleton'
+        // East of England
+        'Norwich', 'Ipswich', 'Colchester', 'Southend-on-Sea', 'Chelmsford', 'Luton',
+        'Stevenage', 'Watford', 'Basildon', 'St Albans', 'Harlow', 'Kings Lynn'
     ];
 
     return (
@@ -202,8 +204,8 @@ export default function FloorPlansPage() {
                             Floor plans
                         </h1>
                         <p className="text-sm sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto px-4">
-                            Explore detailed floor plans and layouts from Canada's premier real estate developments.
-                            Find your perfect home design across major Canadian cities.
+                            Explore detailed floor plans and layouts from the UK's premier real estate developments.
+                            Find your perfect home design across major UK cities.
                         </p>
 
                         {/* Search Bar */}
@@ -231,7 +233,7 @@ export default function FloorPlansPage() {
                 </div>
             </section>
 
-            {/* Canadian Cities Showcase */}
+            {/* UK Cities Showcase */}
             <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
                 <div className="container mx-auto px-4">
                     <motion.div
@@ -241,13 +243,13 @@ export default function FloorPlansPage() {
                         transition={{ duration: 0.8 }}
                         className="text-center mb-12 sm:mb-16"
                     >
-                        <p className="text-emerald-600 font-medium mb-2 sm:mb-4 text-xs sm:text-sm">CANADIAN FLOOR PLANS</p>
+                        <p className="text-emerald-600 font-medium mb-2 sm:mb-4 text-xs sm:text-sm">UK FLOOR PLANS</p>
                         <h2 className="text-responsive-h2 font-bold text-gray-900 mb-8 sm:mb-12">
-                            Canada Floor plans
+                            UK Floor plans
                         </h2>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-                            {canadianCities.map((city, index) => (
+                            {ukCities.map((city, index) => (
                                 <motion.div
                                     key={city.id}
                                     initial={{ opacity: 0, y: 30 }}
@@ -324,7 +326,7 @@ export default function FloorPlansPage() {
                 </div>
             </section>
 
-            {/* Canadian Location List */}
+            {/* UK Location List */}
             <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
                 <div className="container mx-auto px-4">
                     <motion.div
@@ -334,16 +336,16 @@ export default function FloorPlansPage() {
                         transition={{ duration: 0.8 }}
                     >
                         <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
-                            Canadian Location List
+                            UK Location List
                         </h3>
                         <p className="text-sm sm:text-base text-gray-600 text-center mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto px-4">
-                            Discover floor plans and real estate opportunities across all major Canadian cities,
+                            Discover floor plans and real estate opportunities across all major UK cities,
                             towns, and metropolitan areas. From coast to coast, explore diverse architectural
                             styles and layouts.
                         </p>
 
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3">
-                            {allCanadianLocations.map((location, index) => (
+                            {allUKLocations.map((location, index) => (
                                 <motion.button
                                     key={location}
                                     initial={{ opacity: 0, y: 20 }}
@@ -382,10 +384,10 @@ export default function FloorPlansPage() {
                         className="text-center text-white"
                     >
                         <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6">
-                            Explore Canada's Real Estate Floor Plans
+                            Explore the UK's Real Estate Floor Plans
                         </h3>
                         <p className="text-sm sm:text-lg md:text-xl text-emerald-100 mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto px-4">
-                            Access detailed floor plans from thousands of Canadian properties.
+                            Access detailed floor plans from thousands of UK properties.
                             Make informed decisions with comprehensive layout information.
                         </p>
 
@@ -395,12 +397,12 @@ export default function FloorPlansPage() {
                                 <div className="text-xs sm:text-sm md:text-base text-emerald-200">Floor Plans Available</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">13</div>
-                                <div className="text-xs sm:text-sm md:text-base text-emerald-200">Provinces & Territories</div>
+                                <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">12</div>
+                                <div className="text-xs sm:text-sm md:text-base text-emerald-200">UK Regions</div>
                             </div>
                             <div className="text-center">
                                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">500+</div>
-                                <div className="text-xs sm:text-sm md:text-base text-emerald-200">Canadian Cities</div>
+                                <div className="text-xs sm:text-sm md:text-base text-emerald-200">UK Cities</div>
                             </div>
                         </div>
 

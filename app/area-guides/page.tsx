@@ -5,32 +5,32 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-// Canadian areas data
+// UK areas data
 const readyAreas = [
     {
         id: 1,
-        name: 'Downtown Toronto',
+        name: 'Downtown London',
         status: 'Ready',
         image: 'https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800&h=600&fit=crop',
-        description: 'The heart of Canada\'s largest city with world-class amenities'
+        description: 'The heart of UK\'s largest city with world-class amenities'
     },
     {
         id: 2,
-        name: 'West Vancouver',
+        name: 'West Manchester',
         status: 'Ready',
         image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
         description: 'Luxury living with stunning mountain and ocean views'
     },
     {
         id: 3,
-        name: 'Beltline, Calgary',
+        name: 'Beltline, Bristol',
         status: 'Ready',
         image: 'https://images.unsplash.com/photo-1605875793179-82d9839faca7?w=800&h=600&fit=crop',
-        description: 'Calgary\'s trendy inner-city neighborhood'
+        description: 'Bristol\'s trendy inner-city neighborhood'
     },
     {
         id: 4,
-        name: 'Old Montreal',
+        name: 'Old Edinburgh',
         status: 'Ready',
         image: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&h=600&fit=crop',
         description: 'Historic charm meets modern urban living'
@@ -43,28 +43,28 @@ const developingAreas = [
         name: 'The Distillery District',
         status: 'Developing',
         image: 'https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=800&h=600&fit=crop',
-        description: 'Toronto\'s historic arts and culture district'
+        description: 'London\'s historic arts and culture district'
     },
     {
         id: 6,
-        name: 'River District, Vancouver',
+        name: 'River District, Manchester',
         status: 'Developing',
         image: 'https://images.unsplash.com/photo-1441906363162-903afd0d3d52?w=800&h=600&fit=crop',
         description: 'New waterfront community development'
     },
     {
         id: 7,
-        name: 'East Village, Calgary',
+        name: 'East Village, Bristol',
         status: 'Developing',
         image: 'https://images.unsplash.com/photo-1416838375725-e834a83f62b7?w=800&h=600&fit=crop',
-        description: 'Calgary\'s newest urban neighborhood'
+        description: 'Bristol\'s newest urban neighborhood'
     },
     {
         id: 8,
-        name: 'Griffintown, Montreal',
+        name: 'Griffintown, Edinburgh',
         status: 'Developing',
         image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop',
-        description: 'Montreal\'s rapidly growing tech hub'
+        description: 'Edinburgh\'s rapidly growing tech hub'
     }
 ];
 
@@ -86,7 +86,7 @@ export default function AreaGuidesPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h1 className="text-5xl font-bold mb-4">Discover Canada!</h1>
+                        <h1 className="text-5xl font-bold mb-4">Discover UK!</h1>
                         <p className="text-xl mb-8">Explore the best neighborhoods across the country</p>
                         <div className="flex justify-center">
                             <div className="flex items-center bg-white rounded-lg overflow-hidden shadow-lg max-w-md w-full">
@@ -147,7 +147,7 @@ export default function AreaGuidesPage() {
 
                         <div className="text-center">
                             <Button variant="outline" className="group">
-                                VIEW ALL READY AREA GUIDES IN CANADA
+                                VIEW ALL READY AREA GUIDES IN UK
                                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                             </Button>
                         </div>
@@ -198,7 +198,7 @@ export default function AreaGuidesPage() {
 
                         <div className="text-center">
                             <Button variant="outline" className="group">
-                                VIEW ALL DEVELOPING AREA GUIDES IN CANADA
+                                VIEW ALL DEVELOPING AREA GUIDES IN UK
                                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                             </Button>
                         </div>
@@ -219,22 +219,22 @@ export default function AreaGuidesPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                             {[
                                 {
-                                    name: 'Kensington Market, Toronto',
+                                    name: 'Kensington Market, London',
                                     province: 'Ontario',
                                     image: 'https://images.unsplash.com/photo-1528702748617-c64d49f918af?w=800&h=600&fit=crop'
                                 },
                                 {
-                                    name: 'Yaletown, Vancouver',
+                                    name: 'Yaletown, Manchester',
                                     province: 'British Columbia',
                                     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop'
                                 },
                                 {
-                                    name: 'Plateau-Mont-Royal, Montreal',
+                                    name: 'Plateau-Mont-Royal, Edinburgh',
                                     province: 'Quebec',
                                     image: 'https://images.unsplash.com/photo-1541704328070-0018615eb969?w=800&h=600&fit=crop'
                                 },
                                 {
-                                    name: 'Kensington, Calgary',
+                                    name: 'Kensington, Bristol',
                                     province: 'Alberta',
                                     image: 'https://images.unsplash.com/photo-1605875793179-82d9839faca7?w=800&h=600&fit=crop'
                                 }
@@ -291,22 +291,22 @@ export default function AreaGuidesPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                             {[
                                 {
-                                    name: 'Port Lands, Toronto',
+                                    name: 'Port Lands, London',
                                     province: 'Ontario',
                                     image: 'https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=800&h=600&fit=crop'
                                 },
                                 {
-                                    name: 'Olympic Village, Vancouver',
+                                    name: 'Olympic Village, Manchester',
                                     province: 'British Columbia',
                                     image: 'https://images.unsplash.com/photo-1441906363162-903afd0d3d52?w=800&h=600&fit=crop'
                                 },
                                 {
-                                    name: 'Quartier des Spectacles, Montreal',
+                                    name: 'Quartier des Spectacles, Edinburgh',
                                     province: 'Quebec',
                                     image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop'
                                 },
                                 {
-                                    name: 'Victoria Park, Calgary',
+                                    name: 'Victoria Park, Bristol',
                                     province: 'Alberta',
                                     image: 'https://images.unsplash.com/photo-1416838375725-e834a83f62b7?w=800&h=600&fit=crop'
                                 }

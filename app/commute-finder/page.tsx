@@ -39,8 +39,8 @@ export default function CommuteFinderPage() {
     const mockProperties = [
         {
             id: 1,
-            price: 'CAD 875,000',
-            address: '123 Maple Street, Toronto',
+            price: 'GBP 875,000',
+            address: '123 Maple Street, London',
             beds: 3,
             baths: 2,
             sqft: '1,250',
@@ -50,7 +50,7 @@ export default function CommuteFinderPage() {
         },
         {
             id: 2,
-            price: 'CAD 1,250,000',
+            price: 'GBP 1,250,000',
             address: '456 Oak Avenue, Mississauga',
             beds: 4,
             baths: 3,
@@ -61,7 +61,7 @@ export default function CommuteFinderPage() {
         },
         {
             id: 3,
-            price: 'CAD 950,000',
+            price: 'GBP 950,000',
             address: '789 Pine Road, Markham',
             beds: 3,
             baths: 2.5,
@@ -204,11 +204,11 @@ export default function CommuteFinderPage() {
                                         className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm sm:text-base"
                                     >
                                         <option value="all">All Prices</option>
-                                        <option value="under500k">Under CAD 500K</option>
-                                        <option value="500k-750k">CAD 500K - 750K</option>
-                                        <option value="750k-1m">CAD 750K - 1M</option>
-                                        <option value="1m-1.5m">CAD 1M - 1.5M</option>
-                                        <option value="over1.5m">Over CAD 1.5M</option>
+                                        <option value="under500k">Under GBP 500K</option>
+                                        <option value="500k-750k">GBP 500K - 750K</option>
+                                        <option value="750k-1m">GBP 750K - 1M</option>
+                                        <option value="1m-1.5m">GBP 1M - 1.5M</option>
+                                        <option value="over1.5m">Over GBP 1.5M</option>
                                     </select>
                                 </div>
 
@@ -290,7 +290,7 @@ export default function CommuteFinderPage() {
                                         <path d="M200,0 Q220,100 200,200 T200,400" stroke="#e2e8f0" strokeWidth="6" fill="none" />
                                         <path d="M600,0 Q580,150 600,200 T600,400" stroke="#e2e8f0" strokeWidth="6" fill="none" />
 
-                                        {/* Toronto Skyline */}
+                                        {/* London Skyline */}
                                         <g transform="translate(350, 80)">
                                             {/* CN Tower */}
                                             <rect x="40" y="20" width="4" height="100" fill="#4a90e2" />

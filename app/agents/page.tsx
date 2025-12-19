@@ -53,7 +53,7 @@ export default function AgentsPage() {
               Find Your Perfect Real Estate Agent
             </h1>
             <p className="text-lg text-gray-600">
-              Connect with experienced real estate professionals across Canada.
+              Connect with experienced real estate professionals across UK.
               Our agents are ready to help you buy, sell, or rent your perfect property.
             </p>
           </motion.div>

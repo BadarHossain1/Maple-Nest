@@ -9,7 +9,7 @@ import { CallToAction } from '@/components/CallToAction';
 import { NewProjectsSection } from '@/components/NewProjectsSection';
 import { PopularSection } from '@/components/ui/PopularSection';
 import { FeaturedAgencies } from '@/components/ui/featured-agencies';
-import CanadaMarketInsights from '@/components/CanadaMarketInsights';
+import UKMarketInsights from '@/components/UKMarketInsights';
 
 
 
@@ -67,7 +67,7 @@ export default function HomePage() {
         {...fadeInUp}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
-        <CanadaMarketInsights />
+        <UKMarketInsights />
       </motion.div>
 
       <motion.div

@@ -8,31 +8,31 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
-// Extended dummy data for all Canadian cities
+// Extended dummy data for all UK cities
 const allNewProjects = [
-    // Toronto Projects
+    // london Projects
     {
-        id: 'skyview-condos-toronto',
+        id: 'skyview-condos-london',
         name: 'SkyView Condos',
         type: 'Apartments',
-        city: 'Toronto',
+        city: 'london',
         province: 'ON',
-        location: 'SkyView Condos, Downtown, Toronto, ON',
+        location: 'SkyView Condos, Downtown, london, England',
         launchPrice: 650000,
         handover: 'Q4 2025',
         image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         beds: 2,
         baths: 2,
         sqft: 950,
-        description: 'Modern condos in the heart of downtown Toronto with stunning city views.'
+        description: 'Modern condos in the heart of downtown london with stunning city views.'
     },
     {
-        id: 'liberty-towers-toronto',
+        id: 'liberty-towers-london',
         name: 'Liberty Towers',
         type: 'Condominiums',
-        city: 'Toronto',
+        city: 'london',
         province: 'ON',
-        location: 'Liberty Village, Toronto, ON',
+        location: 'Liberty Village, london, England',
         launchPrice: 750000,
         handover: 'Q2 2026',
         image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
@@ -42,12 +42,12 @@ const allNewProjects = [
         description: 'Luxury condominiums in trendy Liberty Village with premium amenities.'
     },
     {
-        id: 'harbourfront-residences-toronto',
+        id: 'harbourfront-residences-london',
         name: 'Harbourfront Residences',
         type: 'Luxury Condos',
-        city: 'Toronto',
+        city: 'london',
         province: 'ON',
-        location: 'Harbourfront, Toronto, ON',
+        location: 'Harbourfront, london, England',
         launchPrice: 900000,
         handover: 'Q1 2027',
         image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
@@ -56,14 +56,14 @@ const allNewProjects = [
         sqft: 1100,
         description: 'Waterfront luxury living with panoramic lake views and world-class amenities.'
     },
-    // Vancouver Projects
+    // manchester Projects
     {
-        id: 'pacific-view-vancouver',
+        id: 'pacific-view-manchester',
         name: 'Pacific View',
         type: 'Waterfront Condos',
-        city: 'Vancouver',
+        city: 'manchester',
         province: 'BC',
-        location: 'Coal Harbour, Vancouver, BC',
+        location: 'Coal Harbour, manchester, England',
         launchPrice: 850000,
         handover: 'Q3 2025',
         image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
@@ -73,12 +73,12 @@ const allNewProjects = [
         description: 'Prime waterfront condos with mountain and ocean views in Coal Harbour.'
     },
     {
-        id: 'mountain-ridge-vancouver',
+        id: 'mountain-ridge-manchester',
         name: 'Mountain Ridge',
         type: 'Townhouses',
-        city: 'Vancouver',
+        city: 'manchester',
         province: 'BC',
-        location: 'North Vancouver, BC',
+        location: 'North manchester, England',
         launchPrice: 1100000,
         handover: 'Q1 2026',
         image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
@@ -87,14 +87,14 @@ const allNewProjects = [
         sqft: 1800,
         description: 'Spacious family townhouses with mountain views and private gardens.'
     },
-    // Montreal Projects
+    // edinburgh Projects
     {
-        id: 'plateau-lofts-montreal',
+        id: 'plateau-lofts-edinburgh',
         name: 'Plateau Lofts',
         type: 'Urban Lofts',
-        city: 'Montreal',
+        city: 'edinburgh',
         province: 'QC',
-        location: 'Plateau-Mont-Royal, Montreal, QC',
+        location: 'Plateau-Mont-Royal, edinburgh, Scotland',
         launchPrice: 450000,
         handover: 'Q3 2025',
         image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
@@ -104,28 +104,28 @@ const allNewProjects = [
         description: 'Trendy lofts in the vibrant Plateau neighborhood with artistic charm.'
     },
     {
-        id: 'old-port-condos-montreal',
+        id: 'old-port-condos-edinburgh',
         name: 'Old Port Condos',
         type: 'Heritage Condos',
-        city: 'Montreal',
+        city: 'edinburgh',
         province: 'QC',
-        location: 'Old Port, Montreal, QC',
+        location: 'Old Port, edinburgh, Scotland',
         launchPrice: 550000,
         handover: 'Q1 2026',
         image: 'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         beds: 1,
         baths: 1,
         sqft: 750,
-        description: 'Historic charm meets modern luxury in Old Montreal\'s cobblestone streets.'
+        description: 'Historic charm meets modern luxury in Old edinburgh\'s cobblestone streets.'
     },
-    // Calgary Projects
+    // bristol Projects
     {
-        id: 'bow-river-residences-calgary',
+        id: 'bow-river-residences-bristol',
         name: 'Bow River Residences',
         type: 'Riverside Condos',
-        city: 'Calgary',
+        city: 'bristol',
         province: 'AB',
-        location: 'Bow River, Calgary, AB',
+        location: 'Bow River, bristol, England',
         launchPrice: 420000,
         handover: 'Q3 2025',
         image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
@@ -135,50 +135,50 @@ const allNewProjects = [
         description: 'Riverside living with stunning Bow River views and walking trails.'
     },
     {
-        id: 'downtown-core-calgary',
+        id: 'downtown-core-bristol',
         name: 'Downtown Core',
         type: 'Office Condos',
-        city: 'Calgary',
+        city: 'bristol',
         province: 'AB',
-        location: 'Downtown, Calgary, AB',
+        location: 'Downtown, bristol, England',
         launchPrice: 380000,
         handover: 'Q1 2026',
         image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         beds: 1,
         baths: 1,
         sqft: 650,
-        description: 'Urban living in the heart of Calgary\'s business district.'
+        description: 'Urban living in the heart of bristol\'s business district.'
     },
-    // Ottawa Projects
+    // birmingham Projects
     {
-        id: 'byward-market-condos-ottawa',
+        id: 'byward-market-condos-birmingham',
         name: 'ByWard Market Condos',
         type: 'Historic Lofts',
-        city: 'Ottawa',
+        city: 'birmingham',
         province: 'ON',
-        location: 'ByWard Market, Ottawa, ON',
+        location: 'ByWard Market, birmingham, England',
         launchPrice: 420000,
         handover: 'Q4 2025',
         image: 'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         beds: 2,
         baths: 1,
         sqft: 850,
-        description: 'Historic lofts in Ottawa\'s iconic ByWard Market district.'
+        description: 'Historic lofts in birmingham\'s iconic ByWard Market district.'
     },
     {
-        id: 'rideau-centre-ottawa',
+        id: 'rideau-centre-birmingham',
         name: 'Rideau Centre Living',
         type: 'Mixed-use',
-        city: 'Ottawa',
+        city: 'birmingham',
         province: 'ON',
-        location: 'Rideau Centre, Ottawa, ON',
+        location: 'Rideau Centre, birmingham, England',
         launchPrice: 450000,
         handover: 'Q2 2026',
         image: 'https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         beds: 1,
         baths: 1,
         sqft: 700,
-        description: 'Modern mixed-use development in the heart of downtown Ottawa.'
+        description: 'Modern mixed-use development in the heart of downtown birmingham.'
     },
     // Halifax Projects
     {
@@ -216,7 +216,7 @@ const allNewProjects = [
 const formatPrice = (price: number) => {
     return new Intl.NumberFormat('en-CA', {
         style: 'currency',
-        currency: 'CAD',
+        currency: 'GBP',
         minimumFractionDigits: 0,
         maximumFractionDigits: 0,
     }).format(price);
@@ -292,10 +292,10 @@ export default function AllNewProjectsPage() {
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                         <div>
                             <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                                All New Projects in Canada
+                                All New Projects in UK
                             </h1>
                             <p className="text-gray-600">
-                                {filteredProjects.length} projects found across Canadian cities
+                                {filteredProjects.length} projects found across UK cities
                             </p>
                         </div>
                     </div>
@@ -450,3 +450,4 @@ export default function AllNewProjectsPage() {
         </div>
     );
 }
+

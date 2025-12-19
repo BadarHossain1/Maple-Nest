@@ -1,402 +1,402 @@
 [
   {
     "id": 1,
-    "slug": "toronto-yorkville",
-    "title": "Yorkville",
-    "city": "Toronto",
-    "province": "Ontario",
-    "heroImage": "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
-    "description": "Toronto's most prestigious neighborhood, Yorkville offers luxury shopping, fine dining, and sophisticated urban living in the heart of the city.",
-    "coordinates": [43.6708, -79.3899],
+    "slug": "london-mayfair",
+    "title": "Mayfair",
+    "city": "London",
+    "province": "Greater London",
+    "heroImage": "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg",
+    "description": "London's most exclusive neighborhood, Mayfair offers luxury shopping on Bond Street, world-class dining, and elegant Georgian townhouses in the heart of the West End.",
+    "coordinates": [51.5074, -0.1481],
     "averagePrices": {
-      "condo": 1200000,
-      "detached": 3500000,
-      "rental": 3800
+      "condo": 1500000,
+      "detached": 8500000,
+      "rental": 5000
     },
-    "propertyTypes": ["Luxury Condos", "Historic Homes", "Penthouses"],
+    "propertyTypes": ["Luxury Flats", "Georgian Townhouses", "Penthouses"],
     "lifestyle": [
-      "Designer boutiques and luxury shopping",
-      "World-class restaurants and cafés",
-      "Art galleries and cultural venues",
-      "Central to Toronto's business district",
-      "Walkable urban lifestyle"
+      "Bond Street luxury shopping",
+      "Michelin-starred restaurants",
+      "Private members' clubs",
+      "Hyde Park proximity",
+      "Art galleries and auction houses"
     ],
-    "schools": ["University of Toronto", "Toronto Metropolitan University", "Private Schools"],
-    "transit": ["TTC Subway (Bay & Bloor)", "Extensive Bus Routes", "Walk to Union Station"],
+    "schools": ["The American School in London", "Francis Holland School", "Private Schools"],
+    "transit": ["Bond Street Station", "Green Park Station", "Extensive Bus Routes"],
     "photos": [
-      "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
-      "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
-      "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg"
+      "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg",
+      "https://images.pexels.com/photos/1796736/pexels-photo-1796736.jpeg",
+      "https://images.pexels.com/photos/2224861/pexels-photo-2224861.jpeg"
     ],
     "demographics": {
-      "population": 8500,
+      "population": 9500,
       "medianAge": 42,
-      "averageIncome": 125000
+      "averageIncome": 150000
     },
     "amenities": {
-      "parks": ["Rosedale Valley", "Queen's Park"],
-      "shopping": ["Yorkville Village", "Holt Renfrew", "Designer Boutiques"],
-      "dining": ["Fine Dining Restaurants", "Trendy Cafés", "International Cuisine"]
+      "parks": ["Hyde Park", "Green Park"],
+      "shopping": ["Bond Street", "Savile Row", "Burlington Arcade"],
+      "dining": ["Fine Dining", "Private Clubs", "International Cuisine"]
     }
   },
   {
     "id": 2,
-    "slug": "vancouver-yaletown",
-    "title": "Yaletown",
-    "city": "Vancouver",
-    "province": "British Columbia",
-    "heroImage": "https://images.pexels.com/photos/1571467/pexels-photo-1571467.jpeg",
-    "description": "Vancouver's trendiest neighborhood, Yaletown combines historic warehouse architecture with modern luxury living, waterfront views, and vibrant nightlife.",
-    "coordinates": [49.2747, -123.1219],
+    "slug": "manchester-northern-quarter",
+    "title": "Northern Quarter",
+    "city": "Manchester",
+    "province": "Greater Manchester",
+    "heroImage": "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg",
+    "description": "Manchester's creative hub, the Northern Quarter features independent shops, street art, vintage boutiques, and a thriving music and arts scene.",
+    "coordinates": [53.4839, -2.2363],
     "averagePrices": {
-      "condo": 950000,
-      "detached": 2800000,
-      "rental": 3200
+      "condo": 280000,
+      "detached": 450000,
+      "rental": 1200
     },
-    "propertyTypes": ["Modern Condos", "Converted Lofts", "Luxury High-rises"],
+    "propertyTypes": ["Converted Warehouses", "Modern Flats", "Loft Apartments"],
     "lifestyle": [
-      "Converted heritage warehouses",
-      "Trendy restaurants and bars",
-      "Seawall and waterfront access",
-      "High-end shopping and galleries",
-      "Active nightlife scene"
+      "Independent record shops",
+      "Street art and galleries",
+      "Craft beer bars",
+      "Live music venues",
+      "Vintage shopping"
     ],
-    "schools": ["Vancouver Community College", "International Village Elementary"],
-    "transit": ["SkyTrain (Yaletown-Roundhouse)", "Bus Routes", "Seabus Access"],
+    "schools": ["Manchester Grammar School", "Various Primary Schools"],
+    "transit": ["Piccadilly Station", "Victoria Station", "Metrolink Tram"],
     "photos": [
-      "https://images.pexels.com/photos/1571467/pexels-photo-1571467.jpeg",
-      "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
-      "https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg"
+      "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg",
+      "https://images.pexels.com/photos/1802255/pexels-photo-1802255.jpeg",
+      "https://images.pexels.com/photos/1707310/pexels-photo-1707310.jpeg"
     ],
     "demographics": {
       "population": 12000,
-      "medianAge": 38,
-      "averageIncome": 95000
+      "medianAge": 32,
+      "averageIncome": 35000
     },
     "amenities": {
-      "parks": ["David Lam Park", "Emery Barnes Park"],
-      "shopping": ["Yaletown Shopping", "Designer Stores"],
-      "dining": ["International Restaurants", "Craft Breweries", "Rooftop Bars"]
+      "parks": ["Piccadilly Gardens", "Angel Meadow Park"],
+      "shopping": ["Afflecks", "Independent Boutiques", "Record Shops"],
+      "dining": ["Street Food Markets", "Craft Beer Bars", "International Cafés"]
     }
   },
   {
     "id": 3,
-    "slug": "montreal-plateau-mont-royal",
-    "title": "Plateau Mont-Royal",
-    "city": "Montreal",
-    "province": "Quebec",
-    "description": "Montreal's bohemian heart, the Plateau offers colorful row houses, vibrant street art, eclectic dining, and a thriving arts scene.",
-    "heroImage": "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg",
-    "coordinates": [45.5240, -73.5985],
+    "slug": "edinburgh-old-town",
+    "title": "Old Town",
+    "city": "Edinburgh",
+    "province": "Scotland",
+    "heroImage": "https://images.pexels.com/photos/2724664/pexels-photo-2724664.jpeg",
+    "description": "Edinburgh's historic heart, Old Town features medieval architecture, the iconic Royal Mile, Edinburgh Castle, and stunning views from Arthur's Seat.",
+    "coordinates": [55.9486, -3.1878],
     "averagePrices": {
-      "condo": 450000,
-      "detached": 850000,
-      "rental": 2100
+      "condo": 320000,
+      "detached": 650000,
+      "rental": 1500
     },
-    "propertyTypes": ["Heritage Duplexes", "Modern Condos", "Artist Lofts"],
+    "propertyTypes": ["Historic Flats", "Georgian Apartments", "Townhouses"],
     "lifestyle": [
-      "Colorful Victorian architecture",
-      "Vibrant arts and music scene",
-      "Eclectic restaurants and cafés",
-      "Street festivals and markets",
-      "Bike-friendly neighborhood"
+      "Edinburgh Castle views",
+      "Royal Mile attractions",
+      "Festival season activities",
+      "Traditional pubs",
+      "Historic architecture"
     ],
-    "schools": ["Université du Québec à Montréal", "Various French Schools"],
-    "transit": ["Metro Stations", "Bixi Bike Share", "Bus Network"],
+    "schools": ["Edinburgh Academy", "George Heriot's School", "Royal High School"],
+    "transit": ["Waverley Station", "Extensive Bus Network", "Edinburgh Trams"],
     "photos": [
-      "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg",
-      "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
-      "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg"
+      "https://images.pexels.com/photos/2724664/pexels-photo-2724664.jpeg",
+      "https://images.pexels.com/photos/208733/pexels-photo-208733.jpeg",
+      "https://images.pexels.com/photos/2174656/pexels-photo-2174656.jpeg"
     ],
     "demographics": {
-      "population": 110000,
-      "medianAge": 35,
-      "averageIncome": 55000
+      "population": 15000,
+      "medianAge": 38,
+      "averageIncome": 42000
     },
     "amenities": {
-      "parks": ["Mount Royal Park", "Jeanne-Mance Park"],
-      "shopping": ["Saint-Laurent Boulevard", "Local Boutiques"],
-      "dining": ["French Bistros", "International Cuisine", "Craft Coffee"]
+      "parks": ["Princes Street Gardens", "Holyrood Park"],
+      "shopping": ["Royal Mile", "Victoria Street", "Grassmarket"],
+      "dining": ["Traditional Scottish Pubs", "Fine Dining", "International Cuisine"]
     }
   },
   {
     "id": 4,
-    "slug": "calgary-kensington",
-    "title": "Kensington",
-    "city": "Calgary",
-    "province": "Alberta",
-    "heroImage": "https://images.pexels.com/photos/209315/pexels-photo-209315.jpeg",
-    "description": "Calgary's hip riverside neighborhood offering trendy shops, craft breweries, and beautiful Bow River pathways with stunning mountain views.",
-    "coordinates": [51.0539, -114.0856],
+    "slug": "bristol-clifton",
+    "title": "Clifton",
+    "city": "Bristol",
+    "province": "South West England",
+    "heroImage": "https://images.pexels.com/photos/1470405/pexels-photo-1470405.jpeg",
+    "description": "Bristol's most prestigious area, Clifton features stunning Regency architecture, the iconic Suspension Bridge, leafy streets, and independent boutiques.",
+    "coordinates": [51.4630, -2.6143],
     "averagePrices": {
-      "condo": 380000,
-      "detached": 750000,
-      "rental": 2200
+      "condo": 450000,
+      "detached": 850000,
+      "rental": 1800
     },
-    "propertyTypes": ["Character Homes", "Modern Condos", "Riverside Properties"],
+    "propertyTypes": ["Regency Townhouses", "Victorian Villas", "Modern Flats"],
     "lifestyle": [
-      "Bow River pathway system",
-      "Local craft breweries",
-      "Boutique shopping district",
-      "Mountain and river views",
-      "Close to downtown Calgary"
+      "Clifton Suspension Bridge",
+      "Independent shops and cafés",
+      "Downs open space",
+      "Village atmosphere",
+      "Georgian and Regency architecture"
     ],
-    "schools": ["Hillhurst Elementary", "Crescent Heights High School"],
-    "transit": ["C-Train Access", "Bus Routes", "Bike Paths"],
+    "schools": ["Clifton College", "Clifton High School", "Bristol Grammar School"],
+    "transit": ["Clifton Down Station", "Regular Bus Services", "Bristol Temple Meads"],
     "photos": [
-      "https://images.pexels.com/photos/209315/pexels-photo-209315.jpeg",
-      "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg",
-      "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg"
+      "https://images.pexels.com/photos/1470405/pexels-photo-1470405.jpeg",
+      "https://images.pexels.com/photos/2724664/pexels-photo-2724664.jpeg",
+      "https://images.pexels.com/photos/1802255/pexels-photo-1802255.jpeg"
     ],
     "demographics": {
-      "population": 5500,
+      "population": 22000,
       "medianAge": 40,
-      "averageIncome": 78000
+      "averageIncome": 55000
     },
     "amenities": {
-      "parks": ["Prince's Island Park", "Bow River Pathway"],
-      "shopping": ["Kensington Road Shopping", "Local Boutiques"],
-      "dining": ["Craft Breweries", "Trendy Restaurants", "Coffee Shops"]
+      "parks": ["The Downs", "Clifton Observatory", "Leigh Woods"],
+      "shopping": ["Clifton Village", "The Mall", "Independent Boutiques"],
+      "dining": ["Fine Dining", "Artisan Cafés", "Traditional Pubs"]
     }
   },
   {
     "id": 5,
-    "slug": "ottawa-byward-market",
-    "title": "ByWard Market",
-    "city": "Ottawa",
-    "province": "Ontario",
-    "heroImage": "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg",
-    "description": "Ottawa's historic market district, featuring cobblestone streets, heritage buildings, vibrant nightlife, and proximity to Parliament Hill.",
-    "coordinates": [45.4297, -75.6918],
+    "slug": "birmingham-jewellery-quarter",
+    "title": "Jewellery Quarter",
+    "city": "Birmingham",
+    "province": "West Midlands",
+    "heroImage": "https://images.pexels.com/photos/1722183/pexels-photo-1722183.jpeg",
+    "description": "Birmingham's historic Jewellery Quarter combines industrial heritage with modern living, featuring converted workshops, independent restaurants, and thriving creative scene.",
+    "coordinates": [52.4862, -1.9093],
     "averagePrices": {
-      "condo": 520000,
-      "detached": 950000,
-      "rental": 2400
+      "condo": 240000,
+      "detached": 420000,
+      "rental": 1100
     },
-    "propertyTypes": ["Heritage Conversions", "Modern Condos", "Historic Homes"],
+    "propertyTypes": ["Converted Workshops", "Modern Flats", "Victorian Buildings"],
     "lifestyle": [
-      "Historic cobblestone streets",
-      "Vibrant farmers market",
-      "Active nightlife scene",
-      "Walking distance to Parliament",
-      "Cultural festivals and events"
+      "Historic jewellery workshops",
+      "Independent restaurants",
+      "Creative workspaces",
+      "Canal-side living",
+      "Art galleries and museums"
     ],
-    "schools": ["University of Ottawa", "Various Elementary Schools"],
-    "transit": ["OC Transpo Hub", "Light Rail Transit", "Walking Distance"],
+    "schools": ["Birmingham Grammar School", "Various Primary Schools"],
+    "transit": ["Jewellery Quarter Station", "Birmingham New Street", "Metro Tram"],
     "photos": [
-      "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg",
-      "https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg",
-      "https://images.pexels.com/photos/1571467/pexels-photo-1571467.jpeg"
+      "https://images.pexels.com/photos/1722183/pexels-photo-1722183.jpeg",
+      "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg",
+      "https://images.pexels.com/photos/1707310/pexels-photo-1707310.jpeg"
     ],
     "demographics": {
-      "population": 9200,
-      "medianAge": 36,
-      "averageIncome": 72000
+      "population": 19000,
+      "medianAge": 35,
+      "averageIncome": 38000
     },
     "amenities": {
-      "parks": ["Major's Hill Park", "Confederation Park"],
-      "shopping": ["ByWard Market", "Local Artisan Shops"],
-      "dining": ["Fine Dining", "Pubs & Bars", "International Cuisine"]
+      "parks": ["Key Hill Cemetery", "St Paul's Square"],
+      "shopping": ["Independent Jewellers", "Vintage Shops", "Local Markets"],
+      "dining": ["Contemporary Restaurants", "Coffee Roasters", "Street Food"]
     }
   },
   {
     "id": 6,
-    "slug": "toronto-the-beaches",
-    "title": "The Beaches",
-    "city": "Toronto",
-    "province": "Ontario",
-    "heroImage": "https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg",
-    "description": "Toronto's lakefront paradise offering sandy beaches, boardwalks, charming village atmosphere, and beautiful Victorian homes.",
-    "coordinates": [43.6677, -79.2941],
+    "slug": "london-shoreditch",
+    "title": "Shoreditch",
+    "city": "London",
+    "province": "Greater London",
+    "heroImage": "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg",
+    "description": "London's creative epicentre, Shoreditch offers street art, tech startups, vintage markets, and a vibrant nightlife scene in the heart of East London.",
+    "coordinates": [51.5255, -0.0807],
     "averagePrices": {
-      "condo": 850000,
-      "detached": 1600000,
-      "rental": 3100
+      "condo": 650000,
+      "detached": 1800000,
+      "rental": 2500
     },
-    "propertyTypes": ["Victorian Homes", "Beachfront Condos", "Family Houses"],
+    "propertyTypes": ["Converted Warehouses", "Modern Flats", "Loft Spaces"],
     "lifestyle": [
-      "Sandy Lake Ontario beaches",
-      "Historic boardwalk",
-      "Village-like main street",
-      "Family-friendly community",
-      "Beach volleyball and water sports"
+      "Street art and galleries",
+      "Tech startup culture",
+      "Vintage and craft markets",
+      "Trendy bars and nightlife",
+      "Independent coffee shops"
     ],
-    "schools": ["Beaches Alternative School", "Glen Ames Senior Public School"],
-    "transit": ["TTC Streetcar", "Bus Routes", "GO Train Access"],
+    "schools": ["City of London School", "Various Primary Schools"],
+    "transit": ["Liverpool Street Station", "Old Street Station", "Shoreditch High Street"],
     "photos": [
-      "https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg",
-      "https://images.pexels.com/photos/209315/pexels-photo-209315.jpeg",
-      "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg"
+      "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg",
+      "https://images.pexels.com/photos/1802255/pexels-photo-1802255.jpeg",
+      "https://images.pexels.com/photos/1707310/pexels-photo-1707310.jpeg"
     ],
     "demographics": {
-      "population": 21000,
-      "medianAge": 44,
-      "averageIncome": 95000
+      "population": 28000,
+      "medianAge": 33,
+      "averageIncome": 65000
     },
     "amenities": {
-      "parks": ["Woodbine Beach", "Ashbridge's Bay Park"],
-      "shopping": ["Queen Street East", "Beach Boutiques"],
-      "dining": ["Beachfront Patios", "Family Restaurants", "Ice Cream Shops"]
+      "parks": ["Shoreditch Park", "Arnold Circus"],
+      "shopping": ["Brick Lane Market", "Boxpark", "Vintage Shops"],
+      "dining": ["Street Food Markets", "Gastropubs", "International Cuisine"]
     }
   },
   {
     "id": 7,
-    "slug": "vancouver-kitsilano",
-    "title": "Kitsilano",
-    "city": "Vancouver",
-    "province": "British Columbia",
-    "heroImage": "https://images.pexels.com/photos/1571467/pexels-photo-1571467.jpeg",
-    "description": "Vancouver's beach culture hub, Kitsilano offers stunning ocean views, sandy beaches, health-conscious lifestyle, and proximity to downtown.",
-    "coordinates": [49.2606, -123.1370],
+    "slug": "manchester-deansgate",
+    "title": "Deansgate",
+    "city": "Manchester",
+    "province": "Greater Manchester",
+    "heroImage": "https://images.pexels.com/photos/1802255/pexels-photo-1802255.jpeg",
+    "description": "Manchester's premier shopping and dining district, Deansgate features luxury apartments, high-end restaurants, and excellent transport links.",
+    "coordinates": [53.4794, -2.2506],
     "averagePrices": {
-      "condo": 750000,
-      "detached": 2200000,
-      "rental": 2800
+      "condo": 320000,
+      "detached": 520000,
+      "rental": 1400
     },
-    "propertyTypes": ["Beach Houses", "Modern Condos", "Character Homes"],
+    "propertyTypes": ["Luxury Flats", "Modern Apartments", "Penthouses"],
     "lifestyle": [
-      "Kitsilano Beach access",
-      "Health and wellness focus",
-      "Yoga studios and fitness",
-      "Organic markets and cafés",
-      "Mountain and ocean views"
+      "Premium shopping",
+      "Fine dining restaurants",
+      "Riverside location",
+      "Spinningfields business district",
+      "Vibrant nightlife"
     ],
-    "schools": ["Lord Byng Secondary", "Kitsilano Secondary"],
-    "transit": ["Bus Routes", "Broadway SkyTrain", "Bike Lanes"],
+    "schools": ["Manchester Grammar School", "Chetham's School of Music"],
+    "transit": ["Deansgate Station", "Metrolink Tram", "Excellent Bus Links"],
     "photos": [
-      "https://images.pexels.com/photos/1571467/pexels-photo-1571467.jpeg",
-      "https://images.pexels.com/photos/209315/pexels-photo-209315.jpeg",
-      "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg"
+      "https://images.pexels.com/photos/1802255/pexels-photo-1802255.jpeg",
+      "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg",
+      "https://images.pexels.com/photos/1707310/pexels-photo-1707310.jpeg"
     ],
     "demographics": {
-      "population": 41000,
-      "medianAge": 41,
-      "averageIncome": 88000
+      "population": 16000,
+      "medianAge": 34,
+      "averageIncome": 48000
     },
     "amenities": {
-      "parks": ["Kitsilano Beach", "Vanier Park"],
-      "shopping": ["West 4th Avenue", "Broadway Shopping"],
-      "dining": ["Health Food Cafés", "Beachfront Restaurants", "Craft Breweries"]
+      "parks": ["Castlefield Basin", "Spinningfields Square"],
+      "shopping": ["Deansgate Shopping", "Spinningfields", "King Street"],
+      "dining": ["Fine Dining", "Cocktail Bars", "International Restaurants"]
     }
   },
   {
     "id": 8,
-    "slug": "montreal-old-montreal",
-    "title": "Old Montreal",
-    "city": "Montreal",
-    "province": "Quebec",
-    "heroImage": "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg",
-    "description": "Montreal's historic heart featuring cobblestone streets, 17th-century architecture, world-class dining, and stunning waterfront views.",
-    "coordinates": [45.5017, -73.5573],
+    "slug": "edinburgh-new-town",
+    "title": "New Town",
+    "city": "Edinburgh",
+    "province": "Scotland",
+    "heroImage": "https://images.pexels.com/photos/208733/pexels-photo-208733.jpeg",
+    "description": "Edinburgh's Georgian masterpiece, New Town features wide streets, elegant architecture, Princes Street shopping, and prestigious residential addresses.",
+    "coordinates": [55.9558, -3.1927],
     "averagePrices": {
-      "condo": 650000,
-      "detached": 1200000,
-      "rental": 2800
+      "condo": 380000,
+      "detached": 750000,
+      "rental": 1800
     },
-    "propertyTypes": ["Heritage Lofts", "Historic Conversions", "Luxury Condos"],
+    "propertyTypes": ["Georgian Apartments", "Period Flats", "Luxury Townhouses"],
     "lifestyle": [
-      "Cobblestone streets and squares",
-      "17th-century architecture",
-      "Fine dining and wine bars",
-      "Art galleries and museums",
-      "St. Lawrence River views"
+      "Georgian architecture",
+      "Princes Street shopping",
+      "Professional district",
+      "Gardens and green spaces",
+      "Cultural venues"
     ],
-    "schools": ["Various Private Schools", "Nearby Universities"],
-    "transit": ["Metro Stations", "Bus Network", "Walking Distance"],
+    "schools": ["Edinburgh Academy", "Fettes College", "Stewart's Melville College"],
+    "transit": ["Waverley Station", "Edinburgh Trams", "Extensive Bus Network"],
     "photos": [
-      "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg",
-      "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
-      "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg"
+      "https://images.pexels.com/photos/208733/pexels-photo-208733.jpeg",
+      "https://images.pexels.com/photos/2724664/pexels-photo-2724664.jpeg",
+      "https://images.pexels.com/photos/2174656/pexels-photo-2174656.jpeg"
     ],
     "demographics": {
-      "population": 4500,
-      "medianAge": 39,
-      "averageIncome": 82000
+      "population": 25000,
+      "medianAge": 40,
+      "averageIncome": 52000
     },
     "amenities": {
-      "parks": ["Place Jacques-Cartier", "Pointe-à-Callière"],
-      "shopping": ["Rue Saint-Paul", "Artisan Boutiques"],
-      "dining": ["Fine French Restaurants", "Wine Bars", "Historic Taverns"]
+      "parks": ["Princes Street Gardens", "Queen Street Gardens", "Royal Botanic Garden"],
+      "shopping": ["Princes Street", "George Street", "Multrees Walk"],
+      "dining": ["Fine Scottish Cuisine", "International Restaurants", "Traditional Pubs"]
     }
   },
   {
     "id": 9,
-    "slug": "calgary-mission",
-    "title": "Mission",
-    "city": "Calgary",
-    "province": "Alberta",
-    "heroImage": "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
-    "description": "Calgary's trendy inner-city neighborhood featuring modern condos, trendy restaurants, river access, and vibrant nightlife scene.",
-    "coordinates": [51.0366, -114.0719],
+    "slug": "bristol-harbourside",
+    "title": "Harbourside",
+    "city": "Bristol",
+    "province": "South West England",
+    "heroImage": "https://images.pexels.com/photos/1707310/pexels-photo-1707310.jpeg",
+    "description": "Bristol's rejuvenated waterfront, Harbourside features modern apartments, museums, waterside dining, and a vibrant cultural scene.",
+    "coordinates": [51.4500, -2.5997],
     "averagePrices": {
-      "condo": 420000,
-      "detached": 850000,
-      "rental": 2300
+      "condo": 380000,
+      "detached": 620000,
+      "rental": 1600
     },
-    "propertyTypes": ["Modern Condos", "Converted Lofts", "Character Homes"],
+    "propertyTypes": ["Waterfront Flats", "Modern Apartments", "Converted Warehouses"],
     "lifestyle": [
-      "Trendy restaurant scene",
-      "Active nightlife",
-      "Bow River pathway access",
-      "Young professional community",
-      "Close to downtown Calgary"
+      "Waterfront living",
+      "Museums and galleries",
+      "Festivals and events",
+      "Outdoor dining",
+      "City centre proximity"
     ],
-    "schools": ["Western Canada High School", "Various Elementary Schools"],
-    "transit": ["C-Train Nearby", "Bus Routes", "Bike Paths"],
+    "schools": ["Bristol Cathedral School", "Colston's Girls' School"],
+    "transit": ["Bristol Temple Meads", "Regular Ferry Services", "Bus Network"],
     "photos": [
-      "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
-      "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
-      "https://images.pexels.com/photos/209315/pexels-photo-209315.jpeg"
+      "https://images.pexels.com/photos/1707310/pexels-photo-1707310.jpeg",
+      "https://images.pexels.com/photos/1470405/pexels-photo-1470405.jpeg",
+      "https://images.pexels.com/photos/1802255/pexels-photo-1802255.jpeg"
     ],
     "demographics": {
-      "population": 3800,
-      "medianAge": 32,
-      "averageIncome": 75000
+      "population": 18000,
+      "medianAge": 36,
+      "averageIncome": 46000
     },
     "amenities": {
-      "parks": ["Bow River Pathway", "Mission Bridge"],
-      "shopping": ["4th Street SW", "Local Boutiques"],
-      "dining": ["Trendy Restaurants", "Craft Cocktail Bars", "Coffee Roasters"]
+      "parks": ["Castle Park", "Brandon Hill"],
+      "shopping": ["Cabot Circus", "The Galleries", "Independent Shops"],
+      "dining": ["Waterfront Restaurants", "Street Food", "Craft Beer Bars"]
     }
   },
   {
     "id": 10,
-    "slug": "ottawa-westboro",
-    "title": "Westboro",
-    "city": "Ottawa",
-    "province": "Ontario",
-    "heroImage": "https://images.pexels.com/photos/1571467/pexels-photo-1571467.jpeg",
-    "description": "Ottawa's vibrant village within the city, offering boutique shopping, excellent restaurants, Ottawa River access, and a strong sense of community.",
-    "coordinates": [45.3995, -75.7591],
+    "slug": "london-chelsea",
+    "title": "Chelsea",
+    "city": "London",
+    "province": "Greater London",
+    "heroImage": "https://images.pexels.com/photos/1796736/pexels-photo-1796736.jpeg",
+    "description": "London's affluent riverside neighborhood, Chelsea offers designer shopping on King's Road, elegant Victorian townhouses, and proximity to Hyde Park.",
+    "coordinates": [51.4875, -0.1687],
     "averagePrices": {
-      "condo": 480000,
-      "detached": 890000,
-      "rental": 2500
+      "condo": 1200000,
+      "detached": 6500000,
+      "rental": 4200
     },
-    "propertyTypes": ["Village Homes", "Modern Condos", "Riverside Properties"],
+    "propertyTypes": ["Victorian Townhouses", "Luxury Flats", "Mews Houses"],
     "lifestyle": [
-      "Village-like main street",
-      "Boutique shopping and dining",
-      "Ottawa River pathway",
-      "Community farmers market",
-      "Family-friendly atmosphere"
+      "King's Road shopping",
+      "Thames riverside walks",
+      "Boutique restaurants",
+      "Chelsea Flower Show",
+      "Saatchi Gallery"
     ],
-    "schools": ["Churchill Alternative School", "Westboro Academy"],
-    "transit": ["OC Transpo Routes", "LRT Access", "Bike Paths"],
+    "schools": ["Hill House School", "More House School", "Private Schools"],
+    "transit": ["Sloane Square Station", "South Kensington", "Extensive Bus Routes"],
     "photos": [
-      "https://images.pexels.com/photos/1571467/pexels-photo-1571467.jpeg",
-      "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
-      "https://images.pexels.com/photos/209315/pexels-photo-209315.jpeg"
+      "https://images.pexels.com/photos/1796736/pexels-photo-1796736.jpeg",
+      "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg",
+      "https://images.pexels.com/photos/2224861/pexels-photo-2224861.jpeg"
     ],
     "demographics": {
-      "population": 8900,
+      "population": 41000,
       "medianAge": 43,
-      "averageIncome": 92000
+      "averageIncome": 120000
     },
     "amenities": {
-      "parks": ["Westboro Beach", "Ottawa River Pathway"],
-      "shopping": ["Richmond Road", "Independent Boutiques"],
-      "dining": ["Farm-to-Table Restaurants", "Artisan Bakeries", "Wine Bars"]
+      "parks": ["Hyde Park", "Battersea Park", "Chelsea Embankment"],
+      "shopping": ["King's Road", "Sloane Street", "Designer Boutiques"],
+      "dining": ["Fine Dining", "Boutique Cafés", "Riverside Restaurants"]
     }
   }
 ]

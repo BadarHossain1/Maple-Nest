@@ -64,7 +64,7 @@ const TruBrokerStoriesSection = () => (
                         <div className="bg-white/20 rounded-lg p-4 backdrop-blur-sm">
                             <div className="flex items-center gap-2 mb-3">
                                 <Eye className="h-5 w-5" />
-                                <span className="text-sm font-medium">STORIES from MapleNest in Toronto</span>
+                                <span className="text-sm font-medium">STORIES from MapleNest in London</span>
                             </div>
                             <div className="flex -space-x-2">
                                 {[1, 2, 3, 4, 5].map((i) => (
@@ -89,11 +89,11 @@ const TruBrokerStoriesSection = () => (
 // Top Agencies Section
 const TopAgenciesSection = () => {
     const topAgencies = [
-        { name: 'RE/MAX Ontario-Atlantic Canada', listings: 1388, logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=60&h=60&fit=crop' },
-        { name: 'Century 21 Canada', listings: 1241, logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=60&h=60&fit=crop' },
+        { name: 'RE/MAX UK-England', listings: 1388, logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=60&h=60&fit=crop' },
+        { name: 'Century 21 UK', listings: 1241, logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=60&h=60&fit=crop' },
         { name: 'Royal LePage', listings: 1025, logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=60&h=60&fit=crop' },
         { name: 'Sutton Group Realty', listings: 953, logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=60&h=60&fit=crop' },
-        { name: 'Coldwell Banker Canada', listings: 716, logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=60&h=60&fit=crop' }
+        { name: 'Coldwell Banker UK', listings: 716, logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=60&h=60&fit=crop' }
     ];
 
     return (
@@ -108,12 +108,12 @@ const TopAgenciesSection = () => {
                         >
                             <div className="bg-white rounded-xl p-6 shadow-lg">
                                 <div className="flex items-center gap-4 mb-6">
-                                    <Button variant="outline" className="text-emerald-600 border-emerald-600">TORONTO</Button>
-                                    <Button variant="ghost" className="text-gray-500">VANCOUVER</Button>
+                                    <Button variant="outline" className="text-emerald-600 border-emerald-600">London</Button>
+                                    <Button variant="ghost" className="text-gray-500">MANCHESTER</Button>
                                 </div>
 
                                 <h3 className="text-xl font-bold mb-6">
-                                    Top Ranking Agencies with most Verified™ Listings in Toronto
+                                    Top Ranking Agencies with most Verified™ Listings in London
                                 </h3>
 
                                 <div className="space-y-4">
@@ -177,25 +177,25 @@ const TopAgenciesSection = () => {
 const ContentCornerSection = () => {
     const articles = [
         {
-            title: 'Canadian Real Estate Market Review Q3 2024',
+            title: 'UK Real Estate Market Review Q3 2024',
             category: 'Market Insights',
             readTime: '3 min read',
             image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=250&fit=crop',
-            description: 'Curious about the performance of the Canadian property market during the third quarter of 2024? We have all the insights you should know.'
+            description: 'Curious about the performance of the UK property market during the third quarter of 2024? We have all the insights you should know.'
         },
         {
-            title: 'Your Guide to Hosting an Open House in Canada',
+            title: 'Your Guide to Hosting an Open House in UK',
             category: 'Professional Tips',
             readTime: '4 min read',
             image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop',
             description: 'Sell your client\'s home faster and get it on the radar by hosting an Open House! We take you through the basics of arranging for your first event.'
         },
         {
-            title: 'The Ultimate Guide to Off-Plan Properties in Canada',
+            title: 'The Ultimate Guide to Off-Plan Properties in UK',
             category: 'Investment Tips',
             readTime: '5 min read',
             image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop',
-            description: 'Are you an off-plan sales specialist in Canada? We share six great tips that can help you elevate your real estate business.'
+            description: 'Are you an off-plan sales specialist in UK? We share six great tips that can help you elevate your real estate business.'
         }
     ];
 
@@ -303,9 +303,9 @@ const AcademySection = () => (
                         </div>
                         <h2 className="text-3xl font-bold">MapleNest Academy</h2>
                     </div>
-                    <div className="text-sm text-gray-500 mb-4">ENDORSED BY REAL ESTATE COUNCIL OF CANADA</div>
+                    <div className="text-sm text-gray-500 mb-4">ENDORSED BY REAL ESTATE COUNCIL OF UK</div>
                     <p className="text-lg text-gray-700 mb-8">
-                        Join us to boost the skills you need to succeed in the competitive Canadian Real Estate market,
+                        Join us to boost the skills you need to succeed in the competitive UK Real Estate market,
                         and benefit from great networking opportunities.
                     </p>
                     <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600">
@@ -406,10 +406,10 @@ const BuildingGuidesCTA = () => (
                     </div>
 
                     <h3 className="text-2xl font-bold mb-4">
-                        Discover the many stunning buildings of Canada
+                        Discover the many stunning buildings of UK
                     </h3>
                     <p className="text-gray-700 mb-8">
-                        Browse through our many detailed guides for every building in Canada.
+                        Browse through our many detailed guides for every building in UK.
                     </p>
 
                     <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600">
@@ -439,21 +439,21 @@ const BuildingGuidesCTA = () => (
 const TestimonialsSection = () => {
     const testimonials = [
         {
-            text: "The training workshops offered by MapleNest Academy have helped me become more professional and confident in my interactions with clients in Toronto and helped me develop my real estate career.",
+            text: "The training workshops offered by MapleNest Academy have helped me become more professional and confident in my interactions with clients in London and helped me develop my real estate career.",
             author: "Sarah Johnson",
-            title: "Real Estate Consultant, Toronto Real Estate",
+            title: "Real Estate Consultant, London Real Estate",
             avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop&crop=face"
         },
         {
             text: "I thoroughly enjoyed my time at MapleNest Academy. The trainers' teaching style and sense of humour made the sessions fun, informative and engaging. I had a viewing after the workshop, where I applied what I learnt and secured a deal.",
             author: "Michael Chen",
-            title: "Client Manager, Vancouver Premium Real Estate",
+            title: "Client Manager, MANCHESTER Premium Real Estate",
             avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face"
         },
         {
-            text: "Thanks to MapleNest Academy, I managed to close 10 off-plan properties valued at over $2M. The Verified™ badge helped increase inquiry levels greatly.",
+            text: "Thanks to MapleNest Academy, I managed to close 10 off-plan properties valued at over £2M. The Verified™ badge helped increase inquiry levels greatly.",
             author: "Jamie Thompson",
-            title: "Head of Sales and Leasing, Calgary Elite Real Estate",
+            title: "Head of Sales and Leasing, Bristol Elite Real Estate",
             avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
         }
     ];
@@ -521,13 +521,13 @@ const PressSection = () => {
             image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=250&fit=crop'
         },
         {
-            title: 'MapleNest\'s "Real" Real Estate Promise Dominates Toronto\'s Market Expansion',
+            title: 'MapleNest\'s "Real" Real Estate Promise Dominates London\'s Market Expansion',
             source: 'Global News',
             language: 'ENGLISH',
             image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop'
         },
         {
-            title: 'Canada Real Estate Council Qualifies 166 Young Canadian Citizens Enrolled In The New Real Estate Program',
+            title: 'UK Real Estate Council Qualifies 166 Young UK Citizens Enrolled In The New Real Estate Program',
             source: 'CTV News',
             language: 'ENGLISH',
             image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop'
@@ -548,15 +548,15 @@ const PressSection = () => {
                             <h2 className="text-3xl font-bold mb-8">Latest News & Coverage</h2>
                             <img
                                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop"
-                                alt="Canadian real estate market"
+                                alt="UK real estate market"
                                 className="rounded-xl w-full mb-6"
                             />
                             <h3 className="text-xl font-bold mb-4">
-                                Canadian real estate: MapleNest announces AI property valuation service
+                                UK real estate: MapleNest announces AI property valuation service
                             </h3>
                             <div className="flex gap-4 text-sm text-gray-500 mb-4">
                                 <span>ENGLISH</span>
-                                <span>CANADIAN BUSINESS</span>
+                                <span>UK BUSINESS</span>
                             </div>
                             <Button className="bg-emerald-500 hover:bg-emerald-600">
                                 READ MORE
@@ -667,7 +667,7 @@ export default function AgentPortalPage() {
                         transition={{ duration: 0.8 }}
                     >
                         <h1 className="text-5xl font-bold mb-4">Agent Portal</h1>
-                        <p className="text-xl mb-8">Your gateway to success in Canadian real estate</p>
+                        <p className="text-xl mb-8">Your gateway to success in UK real estate</p>
                     </motion.div>
                 </div>
             </section>
@@ -686,3 +686,5 @@ export default function AgentPortalPage() {
         </div>
     );
 }
+
+

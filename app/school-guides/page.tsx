@@ -1,36 +1,36 @@
-﻿'use client';
+'use client';
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight, GraduationCap, Award, MapPin, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-// Canadian top-rated schools data
+// UK top-rated schools data
 const topRatedSchools = [
     {
         id: 1,
-        name: 'University of Toronto Schools',
-        location: 'Toronto, ON',
-        type: 'Public',
+        name: 'City of London School',
+        location: 'London, England',
+        type: 'Independent',
         rating: 9.8,
-        students: 350,
+        students: 950,
         image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9d1?w=800&h=600&fit=crop',
-        description: 'Laboratory school affiliated with University of Toronto'
+        description: 'Leading independent day school in the heart of London'
     },
     {
         id: 2,
-        name: 'York House School',
-        location: 'Vancouver, BC',
-        type: 'Private',
+        name: 'Manchester Grammar School',
+        location: 'Manchester, England',
+        type: 'Independent',
         rating: 9.7,
-        students: 640,
+        students: 1500,
         image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&h=600&fit=crop',
-        description: 'Independent day school for girls from Junior Kindergarten to Grade 12'
+        description: 'Prestigious independent day school with excellent academic achievements'
     },
     {
         id: 3,
-        name: 'Western Canada High School',
-        location: 'Calgary, AB',
+        name: 'Western UK High School',
+        location: 'Bristol, England',
         type: 'Public',
         rating: 9.5,
         students: 2100,
@@ -39,8 +39,8 @@ const topRatedSchools = [
     },
     {
         id: 4,
-        name: 'Collège Jean-de-Brébeuf',
-        location: 'Montreal, QC',
+        name: 'Coll�ge Jean-de-Br�beuf',
+        location: 'Edinburgh, Scotland',
         type: 'Private',
         rating: 9.6,
         students: 2800,
@@ -53,7 +53,7 @@ const specialPrograms = [
     {
         id: 5,
         name: 'Earl Haig Secondary School',
-        location: 'Toronto, ON',
+        location: 'London, England',
         type: 'Arts Focus',
         rating: 9.2,
         students: 1200,
@@ -63,7 +63,7 @@ const specialPrograms = [
     {
         id: 6,
         name: 'Sir Winston Churchill Secondary',
-        location: 'Vancouver, BC',
+        location: 'Manchester, England',
         type: 'IB Program',
         rating: 9.1,
         students: 1800,
@@ -82,8 +82,8 @@ const specialPrograms = [
     },
     {
         id: 8,
-        name: 'École internationale de Montréal',
-        location: 'Montreal, QC',
+        name: '�cole internationale de Montr�al',
+        location: 'Edinburgh, Scotland',
         type: 'International',
         rating: 9.3,
         students: 600,
@@ -96,7 +96,7 @@ const elementarySchools = [
     {
         id: 9,
         name: 'Rosedale Public School',
-        location: 'Toronto, ON',
+        location: 'London, England',
         type: 'Elementary',
         rating: 9.0,
         students: 420,
@@ -106,7 +106,7 @@ const elementarySchools = [
     {
         id: 10,
         name: 'Trafalgar Elementary',
-        location: 'Vancouver, BC',
+        location: 'Manchester, England',
         type: 'Elementary',
         rating: 8.9,
         students: 350,
@@ -116,7 +116,7 @@ const elementarySchools = [
     {
         id: 11,
         name: 'Colonel Walker Elementary',
-        location: 'Calgary, AB',
+        location: 'Bristol, England',
         type: 'Elementary',
         rating: 8.8,
         students: 480,
@@ -125,8 +125,8 @@ const elementarySchools = [
     },
     {
         id: 12,
-        name: 'École primaire Saint-Enfant-Jésus',
-        location: 'Montreal, QC',
+        name: '�cole primaire Saint-Enfant-J�sus',
+        location: 'Edinburgh, Scotland',
         type: 'Elementary',
         rating: 8.7,
         students: 380,
@@ -154,7 +154,7 @@ export default function SchoolGuidesPage() {
                         transition={{ duration: 0.8 }}
                     >
                         <h1 className="text-5xl font-bold mb-4">Find the Best Schools!</h1>
-                        <p className="text-xl mb-8">Discover Canada&apos;s top educational institutions for your family</p>
+                        <p className="text-xl mb-8">Discover UK&apos;s top educational institutions for your family</p>
                         <div className="flex justify-center">
                             <div className="flex items-center bg-white rounded-lg overflow-hidden shadow-lg max-w-md w-full">
                                 <input
@@ -231,7 +231,7 @@ export default function SchoolGuidesPage() {
 
                         <div className="text-center">
                             <Button variant="outline" className="group">
-                                VIEW ALL TOP RATED SCHOOLS IN CANADA
+                                VIEW ALL TOP RATED SCHOOLS IN UK
                                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                             </Button>
                         </div>
@@ -299,7 +299,7 @@ export default function SchoolGuidesPage() {
 
                         <div className="text-center">
                             <Button variant="outline" className="group">
-                                VIEW ALL SPECIAL PROGRAM SCHOOLS IN CANADA
+                                VIEW ALL SPECIAL PROGRAM SCHOOLS IN UK
                                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                             </Button>
                         </div>
@@ -367,7 +367,7 @@ export default function SchoolGuidesPage() {
 
                         <div className="text-center">
                             <Button variant="outline" className="group">
-                                VIEW ALL ELEMENTARY SCHOOLS IN CANADA
+                                VIEW ALL ELEMENTARY SCHOOLS IN UK
                                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                             </Button>
                         </div>

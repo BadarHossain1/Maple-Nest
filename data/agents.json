@@ -1,22 +1,22 @@
 [
   {
     "id": 1,
-    "slug": "sarah-chen-toronto",
+    "slug": "sarah-chen-london",
     "name": "Sarah Chen",
     "headshot": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
-    "email": "sarah@torontopremium.ca",
-    "phone": "(416) 555-0123",
+    "email": "sarah@londonpremium.co.uk",
+    "phone": "+44 20 7946 0123",
     "languages": ["English", "Mandarin", "Cantonese"],
-    "brokerage": "Toronto Premium Realty",
-    "serviceAreas": ["Toronto", "North York", "Mississauga"],
-    "specialties": ["Luxury Condos", "Downtown Properties", "Investment Properties"],
+    "brokerage": "London Premium Properties",
+    "serviceAreas": ["Mayfair", "Chelsea", "Kensington"],
+    "specialties": ["Luxury Flats", "Central London Properties", "Investment Properties"],
     "experience": 12,
-    "bio": "Sarah Chen is a dedicated real estate professional with over 12 years of experience in Toronto's dynamic market. Specializing in luxury condominiums and downtown properties, she has helped hundreds of clients navigate Toronto's competitive real estate landscape. Sarah's multilingual abilities and deep market knowledge make her an invaluable resource for both local and international clients.",
-    "badges": ["Top Producer 2023", "Luxury Specialist", "Multi-Million Dollar Club"],
+    "bio": "Sarah Chen is a dedicated real estate professional with over 12 years of experience in London's dynamic market. Specialising in luxury flats and central London properties, she has helped hundreds of clients navigate London's competitive real estate landscape. Sarah's multilingual abilities and deep market knowledge make her an invaluable resource for both local and international clients.",
+    "badges": ["Top Producer 2023", "Luxury Specialist", "Multi-Million Pound Club"],
     "associatedListings": [1, 7, 11, 16, 21, 26],
     "socialMedia": {
       "linkedin": "https://linkedin.com/in/sarahchen-realestate",
-      "instagram": "@sarahchen_toronto"
+      "instagram": "@sarahchen_london"
     },
     "reviews": {
       "average": 4.9,
@@ -25,21 +25,21 @@
   },
   {
     "id": 2,
-    "slug": "michael-wong-vancouver",
+    "slug": "michael-wong-manchester",
     "name": "Michael Wong",
     "headshot": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg",
-    "email": "michael@coastalprops.ca",
-    "phone": "(604) 555-0456",
+    "email": "michael@manchesterprops.co.uk",
+    "phone": "+44 161 555 0456",
     "languages": ["English", "Mandarin"],
-    "brokerage": "Vancouver Coastal Properties",
-    "serviceAreas": ["Vancouver", "West Vancouver", "Richmond"],
+    "brokerage": "Manchester Luxury Estates",
+    "serviceAreas": ["Northern Quarter", "Deansgate", "Salford Quays"],
     "specialties": ["Waterfront Properties", "Luxury Homes", "New Construction"],
     "experience": 9,
-    "bio": "Michael Wong brings nearly a decade of expertise to Vancouver's luxury real estate market. With a focus on waterfront properties and high-end residences, Michael has established himself as a trusted advisor for discerning clients. His attention to detail and commitment to excellence have earned him recognition as one of Vancouver's top realtors.",
+    "bio": "Michael Wong brings nearly a decade of expertise to Manchester's luxury real estate market. With a focus on waterfront properties and high-end residences, Michael has established himself as a trusted advisor for discerning clients. His attention to detail and commitment to excellence have earned him recognition as one of Manchester's top estate agents.",
     "badges": ["Waterfront Specialist", "New Home Expert", "Client Choice Award 2023"],
     "associatedListings": [2, 6, 12, 17, 22, 27],
     "socialMedia": {
-      "linkedin": "https://linkedin.com/in/michaelwong-vancouver",
+      "linkedin": "https://linkedin.com/in/michaelwong-manchester",
       "instagram": "@michaelwong_realty"
     },
     "reviews": {
@@ -49,190 +49,46 @@
   },
   {
     "id": 3,
-    "slug": "marie-dubois-montreal",
+    "slug": "marie-dubois-edinburgh",
     "name": "Marie Dubois",
-    "headshot": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
-    "email": "marie@plateauimmo.ca",
-    "phone": "(514) 555-0789",
-    "languages": ["French", "English"],
-    "brokerage": "Plateau Immobilier",
-    "serviceAreas": ["Montreal", "Westmount", "Outremont"],
-    "specialties": ["Heritage Properties", "Plateau Neighborhoods", "Luxury Homes"],
+    "headshot": "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg",
+    "email": "marie@edinburghprestige.co.uk",
+    "phone": "+44 131 555 0789",
+    "languages": ["English", "French"],
+    "brokerage": "Edinburgh Prestige Properties",
+    "serviceAreas": ["Old Town", "New Town", "Stockbridge"],
+    "specialties": ["Heritage Properties", "Georgian Townhouses", "Character Homes"],
     "experience": 15,
-    "bio": "Marie Dubois est une courtière immobilière expérimentée qui se spécialise dans les propriétés patrimoniales et les quartiers prestigieux de Montréal. Avec plus de 15 ans d'expérience, elle offre une expertise approfondie du marché montréalais et un service personnalisé à sa clientèle.",
-    "badges": ["Heritage Property Expert", "Top 1% Agent", "Luxury Market Leader"],
-    "associatedListings": [3, 8, 13, 18, 23, 28],
+    "bio": "Marie Dubois brings 15 years of expertise to Edinburgh's historic property market. Specialising in heritage homes and Georgian architecture, she provides exceptional bilingual service to local and international buyers. Her deep knowledge of Edinburgh's property landscape and dedication to client satisfaction have made her a trusted name in Scottish real estate.",
+    "badges": ["Heritage Specialist", "Five Star Agent", "Diamond Achievement"],
+    "associatedListings": [3, 8, 13, 18, 23],
     "socialMedia": {
-      "linkedin": "https://linkedin.com/in/marie-dubois-montreal",
-      "instagram": "@mariedubois_immo"
+      "linkedin": "https://linkedin.com/in/marie-dubois-edinburgh",
+      "facebook": "Marie Dubois Edinburgh Properties"
     },
     "reviews": {
       "average": 4.9,
-      "count": 156
-    }
-  },
-  {
-    "id": 4,
-    "slug": "robert-johnson-calgary",
-    "name": "Robert Johnson",
-    "headshot": "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg",
-    "email": "robert@calgarycommercial.ca",
-    "phone": "(403) 555-0321",
-    "languages": ["English"],
-    "brokerage": "Calgary Commercial Realty",
-    "serviceAreas": ["Calgary", "Airdrie", "Cochrane"],
-    "specialties": ["Commercial Properties", "Investment Real Estate", "Office Spaces"],
-    "experience": 18,
-    "bio": "Robert Johnson is Calgary's premier commercial real estate specialist with 18 years of experience helping businesses find their perfect space. His deep understanding of Calgary's commercial market and strong relationships with property owners make him the go-to agent for office, retail, and industrial properties.",
-    "badges": ["Commercial Expert", "CCIM Designation", "Business Leader Award"],
-    "associatedListings": [4, 9, 14, 19, 24, 29],
-    "socialMedia": {
-      "linkedin": "https://linkedin.com/in/robert-johnson-calgary",
-      "twitter": "@rjohnson_yyc"
-    },
-    "reviews": {
-      "average": 4.7,
-      "count": 73
-    }
-  },
-  {
-    "id": 5,
-    "slug": "jennifer-smith-ottawa",
-    "name": "Jennifer Smith",
-    "headshot": "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg",
-    "email": "jennifer@ottawafamily.ca",
-    "phone": "(613) 555-0654",
-    "languages": ["English", "French"],
-    "brokerage": "Ottawa Family Homes",
-    "serviceAreas": ["Ottawa", "Kanata", "Orleans"],
-    "specialties": ["Family Homes", "First-Time Buyers", "Relocation Services"],
-    "experience": 11,
-    "bio": "Jennifer Smith specializes in helping families find their perfect home in Ottawa's diverse neighborhoods. With 11 years of experience and bilingual service, she provides comprehensive support for first-time buyers, growing families, and those relocating to the National Capital Region.",
-    "badges": ["Family Home Specialist", "First-Time Buyer Expert", "Relocation Specialist"],
-    "associatedListings": [5, 10, 15, 20, 25, 30],
-    "socialMedia": {
-      "linkedin": "https://linkedin.com/in/jennifer-smith-ottawa",
-      "facebook": "Jennifer Smith Ottawa Homes"
-    },
-    "reviews": {
-      "average": 4.8,
       "count": 94
     }
   },
   {
-    "id": 6,
-    "slug": "david-lee-vancouver-luxury",
-    "name": "David Lee",
-    "headshot": "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg",
-    "email": "david@vluxury.ca",
-    "phone": "(604) 555-0987",
-    "languages": ["English", "Korean"],
-    "brokerage": "Vancouver Luxury Estates",
-    "serviceAreas": ["Vancouver", "West Vancouver", "UBC"],
-    "specialties": ["Luxury Estates", "Waterfront Properties", "High-Net-Worth Clients"],
-    "experience": 14,
-    "bio": "David Lee is Vancouver's luxury real estate specialist, working exclusively with high-end properties and discerning clients. His portfolio includes some of Vancouver's most prestigious waterfront estates and luxury condominiums. David's discretion, market expertise, and personalized service have made him the preferred choice for luxury real estate transactions.",
-    "badges": ["Luxury Estate Expert", "Waterfront Specialist", "International Client Specialist"],
-    "associatedListings": [6, 12, 17, 22, 27],
-    "socialMedia": {
-      "linkedin": "https://linkedin.com/in/david-lee-luxury",
-      "instagram": "@davidlee_luxury"
-    },
-    "reviews": {
-      "average": 5.0,
-      "count": 42
-    }
-  },
-  {
-    "id": 7,
-    "slug": "lisa-park-toronto-junction",
-    "name": "Lisa Park",
-    "headshot": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
-    "email": "lisa@junctionliving.ca",
-    "phone": "(416) 555-0147",
-    "languages": ["English", "Korean"],
-    "brokerage": "Junction Living Co.",
-    "serviceAreas": ["The Junction", "High Park", "Roncesvilles"],
-    "specialties": ["Urban Living", "Lofts & Condos", "Creative Professionals"],
-    "experience": 7,
-    "bio": "Lisa Park is a dynamic real estate professional who specializes in Toronto's creative neighborhoods. With a focus on lofts, condos, and unique urban properties, she helps artists, professionals, and young families discover the vibrant lifestyle opportunities in Toronto's west end communities.",
-    "badges": ["Urban Living Expert", "Creative District Specialist", "Rising Star Award"],
-    "associatedListings": [7, 21, 26],
-    "socialMedia": {
-      "linkedin": "https://linkedin.com/in/lisa-park-junction",
-      "instagram": "@lisapark_toronto"
-    },
-    "reviews": {
-      "average": 4.9,
-      "count": 67
-    }
-  },
-  {
-    "id": 8,
-    "slug": "pierre-leblanc-montreal-commercial",
-    "name": "Pierre Leblanc",
-    "headshot": "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg",
-    "email": "pierre@vieuxport.ca",
-    "phone": "(514) 555-0258",
-    "languages": ["French", "English", "Spanish"],
-    "brokerage": "Vieux-Port Commercial",
-    "serviceAreas": ["Old Montreal", "Downtown", "Griffintown"],
-    "specialties": ["Commercial Retail", "Restaurant Spaces", "Tourism Properties"],
-    "experience": 13,
-    "bio": "Pierre Leblanc se spécialise dans l'immobilier commercial dans les quartiers historiques et touristiques de Montréal. Avec 13 ans d'expérience, il aide les entrepreneurs à trouver l'espace commercial parfait dans des emplacements de choix avec un fort achalandage.",
-    "badges": ["Commercial Retail Expert", "Tourism Specialist", "Historic District Expert"],
-    "associatedListings": [8, 13, 18, 23, 28],
-    "socialMedia": {
-      "linkedin": "https://linkedin.com/in/pierre-leblanc-commercial",
-      "facebook": "Pierre Leblanc Commercial Immobilier"
-    },
-    "reviews": {
-      "average": 4.8,
-      "count": 81
-    }
-  },
-  {
-    "id": 9,
-    "slug": "amanda-taylor-calgary",
-    "name": "Amanda Taylor",
-    "headshot": "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg",
-    "email": "amanda@calgarymodern.ca",
-    "phone": "(403) 555-0369",
+    "id": 4,
+    "slug": "robert-johnson-bristol",
+    "name": "Robert Johnson",
+    "headshot": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg",
+    "email": "robert@bristolcommercial.co.uk",
+    "phone": "+44 117 555 0321",
     "languages": ["English"],
-    "brokerage": "Calgary Modern Homes",
-    "serviceAreas": ["Calgary", "Canmore", "Okotoks"],
-    "specialties": ["New Construction", "Modern Design", "Energy Efficient Homes"],
-    "experience": 8,
-    "bio": "Amanda Taylor is Calgary's new construction specialist, working closely with builders and developers to offer the latest in modern home design and energy-efficient living. Her expertise in new builds and contemporary architecture has made her the preferred agent for buyers seeking cutting-edge homes.",
-    "badges": ["New Construction Expert", "Modern Design Specialist", "Green Building Certified"],
-    "associatedListings": [9, 14, 19, 24, 29],
+    "brokerage": "Bristol Commercial Realty",
+    "serviceAreas": ["Clifton", "Harbourside", "Redcliffe"],
+    "specialties": ["Commercial Properties", "Office Spaces", "Retail Premises"],
+    "experience": 18,
+    "bio": "Robert Johnson is Bristol's premier commercial real estate specialist with 18 years of experience helping businesses find their perfect space. His deep understanding of Bristol's commercial market and strong relationships with property owners make him the go-to agent for office, retail, and industrial properties.",
+    "badges": ["Commercial Expert", "Business Growth Partner", "Professional Excellence"],
+    "associatedListings": [4, 9, 14, 19, 24],
     "socialMedia": {
-      "linkedin": "https://linkedin.com/in/amanda-taylor-calgary",
-      "instagram": "@amandataylor_homes"
-    },
-    "reviews": {
-      "average": 4.9,
-      "count": 58
-    }
-  },
-  {
-    "id": 10,
-    "slug": "tom-wilson-ottawa-urban",
-    "name": "Tom Wilson",
-    "headshot": "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg",
-    "email": "tom@ottawaurban.ca",
-    "phone": "(613) 555-0741",
-    "languages": ["English", "French"],
-    "brokerage": "Ottawa Urban Living",
-    "serviceAreas": ["ByWard Market", "Centretown", "Little Italy"],
-    "specialties": ["Urban Condos", "Downtown Living", "Investment Properties"],
-    "experience": 10,
-    "bio": "Tom Wilson specializes in Ottawa's urban core, helping clients discover the benefits of downtown living. With 10 years of experience in condominiums and urban properties, he provides expert guidance on investment opportunities and city lifestyle benefits.",
-    "badges": ["Urban Living Expert", "Investment Specialist", "Downtown Authority"],
-    "associatedListings": [10, 15, 20, 25, 30],
-    "socialMedia": {
-      "linkedin": "https://linkedin.com/in/tom-wilson-ottawa",
-      "twitter": "@tomwilson_ottawa"
+      "linkedin": "https://linkedin.com/in/robert-johnson-bristol",
+      "twitter": "@robertjohnson_bristol"
     },
     "reviews": {
       "average": 4.7,
@@ -240,51 +96,195 @@
     }
   },
   {
-    "id": 11,
-    "slug": "rachel-green-toronto-beaches",
-    "name": "Rachel Green",
-    "headshot": "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg",
-    "email": "rachel@beachesrealty.ca",
-    "phone": "(416) 555-0852",
+    "id": 5,
+    "slug": "jennifer-smith-birmingham",
+    "name": "Jennifer Smith",
+    "headshot": "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg",
+    "email": "jennifer@birminghamfamily.co.uk",
+    "phone": "+44 121 555 0654",
     "languages": ["English"],
-    "brokerage": "Beaches Realty Group",
-    "serviceAreas": ["The Beaches", "Leslieville", "Riverdale"],
-    "specialties": ["Waterfront Properties", "Family Homes", "Beach Communities"],
-    "experience": 13,
-    "bio": "Rachel Green is the go-to agent for Toronto's beautiful lakefront communities. With 13 years of experience in The Beaches and surrounding neighborhoods, she helps families discover the unique lifestyle and community benefits of Toronto's waterfront living.",
-    "badges": ["Waterfront Expert", "Community Specialist", "Family Home Authority"],
-    "associatedListings": [11, 16, 21, 26],
+    "brokerage": "Birmingham Family Homes",
+    "serviceAreas": ["Jewellery Quarter", "Edgbaston", "Moseley"],
+    "specialties": ["Family Homes", "First-Time Buyers", "Period Properties"],
+    "experience": 11,
+    "bio": "Jennifer Smith specialises in helping families find their perfect home in Birmingham's diverse neighbourhoods. With 11 years of experience, she provides comprehensive support for first-time buyers, growing families, and those relocating to the West Midlands.",
+    "badges": ["Family Home Expert", "First-Time Buyer Specialist", "Outstanding Service"],
+    "associatedListings": [5, 10, 15, 20, 25],
     "socialMedia": {
-      "linkedin": "https://linkedin.com/in/rachel-green-beaches",
-      "instagram": "@rachelgreen_beaches"
+      "linkedin": "https://linkedin.com/in/jennifer-smith-birmingham",
+      "facebook": "Jennifer Smith Birmingham Homes"
     },
     "reviews": {
       "average": 4.9,
-      "count": 103
+      "count": 112
+    }
+  },
+  {
+    "id": 6,
+    "slug": "david-lee-london-luxury",
+    "name": "David Lee",
+    "headshot": "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg",
+    "email": "david@londonluxuryestates.co.uk",
+    "phone": "+44 20 7123 4567",
+    "languages": ["English", "Mandarin", "Cantonese"],
+    "brokerage": "London Luxury Estates",
+    "serviceAreas": ["Mayfair", "Knightsbridge", "Belgravia"],
+    "specialties": ["Ultra-Luxury", "Prime Central London", "International Clients"],
+    "experience": 16,
+    "bio": "David Lee is London's luxury real estate specialist, working exclusively with high-end properties and discerning clients. His portfolio includes some of London's most prestigious mansions and luxury penthouses. David's discretion, market expertise, and personalised service have made him the preferred choice for luxury real estate transactions.",
+    "badges": ["Ultra-Luxury Specialist", "International Network", "Platinum Circle"],
+    "associatedListings": [1, 7, 16],
+    "socialMedia": {
+      "linkedin": "https://linkedin.com/in/david-lee-london",
+      "instagram": "@davidlee_luxury"
+    },
+    "reviews": {
+      "average": 5.0,
+      "count": 68
+    }
+  },
+  {
+    "id": 7,
+    "slug": "lisa-park-shoreditch",
+    "name": "Lisa Park",
+    "headshot": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+    "email": "lisa@shoreditch-urban.co.uk",
+    "phone": "+44 20 7555 0987",
+    "languages": ["English", "Korean"],
+    "brokerage": "Shoreditch Urban Living",
+    "serviceAreas": ["Shoreditch", "Hackney", "Dalston"],
+    "specialties": ["Urban Lofts", "Converted Warehouses", "Creative Spaces"],
+    "experience": 8,
+    "bio": "Lisa Park is a dynamic real estate professional who specialises in London's creative neighbourhoods. With a focus on lofts, flats, and unique urban properties, she helps artists, professionals, and young families discover the vibrant lifestyle opportunities in East London communities.",
+    "badges": ["Urban Living Expert", "Rising Star", "Client Favourite"],
+    "associatedListings": [11, 21],
+    "socialMedia": {
+      "linkedin": "https://linkedin.com/in/lisapark-london",
+      "instagram": "@lisapark_london"
+    },
+    "reviews": {
+      "average": 4.8,
+      "count": 52
+    }
+  },
+  {
+    "id": 8,
+    "slug": "pierre-leblanc-manchester-commercial",
+    "name": "Pierre Leblanc",
+    "headshot": "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg",
+    "email": "pierre@manchesterbusiness.co.uk",
+    "phone": "+44 161 555 0432",
+    "languages": ["English", "French"],
+    "brokerage": "Manchester Business Properties",
+    "serviceAreas": ["Northern Quarter", "Spinningfields", "Ancoats"],
+    "specialties": ["Office Spaces", "Mixed-Use Developments", "Investment Properties"],
+    "experience": 14,
+    "bio": "Pierre Leblanc is a seasoned commercial real estate expert specialising in Manchester's thriving business districts. With bilingual service and extensive market knowledge, he has facilitated numerous successful commercial transactions, from tech startups to established corporations.",
+    "badges": ["Commercial Excellence", "Business Partner of the Year", "Top Investment Advisor"],
+    "associatedListings": [12, 17],
+    "socialMedia": {
+      "linkedin": "https://linkedin.com/in/pierre-leblanc-manchester",
+      "twitter": "@pierreleblanc_mcr"
+    },
+    "reviews": {
+      "average": 4.9,
+      "count": 81
+    }
+  },
+  {
+    "id": 9,
+    "slug": "amanda-taylor-bristol",
+    "name": "Amanda Taylor",
+    "headshot": "https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg",
+    "email": "amanda@bristolmodern.co.uk",
+    "phone": "+44 117 555 0876",
+    "languages": ["English"],
+    "brokerage": "Bristol Modern Homes",
+    "serviceAreas": ["Clifton", "Redland", "Cotham"],
+    "specialties": ["New Construction", "Modern Architecture", "Eco-Homes"],
+    "experience": 10,
+    "bio": "Amanda Taylor is Bristol's new construction specialist, working closely with builders and developers to offer the latest in modern home design and energy-efficient living. Her expertise in new builds and contemporary architecture has made her the preferred agent for buyers seeking cutting-edge homes.",
+    "badges": ["New Build Expert", "Eco-Property Specialist", "Innovation Award"],
+    "associatedListings": [14, 24],
+    "socialMedia": {
+      "linkedin": "https://linkedin.com/in/amanda-taylor-bristol",
+      "instagram": "@amandataylor_homes"
+    },
+    "reviews": {
+      "average": 4.8,
+      "count": 64
+    }
+  },
+  {
+    "id": 10,
+    "slug": "tom-wilson-edinburgh-urban",
+    "name": "Tom Wilson",
+    "headshot": "https://images.pexels.com/photos/1845534/pexels-photo-1845534.jpeg",
+    "email": "tom@edinburghurban.co.uk",
+    "phone": "+44 131 555 0234",
+    "languages": ["English"],
+    "brokerage": "Edinburgh Urban Living",
+    "serviceAreas": ["New Town", "Leith", "Stockbridge"],
+    "specialties": ["City Centre Flats", "Rental Properties", "Investment Opportunities"],
+    "experience": 10,
+    "bio": "Tom Wilson specialises in Edinburgh's urban core, helping clients discover the benefits of city centre living. With 10 years of experience in flats and urban properties, he provides expert guidance on investment opportunities and city lifestyle benefits.",
+    "badges": ["Urban Specialist", "Investment Advisor", "Excellent Service"],
+    "associatedListings": [13, 18],
+    "socialMedia": {
+      "linkedin": "https://linkedin.com/in/tom-wilson-edinburgh",
+      "twitter": "@tomwilson_edinburgh"
+    },
+    "reviews": {
+      "average": 4.7,
+      "count": 59
+    }
+  },
+  {
+    "id": 11,
+    "slug": "rachel-green-london-riverside",
+    "name": "Rachel Green",
+    "headshot": "https://images.pexels.com/photos/1036620/pexels-photo-1036620.jpeg",
+    "email": "rachel@londonriverside.co.uk",
+    "phone": "+44 20 7555 0345",
+    "languages": ["English"],
+    "brokerage": "London Riverside Properties",
+    "serviceAreas": ["Canary Wharf", "Greenwich", "Isle of Dogs"],
+    "specialties": ["Waterfront Properties", "Family Homes", "Neighbourhood Expert"],
+    "experience": 13,
+    "bio": "Rachel Green is the go-to agent for London's beautiful riverside communities. With 13 years of experience along the Thames and surrounding neighbourhoods, she helps families discover the unique lifestyle and community benefits of London's waterfront living.",
+    "badges": ["Waterfront Expert", "Family Choice Award", "Neighbourhood Champion"],
+    "associatedListings": [26],
+    "socialMedia": {
+      "linkedin": "https://linkedin.com/in/rachel-green-london",
+      "facebook": "Rachel Green London Riverside"
+    },
+    "reviews": {
+      "average": 4.9,
+      "count": 98
     }
   },
   {
     "id": 12,
-    "slug": "alexander-kim-vancouver-elite",
+    "slug": "alexander-kim-manchester-elite",
     "name": "Alexander Kim",
-    "headshot": "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg",
-    "email": "alex@elitevan.ca",
-    "phone": "(604) 555-0963",
-    "languages": ["English", "Korean", "Mandarin"],
-    "brokerage": "Vancouver Elite Properties",
-    "serviceAreas": ["Yaletown", "Coal Harbour", "West End"],
-    "specialties": ["Ultra-Luxury", "Penthouses", "International Clients"],
+    "headshot": "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg",
+    "email": "alexander@manchesterelite.co.uk",
+    "phone": "+44 161 555 0789",
+    "languages": ["English", "Mandarin", "Korean"],
+    "brokerage": "Manchester Elite Properties",
+    "serviceAreas": ["Didsbury", "Alderley Edge", "Wilmslow"],
+    "specialties": ["Ultra-Luxury", "International Buyers", "Executive Relocations"],
     "experience": 16,
-    "bio": "Alexander Kim represents the pinnacle of luxury real estate in Vancouver. With 16 years of experience in ultra-high-end properties, he has facilitated some of Vancouver's most prestigious real estate transactions. His multilingual abilities and international network make him the preferred choice for discerning global clientele.",
-    "badges": ["Ultra-Luxury Specialist", "Penthouse Expert", "International Specialist"],
-    "associatedListings": [12, 22, 27],
+    "bio": "Alexander Kim represents the pinnacle of luxury real estate in Greater Manchester. With 16 years of experience in ultra-high-end properties, he has facilitated some of Manchester's most prestigious real estate transactions. His multilingual abilities and international network make him the preferred choice for discerning global clientele.",
+    "badges": ["Ultra-Luxury Expert", "International Network", "Platinum Achievement"],
+    "associatedListings": [6, 22],
     "socialMedia": {
-      "linkedin": "https://linkedin.com/in/alexander-kim-elite",
-      "instagram": "@alexanderkim_elite"
+      "linkedin": "https://linkedin.com/in/alexander-kim-manchester",
+      "instagram": "@alexanderkim_luxury"
     },
     "reviews": {
       "average": 5.0,
-      "count": 29
+      "count": 45
     }
   }
 ]

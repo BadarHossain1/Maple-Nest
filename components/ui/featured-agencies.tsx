@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Canadian Real Estate Agencies Data
+// UK Real Estate Agencies Data
 const featuredAgencies = [
     {
         id: 1,
@@ -13,20 +13,20 @@ const featuredAgencies = [
         color: 'bg-blue-600',
         propertiesForSale: 2847,
         propertiesForRent: 1256,
-        description: 'Canada\'s leading real estate network'
+        description: 'UK\'s leading real estate network'
     },
     {
         id: 2,
-        name: 'RE/MAX Canada',
+        name: 'RE/MAX UK',
         logo: 'RE/MAX',
         color: 'bg-red-600',
         propertiesForSale: 3521,
         propertiesForRent: 892,
-        description: 'Premium properties across Canada'
+        description: 'Premium properties across UK'
     },
     {
         id: 3,
-        name: 'Century 21 Canada',
+        name: 'Century 21 UK',
         logo: 'C21',
         color: 'bg-yellow-600',
         propertiesForSale: 1967,
@@ -76,7 +76,7 @@ const featuredAgencies = [
         color: 'bg-amber-700',
         propertiesForSale: 987,
         propertiesForRent: 423,
-        description: 'Toronto\'s premier luxury agency'
+        description: 'London\'s premier luxury agency'
     },
     {
         id: 9,
@@ -270,3 +270,4 @@ export function FeaturedAgencies() {
         </section>
     );
 }
+

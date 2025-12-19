@@ -7,7 +7,7 @@ async function testPropertyGPT() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        message: 'What are the average home prices in Toronto?',
+        message: 'What are the average home prices in London?',
         conversationHistory: []
       }),
     });

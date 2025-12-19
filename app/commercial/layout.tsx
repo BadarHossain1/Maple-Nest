@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Commercial Real Estate in Canada | MapleNest',
-  description: 'Find commercial real estate opportunities across Canada. Office spaces, retail locations, and investment properties.',
+  title: 'Commercial Real Estate in the UK | MapleNest',
+  description: 'Find commercial real estate opportunities across the UK. Office spaces, retail locations, and investment properties.',
 };
 
 export default function CommercialLayout({

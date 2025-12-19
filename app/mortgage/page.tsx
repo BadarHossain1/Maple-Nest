@@ -46,7 +46,7 @@ export default function MortgagePage() {
   const downPaymentPercentage = (formData.downPayment / formData.homePrice * 100) || 0;
   const loanToValue = ((formData.homePrice - formData.downPayment) / formData.homePrice * 100) || 0;
 
-  // Canadian mortgage insurance calculation
+  // UK mortgage insurance calculation
   const cmhcInsurance = formData.downPayment < (formData.homePrice * 0.2) 
     ? results.loanAmount * 0.0275 // Approximate CMHC premium
     : 0;
@@ -66,11 +66,11 @@ export default function MortgagePage() {
       >
         <div className="text-center mb-6 sm:mb-8">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Canadian Mortgage Calculator
+            UK Mortgage Calculator
           </h1>
           <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
             Calculate your monthly mortgage payments and explore different scenarios 
-            to find the right mortgage for your Canadian home purchase.
+            to find the right mortgage for your UK home purchase.
           </p>
         </div>
 
@@ -254,13 +254,13 @@ export default function MortgagePage() {
 
             <Card>
               <CardHeader>
-                <CardTitle>Canadian Mortgage Tips</CardTitle>
+                <CardTitle>UK Mortgage Tips</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3 text-sm">
                   <div className="flex items-start gap-2">
                     <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2"></div>
-                    <p>Minimum down payment: 5% for homes under $500K, 10% for $500K-$1M</p>
+                    <p>Minimum down payment: 5% for homes under £500K, 10% for £500K-£1M</p>
                   </div>
                   <div className="flex items-start gap-2">
                     <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2"></div>

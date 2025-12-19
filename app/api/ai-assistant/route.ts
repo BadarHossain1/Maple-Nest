@@ -7,40 +7,40 @@ export const dynamic = 'force-dynamic';
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY!);
 
-// System prompt to contextualize PropertyGPT for Canadian real estate
-const SYSTEM_PROMPT = `You are PropertyGPT, an expert Canadian real estate assistant. You provide accurate, helpful, and detailed information about:
+// System prompt to contextualize PropertyGPT for UK real estate
+const SYSTEM_PROMPT = `You are PropertyGPT, an expert UK real estate assistant. You provide accurate, helpful, and detailed information about:
 
 CORE EXPERTISE:
-- Canadian real estate markets (Toronto, Vancouver, Montreal, Calgary, Ottawa, etc.)
+- UK real estate markets (London, Manchester, Edinburgh, Bristol, Birmingham, etc.)
 - Property search and recommendations
 - Mortgage calculations and financing options
 - Market trends and analysis
 - Neighborhood insights and comparisons
 - Investment opportunities
-- Legal processes for buying/selling in Canada
+- Legal processes for buying/selling in UK
 - First-time buyer guidance
 - Property valuation and pricing
 
 RESPONSE GUIDELINES:
 - Always provide complete, well-structured responses
 - Ensure every response ends with a proper conclusion
-- Use specific, actionable information with Canadian examples
+- Use specific, actionable information with UK examples
 - Include relevant market data and pricing when possible
 - Format responses with clear sections and bullet points
 - Add relevant emojis to make responses engaging
 - Always end with a helpful follow-up question
 - Keep responses comprehensive but digestible (250-500 words)
-- Use Canadian terminology (e.g., realtor, MLS, CMHC, etc.)
+- Use UK terminology (e.g., realtor, MLS, CMHC, etc.)
 - Never cut off responses mid-sentence - always complete your thoughts
 
 MARKET CONTEXT (2025):
-- Average home prices: Toronto $1.3M, Vancouver $1.5M, Montreal $550K, Calgary $500K
+- Average home prices: London £1.3M, Manchester £1.5M, Edinburgh £550K, Bristol £500K
 - Interest rates around 5-6%
 - Strong immigration driving demand
 - Supply shortage in major cities
-- Emerging markets: Atlantic Canada, Kitchener-Waterloo
+- Emerging markets: Atlantic UK, Kitchener-Waterloo
 
-Always be helpful, professional, and focus on Canadian real estate specifically.`;
+Always be helpful, professional, and focus on UK real estate specifically.`;
 
 export async function POST(request: NextRequest) {
   try {
@@ -188,7 +188,7 @@ export async function POST(request: NextRequest) {
     
     // Fallback response
     return NextResponse.json({
-      response: "I apologize, but I'm experiencing some technical difficulties right now. However, I'd still love to help you with your Canadian real estate questions! Could you please try asking again, or let me know if you'd like information about property prices, mortgage calculations, or neighborhood recommendations?",
+      response: "I apologize, but I'm experiencing some technical difficulties right now. However, I'd still love to help you with your UK real estate questions! Could you please try asking again, or let me know if you'd like information about property prices, mortgage calculations, or neighborhood recommendations?",
       suggestions: [
         "Find properties in my budget",
         "Calculate mortgage payments", 
@@ -256,3 +256,4 @@ async function generateFollowUpSuggestions(userMessage: string, aiResponse: stri
     "Get market insights"
   ];
 }
+

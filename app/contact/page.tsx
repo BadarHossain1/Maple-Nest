@@ -112,7 +112,7 @@ export default function ContactPage() {
                         <div className="bg-emerald-600 rounded-2xl p-6 sm:p-8 text-white h-fit">
                             <h2 className="text-xl sm:text-2xl font-bold mb-2">Get in Touch</h2>
                             <p className="text-emerald-100 mb-6 sm:mb-8 text-sm sm:text-base">
-                                Ready to find your dream home? Our expert team is here to help you navigate Canada&apos;s real estate market.
+                                Ready to find your dream home? Our expert team is here to help you navigate UK&apos;s real estate market.
                             </p>
 
                             <div className="space-y-4 sm:space-y-6">
@@ -133,8 +133,8 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold mb-1 text-sm sm:text-base">Email</h3>
-                                        <p className="text-emerald-100 text-sm sm:text-base">info@maplenest.ca</p>
-                                        <p className="text-emerald-100 text-sm sm:text-base">support@maplenest.ca</p>
+                                        <p className="text-emerald-100 text-sm sm:text-base">info@maplenest.co.uk</p>
+                                        <p className="text-emerald-100 text-sm sm:text-base">support@maplenest.co.uk</p>
                                     </div>
                                 </div>
 
@@ -145,12 +145,12 @@ export default function ContactPage() {
                                     <div>
                                         <h3 className="font-semibold mb-1 text-sm sm:text-base">Offices</h3>
                                         <p className="text-emerald-100 mb-2 text-sm sm:text-base">
-                                            Toronto: 123 Bay Street<br />
-                                            Toronto, ON M5K 1A1
+                                            London: 123 Baker Street<br />
+                                            London, W1U 8ED
                                         </p>
                                         <p className="text-emerald-100">
-                                            Vancouver: 456 Robson Street<br />
-                                            Vancouver, BC V6B 2B5
+                                            Manchester: 456 King Street<br />
+                                            Manchester, M2 3WZ
                                         </p>
                                     </div>
                                 </div>
@@ -199,7 +199,7 @@ export default function ContactPage() {
                                 <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Contact Us</h1>
                                 <p className="text-sm sm:text-base text-gray-600">
                                     Fill out the form below and we&apos;ll get back to you as soon as possible.
-                                    Let us help you find your perfect Canadian home.
+                                    Let us help you find your perfect UK home.
                                 </p>
                             </div>
 
@@ -333,7 +333,7 @@ export default function ContactPage() {
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                                            Budget Range (CAD)
+                                            Budget Range (GBP)
                                         </label>
                                         <div className="relative">
                                             <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -344,13 +344,13 @@ export default function ContactPage() {
                                                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent appearance-none"
                                             >
                                                 <option value="">Select Budget Range</option>
-                                                <option value="under-300k">Under $300K</option>
-                                                <option value="300k-500k">$300K - $500K</option>
-                                                <option value="500k-750k">$500K - $750K</option>
-                                                <option value="750k-1m">$750K - $1M</option>
-                                                <option value="1m-1.5m">$1M - $1.5M</option>
-                                                <option value="1.5m-2m">$1.5M - $2M</option>
-                                                <option value="over-2m">Over $2M</option>
+                                                <option value="under-300k">Under £300K</option>
+                                                <option value="300k-500k">£300K - £500K</option>
+                                                <option value="500k-750k">£500K - £750K</option>
+                                                <option value="750k-1m">£750K - £1M</option>
+                                                <option value="1m-1.5m">£1M - £1.5M</option>
+                                                <option value="1.5m-2m">£1.5M - £2M</option>
+                                                <option value="over-2m">Over £2M</option>
                                             </select>
                                         </div>
                                     </div>
@@ -367,7 +367,7 @@ export default function ContactPage() {
                                                 value={formData.location}
                                                 onChange={handleInputChange}
                                                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                                                placeholder="Toronto, Vancouver, Montreal..."
+                                                placeholder="London, Manchester, Edinburgh\.\.\."
                                             />
                                         </div>
                                     </div>
@@ -503,7 +503,7 @@ export default function ContactPage() {
                     <div className="p-8">
                         <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Locations</h3>
                         <p className="text-gray-600 mb-8">
-                            Visit our offices in Toronto and Vancouver, or connect with us virtually from anywhere in Canada.
+                            Visit our offices in London and Manchester, or connect with us virtually from anywhere in UK.
                         </p>
                     </div>
 
@@ -513,7 +513,7 @@ export default function ContactPage() {
                             <div className="text-center">
                                 <MapPin className="h-12 w-12 text-emerald-600 mx-auto mb-4" />
                                 <p className="text-gray-600">Interactive map would be displayed here</p>
-                                <p className="text-sm text-gray-500">Toronto & Vancouver office locations</p>
+                                <p className="text-sm text-gray-500">London & Manchester office locations</p>
                             </div>
                         </div>
                     </div>
@@ -522,3 +522,6 @@ export default function ContactPage() {
         </div>
     );
 }
+
+
+

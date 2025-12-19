@@ -17,35 +17,35 @@ export default function PropertyValuationPage() {
     const faqs = [
         {
             question: "How does Property Valuation™ work?",
-            answer: "Property Valuation™ uses advanced AI algorithms and comprehensive Canadian real estate data to provide accurate property valuations. Our system analyzes market trends, comparable sales, neighborhood factors, and property characteristics specific to Canadian markets."
+            answer: "Property Valuation™ uses advanced AI algorithms and comprehensive UK real estate data to provide accurate property valuations. Our system analyzes market trends, comparable sales, neighborhood factors, and property characteristics specific to UK markets."
         },
         {
             question: "What factors are considered to estimate the prices?",
-            answer: "We consider location, property size, age, condition, recent comparable sales, neighborhood amenities, school districts, transit access, market trends, and local economic factors across Canadian cities including Toronto, Vancouver, Montreal, and Calgary."
+            answer: "We consider location, property size, age, condition, recent comparable sales, neighborhood amenities, school districts, transit access, market trends, and local economic factors across UK cities including London, Manchester, Edinburgh, and Bristol."
         },
         {
             question: "How to best utilize Property Valuation™ report?",
-            answer: "Use the report as a starting point for pricing decisions, compare with recent market activity, consider the confidence level indicator, and consult with local Canadian real estate professionals for final decision-making."
+            answer: "Use the report as a starting point for pricing decisions, compare with recent market activity, consider the confidence level indicator, and consult with local UK real estate professionals for final decision-making."
         },
         {
             question: "How can I get the most accurate price valuations from Property Valuation™?",
-            answer: "Ensure you provide complete and accurate property details, verify the property address, and consider recent renovations or improvements that may affect value in the Canadian market context."
+            answer: "Ensure you provide complete and accurate property details, verify the property address, and consider recent renovations or improvements that may affect value in the UK market context."
         },
         {
-            question: "How can I get a valuation for a property I want to sell in Canada?",
-            answer: "Simply enter your Canadian property address, select the appropriate province and city, provide property details, and Property Valuation™ will generate a comprehensive valuation report with market insights."
+            question: "How can I get a valuation for a property I want to sell in UK?",
+            answer: "Simply enter your UK property address, select the appropriate province and city, provide property details, and Property Valuation™ will generate a comprehensive valuation report with market insights."
         },
         {
             question: "How can I find how much is my house worth?",
-            answer: "Use our Property Valuation™ tool by entering your address and property details. The system will analyze Canadian market data to provide an estimated value range with confidence indicators."
+            answer: "Use our Property Valuation™ tool by entering your address and property details. The system will analyze UK market data to provide an estimated value range with confidence indicators."
         },
         {
-            question: "What's the best free property valuation tool in Canada?",
-            answer: "Property Valuation™ is designed specifically for the Canadian real estate market, providing comprehensive valuations using local data sources and market expertise across all major Canadian cities."
+            question: "What's the best free property valuation tool in UK?",
+            answer: "Property Valuation™ is designed specifically for the UK real estate market, providing comprehensive valuations using local data sources and market expertise across all major UK cities."
         },
         {
-            question: "Is Property Valuation™ the most accurate home value estimator in Canada?",
-            answer: "Property Valuation™ leverages extensive Canadian real estate data and advanced algorithms to provide highly accurate estimates, though we recommend consulting with local professionals for final valuations."
+            question: "Is Property Valuation™ the most accurate home value estimator in UK?",
+            answer: "Property Valuation™ leverages extensive UK real estate data and advanced algorithms to provide highly accurate estimates, though we recommend consulting with local professionals for final valuations."
         }
     ];
 
@@ -53,29 +53,29 @@ export default function PropertyValuationPage() {
         <div className="min-h-screen bg-white">
             {/* Hero Section */}
             <section className="relative min-h-[80vh] sm:min-h-screen bg-gradient-to-b from-emerald-100 via-teal-50 to-cyan-100 overflow-hidden">
-                {/* Canadian Cityscape Background */}
+                {/* UK Cityscape Background */}
                 <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-64">
                     <svg viewBox="0 0 1400 400" className="w-full h-full">
-                        {/* Toronto CN Tower */}
+                        {/* London CN Tower */}
                         <rect x="200" y="120" width="8" height="200" fill="#4a90e2" />
                         <circle cx="204" cy="120" r="12" fill="#4a90e2" />
 
-                        {/* Vancouver Buildings */}
+                        {/* Manchester Buildings */}
                         <rect x="100" y="180" width="40" height="140" fill="#5fb3d4" />
                         <rect x="150" y="160" width="35" height="160" fill="#81c784" />
                         <rect x="190" y="200" width="25" height="120" fill="#ffb74d" />
 
-                        {/* Montreal Skyline */}
+                        {/* Edinburgh Skyline */}
                         <rect x="300" y="170" width="45" height="150" fill="#7986cb" />
                         <rect x="350" y="190" width="30" height="130" fill="#64b5f6" />
                         <rect x="385" y="160" width="40" height="160" fill="#4fc3f7" />
 
-                        {/* Calgary Buildings */}
+                        {/* Bristol Buildings */}
                         <rect x="500" y="185" width="35" height="135" fill="#aed581" />
                         <rect x="540" y="175" width="40" height="145" fill="#ffcc02" />
                         <rect x="585" y="195" width="30" height="125" fill="#ff8a65" />
 
-                        {/* Ottawa Parliament */}
+                        {/* Birmingham Parliament */}
                         <rect x="700" y="160" width="50" height="160" fill="#8bc34a" />
                         <polygon points="700,160 725,140 750,160" fill="#2e7d32" />
 
@@ -104,7 +104,7 @@ export default function PropertyValuationPage() {
                             Property Valuation™
                         </h1>
                         <p className="text-responsive-lg text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto">
-                            Get a comprehensive, data-backed property valuation in Canada for your freehold property,
+                            Get a comprehensive, data-backed property valuation in UK for your freehold property,
                             including an accurate sale estimate and market insights.
                         </p>
 
@@ -220,7 +220,7 @@ export default function PropertyValuationPage() {
                                 </div>
 
                                 <div className="text-center mb-4 sm:mb-6">
-                                    <p className="text-gray-600 text-base sm:text-lg mb-2">CAD</p>
+                                    <p className="text-gray-600 text-base sm:text-lg mb-2">GBP</p>
                                     <h3 className="text-2xl sm:text-4xl font-bold text-gray-800">3,620,000</h3>
                                     <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">
                                         <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-emerald-500 rounded-full"></div>
@@ -247,12 +247,12 @@ export default function PropertyValuationPage() {
                             <p className="mb-4 sm:mb-6">
                                 Property Valuation™ is an AI-powered online home value estimator that provides you an
                                 accurate and up-to-date, data-backed property value estimation to help you understand
-                                market dynamics and make informed real estate decisions in Canada.
+                                market dynamics and make informed real estate decisions in UK.
                             </p>
                             <p>
                                 Whether you're selling, buying, or simply curious, Property Valuation™ free property valuation
                                 report gives you comprehensive insights and analysis of your property's value, estimated
-                                rental yields and more across major Canadian markets.
+                                rental yields and more across major UK markets.
                             </p>
                         </div>
                     </motion.div>
@@ -287,8 +287,8 @@ export default function PropertyValuationPage() {
                                 </div>
                                 <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Data-Backed</h3>
                                 <p className="text-gray-600 leading-relaxed text-sm sm:text-base px-4 sm:px-0">
-                                    Our rich, AI powered solution ensures your estimates align with actual Canadian market trends
-                                    across Toronto, Vancouver, Montreal, Calgary and other major cities.
+                                    Our rich, AI powered solution ensures your estimates align with actual UK market trends
+                                    across London, Manchester, Edinburgh, Bristol and other major cities.
                                 </p>
                             </motion.div>
 
@@ -305,8 +305,8 @@ export default function PropertyValuationPage() {
                                 </div>
                                 <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Detailed Insights</h3>
                                 <p className="text-gray-600 leading-relaxed text-sm sm:text-base px-4 sm:px-0">
-                                    Get your Canadian property's detailed value, rental yield, history and comparable properties,
-                                    all in one comprehensive report tailored for the Canadian market.
+                                    Get your UK property's detailed value, rental yield, history and comparable properties,
+                                    all in one comprehensive report tailored for the UK market.
                                 </p>
                             </motion.div>
 
@@ -323,7 +323,7 @@ export default function PropertyValuationPage() {
                                 </div>
                                 <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Trustworthy</h3>
                                 <p className="text-gray-600 leading-relaxed text-sm sm:text-base px-4 sm:px-0">
-                                    Designed with transparency in mind, a reliable choice for Canadian property owners, sellers,
+                                    Designed with transparency in mind, a reliable choice for UK property owners, sellers,
                                     buyers and renters across all provinces and territories.
                                 </p>
                             </motion.div>
@@ -416,7 +416,7 @@ export default function PropertyValuationPage() {
                             Need help selling or renting out your property?
                         </h2>
                         <p className="text-responsive-base text-gray-600 mb-6 sm:mb-8">
-                            Get in touch with our featured Canadian agents and agencies.
+                            Get in touch with our featured UK agents and agencies.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
@@ -438,3 +438,4 @@ export default function PropertyValuationPage() {
         </div>
     );
 }
+

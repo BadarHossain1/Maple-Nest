@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          message: 'What are average home prices in Toronto?',
+          message: 'What are average home prices in London?',
           conversationHistory: []
         }),
       });

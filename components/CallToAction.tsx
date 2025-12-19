@@ -20,7 +20,7 @@ export function CallToAction() {
             Ready to Find Your Perfect Home?
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Start your journey today with Canada's most comprehensive real estate platform.
+            Start your journey today with the UK's most comprehensive real estate platform.
           </p>
         </motion.div>
 
@@ -37,7 +37,7 @@ export function CallToAction() {
             </div>
             <h3 className="text-xl font-semibold mb-3">Search Properties</h3>
             <p className="text-gray-300 mb-6">
-              Browse thousands of listings across Canada with advanced search filters.
+              Browse thousands of listings across the UK with advanced search filters.
             </p>
             <Link href="/buy">
               <Button variant="outline" className="w-full">

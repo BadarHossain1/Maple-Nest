@@ -157,10 +157,10 @@ export function Hero() {
                       <option>3+ Beds</option>
                     </select>
                     <select className="px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600 text-xs sm:text-sm lg:text-base">
-                      <option>Price (CAD)</option>
-                      <option>Under $500K</option>
-                      <option>$500K - $1M</option>
-                      <option>$1M+</option>
+                      <option>Price (GBP)</option>
+                      <option>Under £500K</option>
+                      <option>£500K - £1M</option>
+                      <option>£1M+</option>
                     </select>
                   </div>
                   <button className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-medium transition-colors text-sm sm:text-base whitespace-nowrap">
@@ -174,7 +174,7 @@ export function Hero() {
                     <div className="w-4 h-4 sm:w-5 sm:h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
                       <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-600 rounded-full"></div>
                     </div>
-                    <span className="text-xs sm:text-sm leading-tight">Get instant answers about Canadian real estate with PropertyGPT</span>
+                    <span className="text-xs sm:text-sm leading-tight">Get instant answers about UK real estate with PropertyGPT</span>
                   </div>
                   <Link href="/ai-assistant" className="text-green-600 font-medium hover:text-green-700 transition-colors flex items-center gap-1 text-xs sm:text-sm lg:text-base whitespace-nowrap self-start sm:self-center">
                     Try PropertyGPT
@@ -239,7 +239,7 @@ export function FeatureCards() {
                 AI Property Valuation™
               </h3>
               <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
-                Get accurate market valuations for your Canadian property instantly
+                Get accurate market valuations for your UK property instantly
               </p>
               <Link href="/property-valuation" className="text-green-600 font-medium hover:text-green-700 transition-colors flex items-center gap-1 group text-sm sm:text-base">
                 Learn more
@@ -277,7 +277,7 @@ export function FeatureCards() {
                 Smart Commute Finder
               </h3>
               <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
-                Find homes based on your daily commute time across Canadian cities
+                Find homes based on your daily commute time across UK cities
               </p>
               <Link href="/commute-finder" className="text-green-600 font-medium hover:text-green-700 transition-colors flex items-center gap-1 group text-sm sm:text-base">
                 Try it now

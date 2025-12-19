@@ -25,7 +25,7 @@ export interface QuickAction {
   color: string;
 }
 
-// Canadian Real Estate Context Types
+// UK Real Estate Context Types
 export interface PropertySearchCriteria {
   location?: string;
   minPrice?: number;
